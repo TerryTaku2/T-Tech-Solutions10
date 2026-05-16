@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init("Q2jRTmAZJwv6yPNvk");</script>
   <style>
     /* Contact layout */
     .contact-section { padding:80px 0 100px; background:var(--white); }
@@ -226,8 +228,11 @@
             <textarea class="form-control" id="fmessage" placeholder="Describe what you need; the more detail, the better our quote will be. What problem are you trying to solve? What should the system do?"></textarea>
           </div>
 
-          <button id="sendBtn" class="btn btn-primary btn-full btn-lg">Send via WhatsApp →</button>
-          <p style="margin-top:12px;font-size:12px;color:var(--text-muted);text-align:center;">Clicking the button opens WhatsApp with your message pre-filled. We'll reply quickly.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <button id="emailBtn" class="btn btn-outline btn-lg" style="justify-content:center;">✉️ Send via Email</button>
+            <button id="sendBtn" class="btn btn-primary btn-lg" style="justify-content:center;">💬 Send via WhatsApp</button>
+          </div>
+          <p style="margin-top:12px;font-size:12px;color:var(--text-muted);text-align:center;">Both buttons pre-fill your message. WhatsApp is fastest; email goes to terrencemuromba6@gmail.com.</p>
         </div>
       </div>
 
@@ -287,7 +292,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 T-Tech Solutions. All rights reserved. 🇿🇼</div>
+      <div class="footer-copy">© 2026 T-Tech Solutions. All rights reserved. 🇿🇼</div>
       <div class="footer-social">
         <a href="https://wa.me/263774128219" target="_blank" rel="noopener" class="social-btn">💬</a>
         <a href="mailto:terrencemuromba6@gmail.com" class="social-btn">✉</a>

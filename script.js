@@ -28,28 +28,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  /* ── Contact Form → WhatsApp ─────────────────────────── */
+  /* ── Contact Form → WhatsApp / Email ────────────────── */
+  function getFormFields() {
+    return {
+      name:    document.getElementById('fname')?.value.trim(),
+      email:   document.getElementById('femail')?.value.trim(),
+      phone:   document.getElementById('fphone')?.value.trim(),
+      service: document.getElementById('fservice')?.value,
+      budget:  document.getElementById('fbudget')?.value,
+      message: document.getElementById('fmessage')?.value.trim(),
+    };
+  }
+
   const sendBtn = document.getElementById('sendBtn');
   if (sendBtn) {
     sendBtn.addEventListener('click', e => {
       e.preventDefault();
-      const name    = document.getElementById('fname')?.value.trim();
-      const email   = document.getElementById('femail')?.value.trim();
-      const service = document.getElementById('fservice')?.value;
-      const budget  = document.getElementById('fbudget')?.value;
-      const message = document.getElementById('fmessage')?.value.trim();
+      const { name, email, service, budget, message } = getFormFields();
+      if (!name || !email || !message) {
+        alert('Please fill in your name, email, and project description.');
+        return;
+      }
+      const text = `Hello T-Tech Solutions!\n\n*Name:* ${name}\n*Email:* ${email}\n*Service:* ${service || 'Not specified'}\n*Budget:* ${budget || 'Not specified'}\n\n*Project Details:*\n${message}`;
+      window.open(`https://wa.me/263774128219?text=${encodeURIComponent(text)}`, '_blank');
+      sendBtn.innerHTML = '✓ Opening WhatsApp…';
+      sendBtn.style.background = '#16a34a';
+      setTimeout(() => { sendBtn.innerHTML = '💬 Send via WhatsApp'; sendBtn.style.background = ''; }, 3000);
+    });
+  }
 
+  const emailBtn = document.getElementById('emailBtn');
+  if (emailBtn) {
+    emailBtn.addEventListener('click', e => {
+      e.preventDefault();
+      const { name, email, phone, service, budget, message } = getFormFields();
       if (!name || !email || !message) {
         alert('Please fill in your name, email, and project description.');
         return;
       }
 
-      const text = `Hello T-Tech Solutions!\n\n*Name:* ${name}\n*Email:* ${email}\n*Service:* ${service || 'Not specified'}\n*Budget:* ${budget || 'Not specified'}\n\n*Project Details:*\n${message}`;
-      window.open(`https://wa.me/263774128219?text=${encodeURIComponent(text)}`, '_blank');
+      emailBtn.disabled = true;
+      emailBtn.innerHTML = 'Sending…';
 
-      sendBtn.textContent = '✓ Opening WhatsApp…';
-      sendBtn.style.background = '#16a34a';
-      setTimeout(() => { sendBtn.textContent = 'Send via WhatsApp →'; sendBtn.style.background = ''; }, 3000);
+      emailjs.send('service_ar9rhxq', 'template_yqxqljf', {
+        from_name:    name,
+        from_email:   email,
+        phone:        phone || 'Not provided',
+        service:      service || 'Not specified',
+        budget:       budget || 'Not specified',
+        message:      message,
+      })
+      .then(() => {
+        emailBtn.innerHTML = '✓ Email Sent!';
+        emailBtn.style.background = '#16a34a';
+        emailBtn.style.color = '#fff';
+        emailBtn.style.borderColor = '#16a34a';
+        setTimeout(() => {
+          emailBtn.innerHTML = '✉️ Send via Email';
+          emailBtn.style.background = '';
+          emailBtn.style.color = '';
+          emailBtn.style.borderColor = '';
+          emailBtn.disabled = false;
+        }, 4000);
+      })
+      .catch(() => {
+        alert('Email failed to send. Please try WhatsApp or email us directly.');
+        emailBtn.innerHTML = '✉️ Send via Email';
+        emailBtn.disabled = false;
+      });
     });
   }
 
