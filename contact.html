@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — T-Tech Solutions</title>
+  <meta name="description" content="Contact T-Tech Solutions. Call or WhatsApp +263 774 128 219. Email terrencemuromba6@gmail.com. Based at 391 Off Beeston, The Grange, Harare."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* Contact layout */
+    .contact-section { padding:80px 0 100px; background:var(--white); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:start; }
+    @media(max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
+
+    /* Contact info side */
+    .contact-intro { margin-bottom:40px; }
+    .contact-info-cards { display:flex; flex-direction:column; gap:16px; }
+    .ci-card { background:var(--bg); border-radius:var(--radius-lg); padding:20px 24px; border:1px solid var(--border); display:flex; align-items:center; gap:16px; transition:all .2s; }
+    .ci-card:hover { background:var(--white); box-shadow:var(--shadow-sm); border-color:var(--primary-light); }
+    .ci-card a { display:flex; align-items:center; gap:16px; width:100%; color:inherit; }
+    .ci-icon-box { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+    .ci-label { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:3px; }
+    .ci-value { font-size:15px; font-weight:600; color:var(--text); }
+    .ci-sub { font-size:12px; color:var(--text-sec); margin-top:2px; }
+
+    /* WhatsApp card */
+    .wa-card { background:linear-gradient(135deg,#22c55e,#16a34a); border-radius:var(--radius-lg); padding:28px; border:none; margin-top:24px; }
+    .wa-card-inner { display:flex; align-items:center; gap:16px; }
+    .wa-icon { font-size:36px; }
+    .wa-text h4 { color:#fff; font-size:16px; margin-bottom:4px; }
+    .wa-text p { color:rgba(255,255,255,.8); font-size:13px; line-height:1.5; }
+    .wa-btn { margin-top:16px; }
+
+    /* Form side */
+    .contact-form-card { background:var(--white); border-radius:var(--radius-xl); padding:40px; border:1px solid var(--border); box-shadow:var(--shadow-sm); }
+    .form-title { font-family:'Inter',sans-serif; font-size:22px; font-weight:800; margin-bottom:6px; }
+    .form-subtitle { font-size:14px; color:var(--text-sec); margin-bottom:28px; }
+
+    /* Response promise */
+    .response-bar { background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:24px 0; }
+    .response-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; text-align:center; }
+    .rg-icon { font-size:24px; margin-bottom:8px; }
+    .rg-title { font-family:'Inter',sans-serif; font-size:14px; font-weight:700; margin-bottom:4px; }
+    .rg-desc { font-size:12px; color:var(--text-sec); }
+    @media(max-width:640px){ .response-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="logo-mark">TT</div><span class="logo-name">T-Tech <span>Solutions</span></span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+        <a href="connect.html">T-Tech Connect</a><a href="pricing.html">Pricing</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div class="nav-cta"><a href="https://wa.me/263774128219" target="_blank" rel="noopener" class="btn btn-primary btn-sm">WhatsApp Us</a></div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="connect.html">T-Tech Connect</a><a href="pricing.html">Pricing</a><a href="contact.html" class="active">Contact</a>
+  <a href="https://wa.me/263774128219" target="_blank" rel="noopener" class="btn btn-primary btn-full" style="margin-top:20px;">WhatsApp Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.7);">Contact</span></div>
+      <span class="eyebrow">Get In Touch</span>
+      <h1>Let's Talk About<br/>Your Project</h1>
+      <p class="lead">Describe what you need and we'll respond within 24 hours with a clear plan and an honest, upfront quote. No commitment required.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESPONSE PROMISE -->
+<div class="response-bar">
+  <div class="container">
+    <div class="response-grid">
+      <div class="rg-item">
+        <div class="rg-icon">⚡</div>
+        <div class="rg-title">24-Hour Response</div>
+        <p class="rg-desc">We respond to every message within 24 hours, usually much faster.</p>
+      </div>
+      <div class="rg-item">
+        <div class="rg-icon">📋</div>
+        <div class="rg-title">Free Quote</div>
+        <p class="rg-desc">Every enquiry gets a clear, itemised quote at no cost and no commitment.</p>
+      </div>
+      <div class="rg-item">
+        <div class="rg-icon">🤝</div>
+        <div class="rg-title">No Jargon</div>
+        <p class="rg-desc">We explain everything in plain language (Tokwanisa kushandisa rurimi rwamai zvekare) no technical confusion, no pressure.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: Info -->
+      <div>
+        <div class="contact-intro reveal">
+          <span class="eyebrow">Contact Details</span>
+          <h2>Reach Us Directly</h2>
+          <p style="margin-top:10px;">You can contact us through any of the channels below. WhatsApp is the fastest way to reach us and start a conversation.</p>
+        </div>
+
+        <div class="contact-info-cards reveal">
+          <div class="ci-card">
+            <a href="tel:+263774128219">
+              <div class="ci-icon-box ib-blue">📞</div>
+              <div class="ci-text">
+                <div class="ci-label">Call Us</div>
+                <div class="ci-value">+263 774 128 219</div>
+                <div class="ci-sub">Monday – Saturday, 8am – 6pm</div>
+              </div>
+            </a>
+          </div>
+          <div class="ci-card">
+            <a href="mailto:terrencemuromba6@gmail.com">
+              <div class="ci-icon-box ib-purple">✉️</div>
+              <div class="ci-text">
+                <div class="ci-label">Email</div>
+                <div class="ci-value">terrencemuromba6@gmail.com</div>
+                <div class="ci-sub">We reply within 24 hours</div>
+              </div>
+            </a>
+          </div>
+          <div class="ci-card">
+            <div style="display:flex;align-items:center;gap:16px;width:100%;">
+              <div class="ci-icon-box ib-green">📍</div>
+              <div class="ci-text">
+                <div class="ci-label">Our Office</div>
+                <div class="ci-value">391 Off Beeston, The Grange</div>
+                <div class="ci-sub">Harare, Zimbabwe</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wa-card reveal" style="margin-top:24px;">
+          <div class="wa-card-inner">
+            <div class="wa-icon">💬</div>
+            <div class="wa-text">
+              <h4>Fastest Response: WhatsApp</h4>
+              <p>Send us a message on WhatsApp and we'll respond quickly, describe your project and we'll take it from there.</p>
+            </div>
+          </div>
+          <div class="wa-btn">
+            <a href="https://wa.me/263774128219?text=Hello%20T-Tech%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="btn btn-white">Open WhatsApp Chat →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="reveal s1">
+        <div class="contact-form-card">
+          <div class="form-title">Send Us a Message</div>
+          <p class="form-subtitle">Fill in the details below and we'll reply with a plan and quote within 24 hours.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fname">Full Name *</label>
+              <input class="form-control" id="fname" type="text" placeholder="Your full name"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="femail">Email Address *</label>
+              <input class="form-control" id="femail" type="email" placeholder="you@example.com"/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fphone">Phone / WhatsApp</label>
+              <input class="form-control" id="fphone" type="tel" placeholder="+263 7XX XXX XXX"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fbudget">Budget Range</label>
+              <select class="form-control" id="fbudget">
+                <option value="">Select a range…</option>
+                <option>Under $50</option>
+                <option>$50 – $200</option>
+                <option>$200 – $500</option>
+                <option>$500 – $1,000</option>
+                <option>$1,000+</option>
+                <option>Let's discuss</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fservice">Service Needed</label>
+            <select class="form-control" id="fservice">
+              <option value="">Select a service…</option>
+              <option>Website Development</option>
+              <option>Web Application</option>
+              <option>ERP System</option>
+              <option>Financial System</option>
+              <option>Data Analysis</option>
+              <option>AI Solution</option>
+              <option>Branding &amp; Design</option>
+              <option>Property Technology</option>
+              <option>T-Tech Connect: List a Property</option>
+              <option>Not sure, I need advice</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fmessage">Tell Us About Your Project *</label>
+            <textarea class="form-control" id="fmessage" placeholder="Describe what you need; the more detail, the better our quote will be. What problem are you trying to solve? What should the system do?"></textarea>
+          </div>
+
+          <button id="sendBtn" class="btn btn-primary btn-full btn-lg">Send via WhatsApp →</button>
+          <p style="margin-top:12px;font-size:12px;color:var(--text-muted);text-align:center;">Clicking the button opens WhatsApp with your message pre-filled. We'll reply quickly.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES REMINDER -->
+<section style="padding:80px 0;background:var(--bg);">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">Not Sure What You Need?</span>
+      <h2>Browse Our Services First</h2>
+      <p class="lead">Sometimes seeing what's possible helps you figure out what you want. Explore our full list of services to get a clearer picture.</p>
+    </div>
+    <div style="text-align:center;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="services.html" class="btn btn-primary btn-lg">View All Services →</a>
+      <a href="pricing.html" class="btn btn-outline btn-lg">See Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><div class="logo-mark">TT</div><span class="logo-name">T-Tech <span>Solutions</span></span></div>
+        <p class="footer-tagline">Smart digital solutions for finance, property &amp; business growth.<br/>Built in Zimbabwe, for Zimbabwe.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">Web Applications</a></li>
+          <li><a href="services.html">ERP Systems</a></li>
+          <li><a href="services.html">Financial Systems</a></li>
+          <li><a href="services.html">Data Analysis</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="connect.html">T-Tech Connect</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-row">📞 &nbsp;<a href="tel:+263774128219">+263 774 128 219</a></div>
+        <div class="footer-contact-row">💬 &nbsp;<a href="https://wa.me/263774128219" target="_blank" rel="noopener">WhatsApp Us</a></div>
+        <div class="footer-contact-row">✉️ &nbsp;<a href="mailto:terrencemuromba6@gmail.com">terrencemuromba6@gmail.com</a></div>
+        <div class="footer-contact-row">📍 &nbsp;<span>391 Off Beeston, The Grange, Harare</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 T-Tech Solutions. All rights reserved. 🇿🇼</div>
+      <div class="footer-social">
+        <a href="https://wa.me/263774128219" target="_blank" rel="noopener" class="social-btn">💬</a>
+        <a href="mailto:terrencemuromba6@gmail.com" class="social-btn">✉</a>
+        <a href="#" class="social-btn">in</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

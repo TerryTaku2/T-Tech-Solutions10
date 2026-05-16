@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>T-Tech Connect — Zimbabwe's Rental Marketplace</title>
+  <meta name="description" content="T-Tech Connect connects students and tenants with verified landlords across Zimbabwe. Find accommodation near UZ, NUST, MSU and other campuses."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* Custom hero for Connect page */
+    .connect-hero {
+      padding: 148px 0 80px;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, #1e1b4b 100%);
+      position: relative; overflow: hidden;
+    }
+    .connect-hero::before { content:''; position:absolute; top:-80px; right:-80px; width:500px; height:500px; background:radial-gradient(circle,rgba(124,58,237,.3),transparent 70%); }
+    .connect-hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; position:relative; z-index:1; }
+    .connect-hero h1 { color:#fff; margin-bottom:16px; }
+    .connect-hero .lead { color:rgba(255,255,255,.72); margin-bottom:28px; }
+    .connect-hero .eyebrow { color:rgba(255,255,255,.5); }
+    .hero-logo-side { text-align:center; }
+    .hero-logo-side img { max-width:300px; margin:0 auto; filter:drop-shadow(0 20px 48px rgba(0,0,0,.5)); animation:floatImg 4s ease-in-out infinite; }
+    @keyframes floatImg { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
+    .connect-hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
+    @media(max-width:768px){ .connect-hero-grid{grid-template-columns:1fr;} .hero-logo-side{display:none;} }
+
+    /* Overview */
+    .overview { padding:100px 0; background:var(--white); }
+    .overview-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    @media(max-width:768px){ .overview-grid{grid-template-columns:1fr;} }
+
+    /* Audience cards */
+    .audience { padding:100px 0; background:var(--bg); }
+    .audience-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .aud-card { background:var(--white); border-radius:var(--radius-xl); padding:40px; border:1px solid var(--border); }
+    .aud-label { font-family:'Inter',sans-serif; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; }
+    .aud-label.blue { color:var(--primary); }
+    .aud-label.green { color:var(--green); }
+    .aud-title { font-family:'Inter',sans-serif; font-size:22px; font-weight:800; margin-bottom:12px; }
+    .aud-desc { font-size:14px; line-height:1.75; color:var(--text-sec); margin-bottom:24px; }
+    .aud-check { display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
+    .aud-row { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--text-sec); }
+    .aud-dot { width:18px; height:18px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; flex-shrink:0; margin-top:1px; }
+    .aud-dot.blue { background:var(--primary-light); color:var(--primary); }
+    .aud-dot.green { background:var(--green-light); color:var(--green); }
+    @media(max-width:640px){ .audience-grid{grid-template-columns:1fr;} }
+
+    /* How it works */
+    .how { padding:100px 0; background:var(--white); }
+    .steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
+    .step { text-align:center; }
+    .step-num { width:56px; height:56px; border-radius:50%; background:var(--primary); color:#fff; font-family:'Inter',sans-serif; font-size:20px; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
+    .step-title { font-family:'Inter',sans-serif; font-size:17px; font-weight:700; margin-bottom:8px; }
+    .step-desc { font-size:14px; color:var(--text-sec); line-height:1.7; }
+    .step-divider { position:relative; }
+    .step-divider::after { content:'→'; position:absolute; top:-36px; right:-16px; font-size:20px; color:var(--border); }
+    @media(max-width:640px){ .steps-grid{grid-template-columns:1fr;} .step-divider::after{display:none;} }
+
+    /* Features grid */
+    .features { padding:100px 0; background:var(--bg); }
+    .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
+    .feat-card { background:var(--white); border-radius:var(--radius-lg); padding:28px; border:1px solid var(--border); }
+    .feat-icon { font-size:28px; margin-bottom:14px; }
+    .feat-title { font-family:'Inter',sans-serif; font-size:16px; font-weight:700; margin-bottom:8px; }
+    .feat-desc { font-size:13px; color:var(--text-sec); line-height:1.7; }
+
+    /* Live CTA */
+    .live-cta {
+      padding:100px 0;
+      background: linear-gradient(135deg, var(--primary-dark), #1e1b4b);
+      text-align:center; position:relative; overflow:hidden;
+    }
+    .live-cta::before { content:''; position:absolute; top:-50%; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle,rgba(124,58,237,.25),transparent 70%); pointer-events:none; }
+    .live-cta h2 { color:#fff; position:relative; }
+    .live-cta p { color:rgba(255,255,255,.7); margin:14px auto 32px; max-width:520px; position:relative; font-size:16px; }
+    .live-cta-buttons { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; position:relative; }
+    .live-badge-cta { display:inline-flex; align-items:center; gap:8px; background:rgba(22,163,74,.15); border:1px solid rgba(74,222,128,.3); border-radius:99px; padding:8px 18px; font-size:13px; font-weight:600; color:#4ade80; margin-bottom:28px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="logo-mark">TT</div><span class="logo-name">T-Tech <span>Solutions</span></span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+        <a href="connect.html" class="active">T-Tech Connect</a>
+        <a href="pricing.html">Pricing</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta"><a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Platform →</a></div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="connect.html" class="active">T-Tech Connect</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a>
+  <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-primary btn-full" style="margin-top:20px;">Visit Platform →</a>
+</div>
+
+<!-- HERO -->
+<section class="connect-hero">
+  <div class="container">
+    <div class="connect-hero-grid">
+      <div>
+        <div class="breadcrumb"><a href="index.html" style="color:rgba(255,255,255,.5);">Home</a><span style="color:rgba(255,255,255,.3);">/</span><span style="color:rgba(255,255,255,.7);">T-Tech Connect</span></div>
+        <span class="eyebrow">Our Flagship Product</span>
+        <h1>Zimbabwe's Rental Marketplace</h1>
+        <p class="lead">T-Tech Connect is a live property platform that connects students and general tenants with verified landlords across Zimbabwe's major cities which makes finding accommodation simple, safe, and fast.</p>
+        <div class="connect-hero-actions">
+          <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-white btn-lg">Visit Platform →</a>
+          <a href="contact.html" class="btn btn-ghost btn-lg">List a Property</a>
+        </div>
+      </div>
+      <div class="hero-logo-side">
+        <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener">
+          <img src="images/logo.png" alt="T-Tech Connect"/>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item">🏠 &nbsp;Verified Listings</div>
+      <div class="trust-item">💬 &nbsp;Real-time Messaging</div>
+      <div class="trust-item">📍 &nbsp;Campus Proximity Filters</div>
+      <div class="trust-item">🔒 &nbsp;Secure Payments</div>
+      <div class="trust-item">🇿🇼 &nbsp;Zimbabwe-wide</div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="overview">
+  <div class="container">
+    <div class="overview-grid">
+      <div class="reveal">
+        <span class="eyebrow">What is T-Tech Connect</span>
+        <h2>The Smarter Way to Find or List Property in Zimbabwe</h2>
+        <p style="margin-bottom:16px;">Finding accommodation in Zimbabwe has always been a frustrating process word of mouth, WhatsApp forwards, unsafe meetups, and no real verification of properties or landlords.</p>
+        <p style="margin-bottom:16px;">T-Tech Connect changes that. It's a dedicated digital marketplace where landlords list verified properties and tenants find accommodation safely, with photos, real pricing, and direct communication all in one platform.</p>
+        <p>Whether you're a university student looking for something close to campus, or a working professional looking for a furnished flat at T-Tech Connect makes the process simple, transparent, and trustworthy.</p>
+        <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">Find Accommodation →</a>
+          <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-outline">List Your Property</a>
+        </div>
+      </div>
+      <div class="reveal s1" style="background:var(--bg);border-radius:var(--radius-xl);padding:40px;border:1px solid var(--border);">
+        <div style="font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;">Platform at a Glance</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:10px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🔍</div><div><div style="font-weight:600;font-size:14px;">Smart Search</div><div style="font-size:13px;color:var(--text-sec);">Filter by city, campus, price, and type</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:10px;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">✅</div><div><div style="font-weight:600;font-size:14px;">Verified Listings</div><div style="font-size:13px;color:var(--text-sec);">Properties reviewed with real photos</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:10px;background:#ede9fe;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">💬</div><div><div style="font-weight:600;font-size:14px;">Real-time Chat</div><div style="font-size:13px;color:var(--text-sec);">Message landlords directly in-app</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:10px;background:#ffedd5;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🏫</div><div><div style="font-weight:600;font-size:14px;">Campus Proximity</div><div style="font-size:13px;color:var(--text-sec);">Distance from UZ, NUST, MSU &amp; more</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:10px;background:#ccfbf1;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">💳</div><div><div style="font-weight:600;font-size:14px;">Secure Payments</div><div style="font-size:13px;color:var(--text-sec);">Safe commission payment gateway</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR TENANTS & LANDLORDS -->
+<section class="audience">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">Who It's For</span>
+      <h2>Built for Both Sides of the Market</h2>
+      <p class="lead">T-Tech Connect serves tenants looking for accommodation and landlords looking for reliable tenants - equally well.</p>
+    </div>
+    <div class="audience-grid">
+      <div class="aud-card reveal">
+        <div class="aud-label blue">For Tenants &amp; Students</div>
+        <div class="aud-title">Find the Right Place Without the Stress</div>
+        <p class="aud-desc">Stop relying on word of mouth or unverified WhatsApp listings. Browse real, verified properties with photos, pricing, and exact locations and contact landlords directly through the platform.</p>
+        <div class="aud-check">
+          <div class="aud-row"><div class="aud-dot blue">✓</div>Browse hundreds of listings in Harare, Bulawayo &amp; beyond</div>
+          <div class="aud-row"><div class="aud-dot blue">✓</div>Filter by distance from your university campus</div>
+          <div class="aud-row"><div class="aud-dot blue">✓</div>See real photos so there are no surprises when you arrive</div>
+          <div class="aud-row"><div class="aud-dot blue">✓</div>Chat directly with landlords before committing</div>
+          <div class="aud-row"><div class="aud-dot blue">✓</div>Find roommates for shared accommodation</div>
+          <div class="aud-row"><div class="aud-dot blue">✓</div>Filter by price, furnishing, and room type</div>
+        </div>
+        <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-primary btn-full">Browse Listings →</a>
+      </div>
+      <div class="aud-card reveal s1">
+        <div class="aud-label green">For Landlords</div>
+        <div class="aud-title">Reach More Tenants. Manage Less Hassle.</div>
+        <p class="aud-desc">List your property once and have it seen by hundreds of active tenants, students, professionals, and families. Manage enquiries, messages, and bookings all in one place.</p>
+        <div class="aud-check">
+          <div class="aud-row"><div class="aud-dot green">✓</div>Create detailed listings with photos in minutes</div>
+          <div class="aud-row"><div class="aud-dot green">✓</div>Reach students from UZ, NUST, MSU, and more</div>
+          <div class="aud-row"><div class="aud-dot green">✓</div>Manage all tenant enquiries in one dashboard</div>
+          <div class="aud-row"><div class="aud-dot green">✓</div>Receive messages directly from interested tenants</div>
+          <div class="aud-row"><div class="aud-dot green">✓</div>Update availability instantly, no middlemen</div>
+          <div class="aud-row"><div class="aud-dot green">✓</div>Professional listing page for each property</div>
+        </div>
+        <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-green btn-full">List a Property →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>Simple from Start to Finish</h2>
+      <p class="lead">Getting started on T-Tech Connect takes minutes, whether you're a tenant or a landlord.</p>
+    </div>
+    <div style="margin-bottom:56px;">
+      <div style="font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:28px;text-align:center;">For Tenants</div>
+      <div class="steps-grid">
+        <div class="step step-divider reveal">
+          <div class="step-num">1</div>
+          <div class="step-title">Create Your Account</div>
+          <p class="step-desc">Sign up in seconds with your email or Google account. Tell us whether you're a student or general tenant.</p>
+        </div>
+        <div class="step step-divider reveal s1">
+          <div class="step-num">2</div>
+          <div class="step-title">Search &amp; Filter</div>
+          <p class="step-desc">Browse listings by city, price range, campus distance, room type, and furnishing. Find exactly what you need.</p>
+        </div>
+        <div class="step reveal s2">
+          <div class="step-num">3</div>
+          <div class="step-title">Message &amp; Move In</div>
+          <p class="step-desc">Contact the landlord directly through our real-time chat. Agree terms and move in, no agents, no unnecessary fees.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:28px;text-align:center;">For Landlords</div>
+      <div class="steps-grid">
+        <div class="step step-divider reveal">
+          <div class="step-num" style="background:var(--green);">1</div>
+          <div class="step-title">Register as Landlord</div>
+          <p class="step-desc">Create your landlord account. It's free to register and takes less than two minutes.</p>
+        </div>
+        <div class="step step-divider reveal s1">
+          <div class="step-num" style="background:var(--green);">2</div>
+          <div class="step-title">List Your Property</div>
+          <p class="step-desc">Add photos, set your price, describe the property, and publish. Your listing goes live immediately.</p>
+        </div>
+        <div class="step reveal s2">
+          <div class="step-num" style="background:var(--green);">3</div>
+          <div class="step-title">Connect with Tenants</div>
+          <p class="step-desc">Receive messages from interested tenants, review their profiles, and choose who to rent to.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">Platform Features</span>
+      <h2>Everything You Need in One Place</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card reveal"><div class="feat-icon">🔍</div><div class="feat-title">Smart Search</div><p class="feat-desc">Filter properties by city, price range, room type, campus distance, and furnishing status to find exactly what fits.</p></div>
+      <div class="feat-card reveal s1"><div class="feat-icon">✅</div><div class="feat-title">Verified Listings</div><p class="feat-desc">All properties go through a verification process with real photos, so what you see is what you get.</p></div>
+      <div class="feat-card reveal s2"><div class="feat-icon">💬</div><div class="feat-title">Real-time Messaging</div><p class="feat-desc">Chat directly with landlords or tenants through our built-in messaging system, so there's no need for external WhatsApp groups.</p></div>
+      <div class="feat-card reveal s3"><div class="feat-icon">🏫</div><div class="feat-title">Campus Proximity</div><p class="feat-desc">See exactly how far each property is from UZ, NUST, MSU, and other major campuses across Zimbabwe.</p></div>
+      <div class="feat-card reveal"><div class="feat-icon">👥</div><div class="feat-title">Roommate Matching</div><p class="feat-desc">Students looking for shared accommodation can find compatible roommates through our matching feature.</p></div>
+      <div class="feat-card reveal s1"><div class="feat-icon">💳</div><div class="feat-title">Secure Payments</div><p class="feat-desc">Commission payments are processed securely through our built-in payment gateway, so there are no cash handovers.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE CTA -->
+<section class="live-cta">
+  <div class="container">
+    <div class="live-badge-cta"><div class="pulse-dot"></div>&nbsp;Platform is live now</div>
+    <h2>Ready to Use T-Tech Connect?</h2>
+    <p>Join hundreds of tenants and landlords already using Zimbabwe's smartest rental marketplace.</p>
+    <div class="live-cta-buttons">
+      <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-white btn-lg">Visit T-Tech Connect →</a>
+      <a href="contact.html" class="btn btn-ghost btn-lg">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><div class="logo-mark">TT</div><span class="logo-name">T-Tech <span>Solutions</span></span></div>
+        <p class="footer-tagline">Smart digital solutions for finance, property &amp; business growth.<br/>Built in Zimbabwe, for Zimbabwe.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">Web Applications</a></li>
+          <li><a href="services.html">ERP Systems</a></li>
+          <li><a href="services.html">Financial Systems</a></li>
+          <li><a href="services.html">Data Analysis</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="connect.html">T-Tech Connect</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-row">📞 &nbsp;<a href="tel:+263774128219">+263 774 128 219</a></div>
+        <div class="footer-contact-row">💬 &nbsp;<a href="https://wa.me/263774128219" target="_blank" rel="noopener">WhatsApp Us</a></div>
+        <div class="footer-contact-row">✉️ &nbsp;<a href="mailto:terrencemuromba6@gmail.com">terrencemuromba6@gmail.com</a></div>
+        <div class="footer-contact-row">📍 &nbsp;<span>391 Off Beeston, The Grange, Harare</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 T-Tech Solutions. All rights reserved. 🇿🇼</div>
+      <div class="footer-social">
+        <a href="https://wa.me/263774128219" target="_blank" rel="noopener" class="social-btn">💬</a>
+        <a href="mailto:terrencemuromba6@gmail.com" class="social-btn">✉</a>
+        <a href="#" class="social-btn">in</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

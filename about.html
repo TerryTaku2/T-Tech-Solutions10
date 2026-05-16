@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — T-Tech Solutions</title>
+  <meta name="description" content="T-Tech Solutions is a Zimbabwe-based digital company combining financial expertise with modern technology to build systems that solve real business problems."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; padding:100px 0; }
+    .about-visual { background:linear-gradient(135deg,var(--primary-dark),var(--accent)); border-radius:var(--radius-xl); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+    .about-visual::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
+    .icon-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:32px; position:relative; z-index:1; }
+    .icon-cell { background:rgba(255,255,255,.12); border-radius:12px; padding:18px; text-align:center; }
+    .icon-cell .emoji { font-size:32px; margin-bottom:8px; }
+    .icon-cell .label { font-size:12px; color:rgba(255,255,255,.8); font-weight:500; }
+    .about-pill { position:absolute; bottom:-20px; right:-12px; background:#fff; border-radius:12px; box-shadow:var(--shadow-md); border:1px solid var(--border); padding:14px 20px; display:flex; align-items:center; gap:12px; }
+    .pill-num { font-family:'Inter',sans-serif; font-size:24px; font-weight:800; color:var(--primary); }
+    .pill-lbl { font-size:12px; color:var(--text-sec); line-height:1.4; }
+    .about-visual-wrap { position:relative; }
+    @media(max-width:900px){ .about-grid{grid-template-columns:1fr;} }
+
+    .mission-vision { padding:80px 0; background:var(--bg); }
+    .mv-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .mv-card { background:var(--white); border-radius:var(--radius-lg); padding:36px; border:1px solid var(--border); }
+    .mv-icon { font-size:32px; margin-bottom:16px; }
+    .mv-label { font-family:'Inter',sans-serif; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--primary); margin-bottom:10px; }
+    .mv-title { font-family:'Inter',sans-serif; font-size:20px; font-weight:800; margin-bottom:12px; }
+    .mv-text { font-size:14px; line-height:1.75; color:var(--text-sec); }
+    @media(max-width:640px){ .mv-grid{grid-template-columns:1fr;} }
+
+    .values { padding:100px 0; background:var(--white); }
+    .values-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
+    .val-card { background:var(--bg); border-radius:var(--radius-lg); padding:28px; border:1px solid var(--border); transition:all .25s; }
+    .val-card:hover { background:var(--white); box-shadow:var(--shadow-md); transform:translateY(-3px); }
+    .val-icon { font-size:28px; margin-bottom:14px; }
+    .val-title { font-family:'Inter',sans-serif; font-size:16px; font-weight:700; margin-bottom:8px; }
+    .val-desc { font-size:13px; color:var(--text-sec); line-height:1.7; }
+
+    .stack { padding:80px 0; background:var(--bg); }
+    .stack-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+    .stack-cat { background:var(--white); border-radius:var(--radius); padding:24px; border:1px solid var(--border); }
+    .stack-label { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:14px; }
+    .stack-items { display:flex; flex-wrap:wrap; gap:8px; }
+    .stack-item { display:flex; align-items:center; gap:6px; font-size:13px; font-weight:500; background:var(--bg); padding:5px 10px; border-radius:8px; }
+    .s-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+    .dot-blue{background:var(--primary);} .dot-green{background:var(--green);} .dot-purple{background:#7c3aed;} .dot-orange{background:#ea580c;}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark">TT</div>
+        <span class="logo-name">T-Tech <span>Solutions</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="connect.html">T-Tech Connect</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta"><a href="contact.html" class="btn btn-primary btn-sm">Start a Project</a></div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a><a href="about.html" class="active">About</a><a href="services.html">Services</a>
+  <a href="connect.html">T-Tech Connect</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary btn-full" style="margin-top:20px;">Start a Project</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.7);">About</span></div>
+      <span class="eyebrow">Who We Are</span>
+      <h1>Built in Zimbabwe.<br/>Built for Zimbabwe.</h1>
+      <p class="lead">We are a digital solutions company that combines financial expertise with modern technology to build systems that actually work in the Zimbabwean context.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<div class="container">
+  <div class="about-grid">
+    <div class="about-visual-wrap reveal">
+      <div class="about-visual">
+        <div class="icon-grid">
+          <div class="icon-cell"><div class="emoji">💻</div><div class="label">Web Apps</div></div>
+          <div class="icon-cell"><div class="emoji">📊</div><div class="label">Finance</div></div>
+          <div class="icon-cell"><div class="emoji">🏠</div><div class="label">PropTech</div></div>
+          <div class="icon-cell"><div class="emoji">🤖</div><div class="label">AI Tools</div></div>
+        </div>
+      </div>
+      <div class="about-pill">
+        <div class="pill-num">100%</div>
+        <div class="pill-lbl">Zimbabwe-focused<br/>solutions</div>
+      </div>
+    </div>
+    <div class="reveal s1">
+      <span class="eyebrow">Our Story</span>
+      <h2>Finance Expertise Meets Modern Technology</h2>
+      <p style="margin-bottom:18px;">T-Tech Solutions was founded on a straightforward belief: great technology should be accessible to every business, not just large corporations with big IT budgets.</p>
+      <p style="margin-bottom:18px;">We saw a gap in Zimbabwe's market. Businesses needed proper digital systems, ones built with an understanding of local realities, not just foreign templates applied without context. So we built a company that bridges that gap.</p>
+      <p>Today, we deliver custom web applications, financial systems, ERP platforms, AI tools, and our flagship property marketplace, T-Tech Connect. Every product we build is designed to solve a real problem for a real Zimbabwean business.</p>
+      <div style="margin-top:28px;">
+        <a href="contact.html" class="btn btn-primary">Work With Us →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION & VISION -->
+<section class="mission-vision">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">What Drives Us</span>
+      <h2>Mission &amp; Vision</h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card reveal">
+        <div class="mv-icon">🎯</div>
+        <div class="mv-label">Our Mission</div>
+        <div class="mv-title">Build Systems That Work</div>
+        <p class="mv-text">To design and deliver intelligent, reliable, and affordable digital systems that empower Zimbabwean businesses, students, and professionals to operate more efficiently and grow with confidence.</p>
+      </div>
+      <div class="mv-card reveal s1">
+        <div class="mv-icon">🌟</div>
+        <div class="mv-label">Our Vision</div>
+        <div class="mv-title">Zimbabwe's Most Trusted Tech Partner</div>
+        <p class="mv-text">To become Zimbabwe's most trusted technology company, known not just for what we build, but for the reliability of our work, the quality of our support, and the genuine impact we have on our clients' success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">What We Stand For</span>
+      <h2>Our Values</h2>
+      <p class="lead">Four principles that guide every project we take on and every relationship we build.</p>
+    </div>
+    <div class="values-grid">
+      <div class="val-card reveal">
+        <div class="val-icon">💡</div>
+        <div class="val-title">Innovation First</div>
+        <p class="val-desc">We use the latest tools to deliver better results. We don't default to outdated approaches just because they're familiar.</p>
+      </div>
+      <div class="val-card reveal s1">
+        <div class="val-icon">🔒</div>
+        <div class="val-title">Reliability Above All</div>
+        <p class="val-desc">We build systems that work. We test thoroughly, document clearly, and we're available when things need attention. Reliability isn't a feature, it's a standard.</p>
+      </div>
+      <div class="val-card reveal s2">
+        <div class="val-icon">🌍</div>
+        <div class="val-title">Context Awareness</div>
+        <p class="val-desc">Every system is designed for how Zimbabwean businesses actually operate. We understand the local environment, the infrastructure, and the real-world constraints our clients face.</p>
+      </div>
+      <div class="val-card reveal s3">
+        <div class="val-icon">🤝</div>
+        <div class="val-title">Long-Term Partnership</div>
+        <p class="val-desc">We don't deliver and disappear. We support our clients after launch, adapt to their growth, and treat every engagement as an ongoing relationship; not a one-off transaction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="stack">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">Our Stack</span>
+      <h2>Technologies We Work With</h2>
+      <p class="lead">We use proven, modern tools chosen specifically for each project's needs.</p>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-cat reveal">
+        <div class="stack-label">Frontend</div>
+        <div class="stack-items">
+          <div class="stack-item"><div class="s-dot dot-blue"></div>HTML / CSS</div>
+          <div class="stack-item"><div class="s-dot dot-blue"></div>JavaScript</div>
+          <div class="stack-item"><div class="s-dot dot-blue"></div>React</div>
+          <div class="stack-item"><div class="s-dot dot-blue"></div>Figma</div>
+        </div>
+      </div>
+      <div class="stack-cat reveal s1">
+        <div class="stack-label">Backend</div>
+        <div class="stack-items">
+          <div class="stack-item"><div class="s-dot dot-green"></div>Python</div>
+          <div class="stack-item"><div class="s-dot dot-green"></div>Flask</div>
+          <div class="stack-item"><div class="s-dot dot-green"></div>FastAPI</div>
+          <div class="stack-item"><div class="s-dot dot-green"></div>PostgreSQL</div>
+        </div>
+      </div>
+      <div class="stack-cat reveal s2">
+        <div class="stack-label">Data &amp; Analysis</div>
+        <div class="stack-items">
+          <div class="stack-item"><div class="s-dot dot-orange"></div>Stata</div>
+          <div class="stack-item"><div class="s-dot dot-orange"></div>SPSS</div>
+          <div class="stack-item"><div class="s-dot dot-orange"></div>R</div>
+          <div class="stack-item"><div class="s-dot dot-orange"></div>Excel</div>
+          <div class="stack-item"><div class="s-dot dot-orange"></div>SQL</div>
+        </div>
+      </div>
+      <div class="stack-cat reveal s3">
+        <div class="stack-label">AI &amp; Automation</div>
+        <div class="stack-items">
+          <div class="stack-item"><div class="s-dot dot-purple"></div>OpenAI APIs</div>
+          <div class="stack-item"><div class="s-dot dot-purple"></div>Claude AI</div>
+          <div class="stack-item"><div class="s-dot dot-purple"></div>Chatbots</div>
+          <div class="stack-item"><div class="s-dot dot-purple"></div>Automation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Let's Build Something Together</h2>
+    <p>We respond to every enquiry within 24 hours with a clear plan and an honest quote.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-white btn-lg">Get in Touch →</a>
+      <a href="services.html" class="btn btn-ghost btn-lg">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><div class="logo-mark">TT</div><span class="logo-name">T-Tech <span>Solutions</span></span></div>
+        <p class="footer-tagline">Smart digital solutions for finance, property &amp; business growth.<br/>Built in Zimbabwe, for Zimbabwe.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">Web Applications</a></li>
+          <li><a href="services.html">ERP Systems</a></li>
+          <li><a href="services.html">Financial Systems</a></li>
+          <li><a href="services.html">Data Analysis</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="connect.html">T-Tech Connect</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-row">📞 &nbsp;<a href="tel:+263774128219">+263 774 128 219</a></div>
+        <div class="footer-contact-row">💬 &nbsp;<a href="https://wa.me/263774128219" target="_blank" rel="noopener">WhatsApp Us</a></div>
+        <div class="footer-contact-row">✉️ &nbsp;<a href="mailto:terrencemuromba6@gmail.com">terrencemuromba6@gmail.com</a></div>
+        <div class="footer-contact-row">📍 &nbsp;<span>391 Off Beeston, The Grange, Harare</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 T-Tech Solutions. All rights reserved. 🇿🇼</div>
+      <div class="footer-social">
+        <a href="https://wa.me/263774128219" target="_blank" rel="noopener" class="social-btn">💬</a>
+        <a href="mailto:terrencemuromba6@gmail.com" class="social-btn">✉</a>
+        <a href="#" class="social-btn">in</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

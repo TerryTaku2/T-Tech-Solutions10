@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing — T-Tech Solutions</title>
+  <meta name="description" content="Simple, transparent pricing for all T-Tech Solutions services. Starter from $50, Professional from $200, Enterprise from $500. No hidden costs."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* Pricing Cards */
+    .pricing-section { padding:80px 0 100px; background:var(--bg); }
+    .pricing-note { text-align:center; margin-bottom:48px; font-size:14px; color:var(--text-sec); background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:14px 24px; display:inline-block; }
+    .pricing-note-wrap { text-align:center; margin-bottom:48px; }
+    .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start; }
+    .price-card { background:var(--white); border-radius:var(--radius-xl); padding:36px; border:1px solid var(--border); transition:all .25s; }
+    .price-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
+    .price-card.featured { background:linear-gradient(135deg,var(--primary-dark),#1e1b4b); border-color:transparent; color:#fff; }
+    .price-badge { display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25); color:#fff; font-size:11px; font-weight:600; padding:4px 12px; border-radius:99px; margin-bottom:14px; }
+    .price-name { font-family:'Inter',sans-serif; font-size:16px; font-weight:700; margin-bottom:6px; }
+    .price-card.featured .price-name { color:#fff; }
+    .price-who { font-size:13px; color:var(--text-sec); margin-bottom:24px; line-height:1.5; }
+    .price-card.featured .price-who { color:rgba(255,255,255,.65); }
+    .price-amount { display:flex; align-items:baseline; gap:4px; margin-bottom:28px; }
+    .pa-sym { font-size:18px; font-weight:600; color:var(--text-sec); margin-top:8px; }
+    .price-card.featured .pa-sym { color:rgba(255,255,255,.6); }
+    .pa-val { font-family:'Inter',sans-serif; font-size:48px; font-weight:800; color:var(--text); line-height:1; }
+    .price-card.featured .pa-val { color:#fff; }
+    .pa-from { font-size:13px; color:var(--text-muted); }
+    .price-card.featured .pa-from { color:rgba(255,255,255,.5); }
+    .price-features { display:flex; flex-direction:column; gap:11px; margin-bottom:32px; }
+    .pf-item { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--text-sec); }
+    .price-card.featured .pf-item { color:rgba(255,255,255,.78); }
+    .pf-check { width:18px; height:18px; border-radius:5px; background:var(--green-light); color:var(--green); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; flex-shrink:0; margin-top:1px; }
+    .price-card.featured .pf-check { background:rgba(74,222,128,.15); border:1px solid rgba(74,222,128,.3); color:#4ade80; }
+    @media(max-width:900px){ .pricing-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;} }
+
+    /* Service price table */
+    .price-table-section { padding:80px 0; background:var(--white); }
+    .price-table { width:100%; border-collapse:collapse; }
+    .price-table th { text-align:left; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); padding:12px 16px; border-bottom:2px solid var(--border); }
+    .price-table td { padding:16px; border-bottom:1px solid var(--border); font-size:14px; vertical-align:middle; }
+    .price-table tr:last-child td { border-bottom:none; }
+    .price-table tr:hover td { background:var(--bg); }
+    .td-service { font-weight:600; color:var(--text); display:flex; align-items:center; gap:10px; }
+    .td-emoji { font-size:20px; }
+    .td-from { font-family:'Inter',sans-serif; font-weight:700; color:var(--primary); }
+    .td-time { color:var(--text-sec); }
+    .td-action a { font-size:13px; font-weight:500; color:var(--primary); }
+    @media(max-width:640px){ .price-table-section{overflow-x:auto;} }
+
+    /* FAQ */
+    .faq-section { padding:80px 0; background:var(--bg); }
+    .faq-list { display:flex; flex-direction:column; gap:12px; max-width:720px; margin:0 auto; }
+    .faq-item { background:var(--white); border-radius:var(--radius); border:1px solid var(--border); overflow:hidden; }
+    .faq-q { display:flex; justify-content:space-between; align-items:center; padding:20px 24px; cursor:pointer; font-weight:600; font-size:15px; color:var(--text); gap:16px; user-select:none; }
+    .faq-q:hover { color:var(--primary); }
+    .faq-arrow { font-size:18px; transition:transform .3s; flex-shrink:0; color:var(--text-muted); }
+    .faq-item.open .faq-arrow { transform:rotate(180deg); }
+    .faq-a { display:none; padding:0 24px 20px; font-size:14px; line-height:1.75; color:var(--text-sec); }
+    .faq-item.open .faq-a { display:block; }
+
+    /* Custom quote */
+    .custom-quote { padding:80px 0; background:var(--white); }
+    .quote-inner { background:var(--bg); border-radius:var(--radius-xl); padding:56px; border:1px solid var(--border); display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+    @media(max-width:768px){ .quote-inner{grid-template-columns:1fr; padding:32px;} }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="logo-mark">TT</div><span class="logo-name">T-Tech <span>Solutions</span></span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+        <a href="connect.html">T-Tech Connect</a>
+        <a href="pricing.html" class="active">Pricing</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta"><a href="contact.html" class="btn btn-primary btn-sm">Start a Project</a></div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="connect.html">T-Tech Connect</a><a href="pricing.html" class="active">Pricing</a><a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary btn-full" style="margin-top:20px;">Start a Project</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.7);">Pricing</span></div>
+      <span class="eyebrow">Transparent Pricing</span>
+      <h1>Simple Packages.<br/>No Hidden Costs.</h1>
+      <p class="lead">Every project is quoted upfront. You always know exactly what you're paying for before we start. Custom quotes are available for anything outside the packages below.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING CARDS -->
+<section class="pricing-section">
+  <div class="container">
+    <div class="pricing-note-wrap">
+      <div class="pricing-note">💡 All prices are starting points. Your final quote depends on the exact scope of your project.</div>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- Starter -->
+      <div class="price-card reveal">
+        <div class="price-name">Starter</div>
+        <p class="price-who">For individuals, students, freelancers, and small businesses that need a professional digital presence.</p>
+        <div class="price-amount">
+          <span class="pa-sym">$</span>
+          <span class="pa-val">50</span>
+          <span class="pa-from">from</span>
+        </div>
+        <ul class="price-features">
+          <li class="pf-item"><div class="pf-check">✓</div>Business website (up to 5 pages)</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Logo design</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Mobile responsive layout</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Contact form integration</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Basic data analysis report</li>
+          <li class="pf-item"><div class="pf-check">✓</div>1 month of post-delivery support</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Deployment assistance</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline btn-full">Get Started →</a>
+      </div>
+
+      <!-- Professional (Featured) -->
+      <div class="price-card featured reveal s1">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-name">Professional</div>
+        <p class="price-who">For SMEs, schools, clinics, and growing businesses that need a full system, not just a website.</p>
+        <div class="price-amount">
+          <span class="pa-sym">$</span>
+          <span class="pa-val">200</span>
+          <span class="pa-from">from</span>
+        </div>
+        <ul class="price-features">
+          <li class="pf-item"><div class="pf-check">✓</div>Full web application with user accounts</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Financial system or ERP module</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Admin dashboard with real data</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Database setup and API integration</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Custom branding and UI design</li>
+          <li class="pf-item"><div class="pf-check">✓</div>3 months of post-delivery support</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Deployment and hosting setup</li>
+        </ul>
+        <a href="contact.html" class="btn btn-white btn-full">Get Started →</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="price-card reveal s2">
+        <div class="price-name">Enterprise</div>
+        <p class="price-who">For organisations that need a complete, fully custom platform built from the ground up to meet their exact requirements.</p>
+        <div class="price-amount">
+          <span class="pa-sym">$</span>
+          <span class="pa-val">500</span>
+          <span class="pa-from">from</span>
+        </div>
+        <ul class="price-features">
+          <li class="pf-item"><div class="pf-check">✓</div>Full ERP or custom platform build</li>
+          <li class="pf-item"><div class="pf-check">✓</div>AI integration and automation</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Complete branding and design system</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Payment gateway integration</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Multiple user roles and permissions</li>
+          <li class="pf-item"><div class="pf-check">✓</div>6 months support and maintenance</li>
+          <li class="pf-item"><div class="pf-check">✓</div>Staff training and documentation</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary btn-full">Contact Us →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE PRICE TABLE -->
+<section class="price-table-section">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">Per-Service Pricing</span>
+      <h2>What Does Each Service Start At?</h2>
+      <p class="lead">Use this as a guide. Your actual quote depends on the scope and complexity of your specific requirements.</p>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Starting Price</th>
+            <th>Typical Timeline</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="td-service"><span class="td-emoji">🌐</span>Website Development</div></td>
+            <td class="td-from">$50</td>
+            <td class="td-time">3 – 7 days</td>
+            <td class="td-action"><a href="contact.html">Get Quote →</a></td>
+          </tr>
+          <tr>
+            <td><div class="td-service"><span class="td-emoji">⚙️</span>Web Application</div></td>
+            <td class="td-from">$200</td>
+            <td class="td-time">2 – 6 weeks</td>
+            <td class="td-action"><a href="contact.html">Get Quote →</a></td>
+          </tr>
+          <tr>
+            <td><div class="td-service"><span class="td-emoji">🏢</span>ERP System</div></td>
+            <td class="td-from">$400</td>
+            <td class="td-time">4 – 10 weeks</td>
+            <td class="td-action"><a href="contact.html">Get Quote →</a></td>
+          </tr>
+          <tr>
+            <td><div class="td-service"><span class="td-emoji">💰</span>Financial System</div></td>
+            <td class="td-from">$150</td>
+            <td class="td-time">1 – 4 weeks</td>
+            <td class="td-action"><a href="contact.html">Get Quote →</a></td>
+          </tr>
+          <tr>
+            <td><div class="td-service"><span class="td-emoji">📊</span>Data Analysis</div></td>
+            <td class="td-from">$30</td>
+            <td class="td-time">2 – 5 days</td>
+            <td class="td-action"><a href="contact.html">Get Quote →</a></td>
+          </tr>
+          <tr>
+            <td><div class="td-service"><span class="td-emoji">🤖</span>AI Solution</div></td>
+            <td class="td-from">$200</td>
+            <td class="td-time">2 – 6 weeks</td>
+            <td class="td-action"><a href="contact.html">Get Quote →</a></td>
+          </tr>
+          <tr>
+            <td><div class="td-service"><span class="td-emoji">🎨</span>Logo &amp; Branding</div></td>
+            <td class="td-from">$30</td>
+            <td class="td-time">2 – 4 days</td>
+            <td class="td-action"><a href="contact.html">Get Quote →</a></td>
+          </tr>
+          <tr>
+            <td><div class="td-service"><span class="td-emoji">🏠</span>Property Technology</div></td>
+            <td class="td-from">$300</td>
+            <td class="td-time">3 – 8 weeks</td>
+            <td class="td-action"><a href="contact.html">Get Quote →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM QUOTE -->
+<section class="custom-quote">
+  <div class="container">
+    <div class="quote-inner reveal">
+      <div>
+        <span class="eyebrow">Custom Quotes</span>
+        <h2>Your Project Is Unique; Your Quote Should Be Too</h2>
+        <p style="margin-top:12px;margin-bottom:24px;">The tables and packages above are starting points. If your project is more complex, crosses multiple service areas, or has specific requirements, we will work up a custom quote that covers exactly what you need, nothing more.</p>
+        <ul class="check-list" style="margin-bottom:28px;">
+          <li><div class="check-icon">✓</div>No obligation, just an honest conversation about your needs</li>
+          <li><div class="check-icon">✓</div>Response within 24 hours</li>
+          <li><div class="check-icon">✓</div>Clear, itemised quote before any work begins</li>
+          <li><div class="check-icon">✓</div>Milestone-based payment options available</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary btn-lg">Request a Custom Quote →</a>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:80px;margin-bottom:16px;">💬</div>
+        <div style="font-family:'Inter',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px;">Prefer to chat first?</div>
+        <p style="font-size:14px;color:var(--text-sec);margin-bottom:20px;">Send us a WhatsApp message right now and we'll respond promptly.</p>
+        <a href="https://wa.me/263774128219" target="_blank" rel="noopener" class="btn btn-green">WhatsApp Us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">Frequently Asked Questions</span>
+      <h2>Pricing Questions, Answered</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Do I pay everything upfront?<span class="faq-arrow">▾</span></div>
+        <div class="faq-a">No. We typically work with a 50% deposit to begin the project and the remaining 50% on delivery. For larger projects, we use milestone-based payment schedules so you pay as progress is made.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What currency do you accept?<span class="faq-arrow">▾</span></div>
+        <div class="faq-a">We accept USD (cash or bank transfer) as well as ZIPIT and EcoCash. For international clients, we can accept payments via bank transfer. Payment method is agreed before the project starts.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Are there any hidden costs I should know about?<span class="faq-arrow">▾</span></div>
+        <div class="faq-a">No. Your quote covers everything we agreed to build. The only additional costs that may arise are third-party services you opt into, like hosting platforms (Render, Heroku), domain names, or premium APIs. We always flag these upfront and you only pay for what you choose.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens if I need changes after delivery?<span class="faq-arrow">▾</span></div>
+        <div class="faq-a">Minor revisions within the originally agreed scope are included. For significant new features or additions, we'll agree a small fee and timeline. All packages include a support period (1–6 months depending on tier) during which bug fixes and small tweaks are free.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I start small and expand later?<span class="faq-arrow">▾</span></div>
+        <div class="faq-a">Absolutely, and we recommend it. Many clients start with a Starter package and upgrade as their business grows. We build everything with scalability in mind so expanding is straightforward and cost-effective.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does a typical project take?<span class="faq-arrow">▾</span></div>
+        <div class="faq-a">A simple website takes 3–7 days. A full web application or ERP system typically takes 2–8 weeks depending on complexity. We always agree a clear timeline before starting and keep you updated throughout.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Let's Start Your Project</h2>
+    <p>Reach out today. We'll discuss your requirements and send you a clear quote within 24 hours; no commitment needed.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-white btn-lg">Get in Touch →</a>
+      <a href="https://wa.me/263774128219" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><div class="logo-mark">TT</div><span class="logo-name">T-Tech <span>Solutions</span></span></div>
+        <p class="footer-tagline">Smart digital solutions for finance, property &amp; business growth.<br/>Built in Zimbabwe, for Zimbabwe.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">Web Applications</a></li>
+          <li><a href="services.html">ERP Systems</a></li>
+          <li><a href="services.html">Financial Systems</a></li>
+          <li><a href="services.html">Data Analysis</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="connect.html">T-Tech Connect</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-row">📞 &nbsp;<a href="tel:+263774128219">+263 774 128 219</a></div>
+        <div class="footer-contact-row">💬 &nbsp;<a href="https://wa.me/263774128219" target="_blank" rel="noopener">WhatsApp Us</a></div>
+        <div class="footer-contact-row">✉️ &nbsp;<a href="mailto:terrencemuromba6@gmail.com">terrencemuromba6@gmail.com</a></div>
+        <div class="footer-contact-row">📍 &nbsp;<span>391 Off Beeston, The Grange, Harare</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 T-Tech Solutions. All rights reserved. 🇿🇼</div>
+      <div class="footer-social">
+        <a href="https://wa.me/263774128219" target="_blank" rel="noopener" class="social-btn">💬</a>
+        <a href="mailto:terrencemuromba6@gmail.com" class="social-btn">✉</a>
+        <a href="#" class="social-btn">in</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

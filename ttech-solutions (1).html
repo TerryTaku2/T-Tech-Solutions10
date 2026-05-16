@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="canonical" href="/"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
 <style>
 /* ── Brand tokens (matched from T-Tech Connect) ─────────────────── */
 :root {
@@ -34,17 +34,17 @@
 
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
 
 /* ── UTILITY ─────────────────────────────────────────────────────── */
 .container{max-width:1160px;margin:0 auto;padding:0 24px;}
 .badge{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:99px;}
 .badge-blue{background:var(--primary-light);color:var(--primary);}
 .badge-green{background:var(--green-light);color:var(--green);}
-.section-eyebrow{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:12px;}
-.section-title{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.15;color:var(--text);margin-bottom:16px;}
+.section-eyebrow{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:12px;}
+.section-title{font-family:'Inter',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.15;color:var(--text);margin-bottom:16px;}
 .section-sub{font-size:16px;color:var(--text-sec);line-height:1.7;max-width:560px;}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-family:'Inter',sans-serif;}
 .btn-primary{background:var(--primary);color:#fff;}
 .btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(29,78,216,.3);}
 .btn-outline{background:transparent;color:var(--primary);border:1.5px solid var(--primary);}
@@ -56,8 +56,8 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.logo-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:15px;}
-.logo-name{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--text);}
+.logo-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Inter',sans-serif;font-weight:800;font-size:15px;}
+.logo-name{font-family:'Inter',sans-serif;font-weight:700;font-size:16px;color:var(--text);}
 .logo-name span{color:var(--primary);}
 .nav-links{display:flex;align-items:center;gap:28px;}
 .nav-links a{font-size:14px;color:var(--text-sec);text-decoration:none;font-weight:500;transition:color .2s;}
@@ -78,23 +78,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .hero-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.6;transform:scale(1.2);}}
 .hero-eyebrow-text{font-size:13px;font-weight:500;color:var(--text-sec);}
-.hero-headline{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;margin-bottom:20px;}
+.hero-headline{font-family:'Inter',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;margin-bottom:20px;}
 .hero-headline .hl-blue{color:var(--primary);}
 .hero-headline .hl-grad{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-desc{font-size:17px;color:var(--text-sec);line-height:1.7;margin-bottom:32px;}
 .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
 .hero-stats{display:flex;gap:32px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border);}
-.h-stat-num{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--text);}
+.h-stat-num{font-family:'Inter',sans-serif;font-size:26px;font-weight:800;color:var(--text);}
 .h-stat-lbl{font-size:13px;color:var(--text-muted);margin-top:2px;}
 .hero-visual{position:relative;}
 .hero-card{background:#fff;border-radius:16px;box-shadow:var(--card-shadow);border:1px solid var(--border);overflow:hidden;}
 .hero-card-header{background:linear-gradient(135deg,var(--primary),var(--accent));padding:18px 20px;display:flex;align-items:center;gap:10px;}
 .hch-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);}
-.hch-title{font-size:13px;font-weight:600;color:#fff;font-family:'Syne',sans-serif;}
+.hch-title{font-size:13px;font-weight:600;color:#fff;font-family:'Inter',sans-serif;}
 .hero-card-body{padding:20px;}
 .metric-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px;}
 .metric{background:var(--bg);border-radius:10px;padding:12px;text-align:center;}
-.metric-val{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--primary);}
+.metric-val{font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:var(--primary);}
 .metric-lbl{font-size:11px;color:var(--text-muted);margin-top:2px;}
 .mini-bar-group{margin-bottom:10px;}
 .mini-bar-label{display:flex;justify-content:space-between;font-size:12px;color:var(--text-sec);margin-bottom:5px;}
@@ -132,7 +132,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .aig-emoji{font-size:28px;margin-bottom:6px;}
 .aig-label{font-size:12px;color:rgba(255,255,255,.8);font-weight:500;}
 .about-pill{position:absolute;bottom:-16px;right:-16px;background:#fff;border-radius:12px;box-shadow:var(--card-shadow);border:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;gap:10px;}
-.ap-num{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--primary);}
+.ap-num{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:var(--primary);}
 .ap-lbl{font-size:12px;color:var(--text-sec);}
 .value-list{margin-top:28px;display:flex;flex-direction:column;gap:14px;}
 .value-item{display:flex;align-items:flex-start;gap:12px;}
@@ -156,7 +156,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .svc-card.orange .svc-icon{background:#ffedd5;color:#ea580c;}
 .svc-card.teal .svc-icon{background:#ccfbf1;color:#0d9488;}
 .svc-card.pink .svc-icon{background:#fce7f3;color:#db2777;}
-.svc-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:8px;}
+.svc-title{font-family:'Inter',sans-serif;font-size:17px;font-weight:700;margin-bottom:8px;}
 .svc-desc{font-size:13px;color:var(--text-sec);line-height:1.65;margin-bottom:16px;}
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .svc-tag{font-size:11px;padding:3px 9px;border-radius:99px;background:var(--bg);color:var(--text-sec);font-weight:500;}
@@ -167,8 +167,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .showcase-inner::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(124,58,237,.3),transparent 70%);}
 .showcase-grid{display:grid;grid-template-columns:1fr 1fr;min-height:480px;}
 .showcase-left{padding:60px 48px;position:relative;z-index:1;}
-.showcase-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:12px;font-family:'Syne',sans-serif;}
-.showcase-title{font-family:'Syne',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.15;}
+.showcase-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:12px;font-family:'Inter',sans-serif;}
+.showcase-title{font-family:'Inter',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.15;}
 .showcase-desc{font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:28px;}
 .feature-list{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
 .feat-item{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.8);}
@@ -177,7 +177,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .app-mockup{background:#fff;border-radius:16px;padding:0;width:100%;max-width:320px;box-shadow:0 24px 64px rgba(0,0,0,.3);overflow:hidden;}
 .app-topbar{background:linear-gradient(135deg,var(--primary),var(--accent));padding:14px 16px;display:flex;align-items:center;gap:8px;}
 .app-tb-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);}
-.app-tb-title{font-size:12px;font-weight:600;color:#fff;font-family:'Syne',sans-serif;margin-left:4px;}
+.app-tb-title{font-size:12px;font-weight:600;color:#fff;font-family:'Inter',sans-serif;margin-left:4px;}
 .app-body{padding:16px;}
 .app-search{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:12px;color:#9ca3af;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
 .prop-card-mini{border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;margin-bottom:8px;}
@@ -211,13 +211,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .price-card{border-radius:16px;padding:32px;border:1px solid var(--border);transition:all .25s;}
 .price-card:hover{box-shadow:var(--card-shadow);transform:translateY(-3px);}
 .price-card.featured{background:linear-gradient(135deg,var(--primary-dark),var(--accent));border-color:transparent;color:#fff;}
-.price-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;}
+.price-name{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;}
 .price-card.featured .price-name,.price-card.featured .price-desc,.price-card.featured .price-feature{color:rgba(255,255,255,.85);}
 .price-desc{font-size:13px;color:var(--text-sec);margin-bottom:20px;}
 .price-amount{display:flex;align-items:baseline;gap:4px;margin-bottom:24px;}
 .pa-currency{font-size:16px;font-weight:600;color:var(--text-sec);margin-top:6px;}
 .price-card.featured .pa-currency{color:rgba(255,255,255,.7);}
-.pa-val{font-family:'Syne',sans-serif;font-size:40px;font-weight:800;color:var(--text);}
+.pa-val{font-family:'Inter',sans-serif;font-size:40px;font-weight:800;color:var(--text);}
 .price-card.featured .pa-val{color:#fff;}
 .pa-per{font-size:13px;color:var(--text-muted);}
 .price-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
@@ -237,7 +237,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .contact-form{background:#fff;border-radius:20px;padding:36px;border:1px solid var(--border);}
 .form-group{margin-bottom:18px;}
 .form-label{font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px;display:block;}
-.form-input,.form-textarea,.form-select{width:100%;background:#f9fafb;border:1px solid var(--border);border-radius:10px;padding:11px 14px;font-size:14px;color:var(--text);font-family:'DM Sans',sans-serif;transition:border-color .2s,box-shadow .2s;outline:none;}
+.form-input,.form-textarea,.form-select{width:100%;background:#f9fafb;border:1px solid var(--border);border-radius:10px;padding:11px 14px;font-size:14px;color:var(--text);font-family:'Inter',sans-serif;transition:border-color .2s,box-shadow .2s;outline:none;}
 .form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(29,78,216,.1);}
 .form-textarea{resize:vertical;min-height:120px;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -249,7 +249,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
 .footer-brand .logo-name{color:#fff;}
 .footer-brand .logo-name span{color:#93c5fd;}
 .footer-tagline{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px;line-height:1.6;}
-.footer-col-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;}
+.footer-col-title{font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
 .footer-links a{font-size:13px;color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s;}
 .footer-links a:hover{color:#fff;}
@@ -347,12 +347,12 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
         <div class="hero-card">
           <div class="hero-card-header">
             <div class="hch-dot"></div><div class="hch-dot"></div><div class="hch-dot"></div>
-            <span class="hch-title">T-Tech Solutions Dashboard</span>
+              <span class="hch-title">T-Tech Solutions Dashboard</span>
           </div>
           <div class="hero-card-body">
             <div class="metric-row">
               <div class="metric"><div class="metric-val">12</div><div class="metric-lbl">Projects</div></div>
-              <div class="metric"><div class="metric-val">98%</div><div class="metric-lbl">Delivered</div></div>
+                <div class="metric"><div class="metric-val">98%</div><div class="metric-lbl">Delivered</div></div>
               <div class="metric"><div class="metric-val">6</div><div class="metric-lbl">Services</div></div>
             </div>
             <div class="mini-bar-group">
@@ -421,7 +421,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
       </div>
       <div class="reveal stagger-1">
         <div class="section-eyebrow">Who We Are</div>
-        <h2 class="section-title">Finance meets technology — built for Zimbabwe</h2>
+        <h2 class="section-title">Finance meets technology, built for Zimbabwe</h2>
         <p class="section-sub">T-Tech Solutions is a digital solutions company combining deep financial expertise with modern technology to build systems that actually work in the Zimbabwean context.</p>
         <div class="value-list">
           <div class="value-item">
@@ -448,7 +448,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
     <div class="services-header reveal">
       <div class="section-eyebrow">What We Build</div>
       <h2 class="section-title">Our Services</h2>
-      <p class="section-sub">From custom web apps to full ERP systems — we cover the full digital stack for businesses, individuals, and institutions.</p>
+      <p class="section-sub">From custom web apps to full ERP systems, we cover the full digital stack for businesses, individuals, and institutions.</p>
     </div>
     <div class="services-grid">
       <div class="svc-card reveal">
@@ -466,7 +466,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
       <div class="svc-card green reveal stagger-2">
         <div class="svc-icon">🏢</div>
         <div class="svc-title">ERP Systems</div>
-        <p class="svc-desc">End-to-end Enterprise Resource Planning systems for schools, businesses, and organisations — inventory, HR, payroll, and more.</p>
+        <p class="svc-desc">End-to-end Enterprise Resource Planning systems for schools, businesses, and organisations: inventory, HR, payroll, and more.</p>
         <div class="svc-tags"><span class="svc-tag">Inventory</span><span class="svc-tag">HR</span><span class="svc-tag">Payroll</span><span class="svc-tag">Reporting</span></div>
       </div>
       <div class="svc-card purple reveal stagger-3">
@@ -531,7 +531,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
               <img src="images/logo.png" alt="T-Tech Connect Logo" class="connect-logo-img"/>
             </a>
             <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="connect-logo-badge">
-              <span class="clb-dot"></span> Live Platform — Visit Now
+              <span class="clb-dot"></span> Live Platform: Visit Now
             </a>
           </div>
         </div>
@@ -682,7 +682,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
       </div>
       <div class="reveal stagger-1">
         <div class="contact-form">
-          <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;">Send us a message</h3>
+          <h3 style="font-family:'Inter',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;">Send us a message</h3>
           <div class="form-row">
             <div class="form-group"><label class="form-label">Full Name</label><input class="form-input" type="text" placeholder="Your name"/></div>
             <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="you@example.com"/></div>
@@ -780,7 +780,7 @@ const obs = new IntersectionObserver((entries) => {
 }, {threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// Contact form — send via WhatsApp
+// Contact form: send via WhatsApp
 document.querySelector('.btn-primary[style*="width:100"]').addEventListener('click', function(e){
   e.preventDefault();
   const form = this.closest('.contact-form');

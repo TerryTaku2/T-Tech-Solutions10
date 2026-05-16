@@ -1,280 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>T-Tech Solutions — Smart Digital Solutions for Finance, Property &amp; Business</title>
-<meta name="description" content="T-Tech Solutions builds financial systems, AI tools, web applications, ERPs, and property technology for businesses and individuals across Zimbabwe."/>
-<meta name="keywords" content="T-Tech Solutions, Zimbabwe, web development, ERP systems, financial systems, AI solutions, data analysis, property technology, Harare"/>
-<meta name="author" content="T-Tech Solutions"/>
-<meta property="og:title" content="T-Tech Solutions — Smart Digital Solutions for Zimbabwe"/>
-<meta property="og:description" content="We build financial systems, AI tools, web apps, ERPs, and property technology that help businesses work smarter across Zimbabwe."/>
-<meta property="og:type" content="website"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<link rel="canonical" href="/"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
-/* ── Brand tokens (matched from T-Tech Connect) ─────────────────── */
-:root {
-  --primary:       #1d4ed8;
-  --primary-dark:  #1e3a8a;
-  --primary-light: #dbeafe;
-  --accent:        #7c3aed;
-  --green:         #16a34a;
-  --green-light:   #dcfce7;
-  --text:          #111827;
-  --text-sec:      #6b7280;
-  --text-muted:    #9ca3af;
-  --bg:            #f3f4f6;
-  --white:         #ffffff;
-  --border:        #e5e7eb;
-  --card-shadow:   0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
-}
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>T-Tech Solutions — Digital Solutions for Zimbabwe</title>
+  <meta name="description" content="T-Tech Solutions builds web applications, financial systems, ERP platforms, AI tools, and property technology for businesses across Zimbabwe."/>
+  <meta name="keywords" content="T-Tech Solutions, Zimbabwe, web development, ERP, financial systems, AI, Harare"/>
+  <meta property="og:title" content="T-Tech Solutions — Digital Solutions for Zimbabwe"/>
+  <meta property="og:description" content="We build web applications, financial systems, ERP platforms, AI tools, and property technology for businesses across Zimbabwe."/>
+  <meta property="og:type" content="website"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* Hero */
+    .hero { padding: 148px 0 100px; background: var(--white); position: relative; overflow: hidden; }
+    .hero::before { content:''; position:absolute; top:-180px; right:-180px; width:650px; height:650px; background:radial-gradient(circle,rgba(29,78,216,.07),transparent 70%); pointer-events:none; }
+    .hero::after  { content:''; position:absolute; bottom:-80px; left:-80px; width:360px; height:360px; background:radial-gradient(circle,rgba(124,58,237,.05),transparent 70%); pointer-events:none; }
+    .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    .hero-eyebrow { display:flex; align-items:center; gap:9px; margin-bottom:20px; }
+    .hero-eyebrow-text { font-size:13px; font-weight:500; color:var(--text-sec); }
+    .hero h1 { margin-bottom:18px; }
+    .hero .lead { margin-bottom:34px; }
+    .hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
+    .hero-stats { display:flex; gap:36px; margin-top:44px; padding-top:36px; border-top:1px solid var(--border); }
+    .h-stat-num { font-family:'Inter',sans-serif; font-size:26px; font-weight:800; color:var(--text); }
+    .h-stat-lbl { font-size:12px; color:var(--text-muted); margin-top:3px; }
+    .hero-card { background:#fff; border-radius:18px; box-shadow:var(--shadow-md); border:1px solid var(--border); overflow:hidden; }
+    .hero-card-header { background:linear-gradient(135deg,var(--primary),var(--accent)); padding:16px 20px; display:flex; align-items:center; gap:8px; }
+    .hc-dot { width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,.35); }
+    .hc-title { font-size:12px; font-weight:600; color:#fff; font-family:'Inter',sans-serif; margin-left:4px; }
+    .hero-card-body { padding:20px; }
+    .metric-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:16px; }
+    .metric { background:var(--bg); border-radius:10px; padding:12px; text-align:center; }
+    .metric-val { font-family:'Inter',sans-serif; font-size:18px; font-weight:800; color:var(--primary); }
+    .metric-lbl { font-size:11px; color:var(--text-muted); margin-top:2px; }
+    .mini-bar { margin-bottom:10px; }
+    .mini-bar-top { display:flex; justify-content:space-between; font-size:12px; color:var(--text-sec); margin-bottom:5px; }
+    .mini-bar-track { height:6px; background:var(--bg); border-radius:99px; overflow:hidden; }
+    .mini-bar-fill { height:100%; border-radius:99px; background:linear-gradient(90deg,var(--primary),var(--accent)); }
+    .activity-item { display:flex; align-items:center; gap:10px; padding:9px 0; border-top:1px solid var(--bg); }
+    .ai-icon { width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0; }
+    .ai-text { flex:1; font-size:12px; color:var(--text-sec); }
+    .ai-text strong { color:var(--text); font-weight:500; }
+    .ai-time { font-size:11px; color:var(--text-muted); }
+    .hero-visual { position:relative; }
+    .float-badge { position:absolute; background:#fff; border-radius:12px; box-shadow:0 6px 28px rgba(0,0,0,.13); border:1px solid var(--border); padding:10px 14px; display:flex; align-items:center; gap:9px; }
+    .fb-top { top:-18px; right:-8px; animation:floatA 3.2s ease-in-out infinite; }
+    .fb-bot { bottom:20px; left:-16px; animation:floatB 3.8s ease-in-out infinite; }
+    @keyframes floatA { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-9px);} }
+    @keyframes floatB { 0%,100%{transform:translateY(0);} 50%{transform:translateY(7px);} }
+    .fb-icon { font-size:18px; }
+    .fb-title { font-size:12px; font-weight:600; color:var(--text); }
+    .fb-sub   { font-size:11px; color:var(--text-muted); }
+    @media(max-width:900px){ .hero-grid{grid-template-columns:1fr;} .hero-visual{display:none;} }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+    /* Services */
+    .services-overview { padding:100px 0; background:var(--bg); }
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(268px,1fr)); gap:20px; margin-bottom:36px; }
+    .svc-tag-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
+    .svc-tag { font-size:11px; padding:3px 9px; border-radius:99px; background:var(--bg); color:var(--text-sec); font-weight:500; }
+    .svc-desc { font-size:13px; line-height:1.65; color:var(--text-sec); margin-top:8px; }
 
-/* ── UTILITY ─────────────────────────────────────────────────────── */
-.container{max-width:1160px;margin:0 auto;padding:0 24px;}
-.badge{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:99px;}
-.badge-blue{background:var(--primary-light);color:var(--primary);}
-.badge-green{background:var(--green-light);color:var(--green);}
-.section-eyebrow{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:12px;}
-.section-title{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.15;color:var(--text);margin-bottom:16px;}
-.section-sub{font-size:16px;color:var(--text-sec);line-height:1.7;max-width:560px;}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;}
-.btn-primary{background:var(--primary);color:#fff;}
-.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(29,78,216,.3);}
-.btn-outline{background:transparent;color:var(--primary);border:1.5px solid var(--primary);}
-.btn-outline:hover{background:var(--primary-light);}
-.btn-white{background:#fff;color:var(--primary);}
-.btn-white:hover{background:var(--primary-light);}
+    /* Connect Feature */
+    .connect-feature { padding:100px 0; background:var(--white); }
+    .connect-inner { background:linear-gradient(135deg,var(--primary-dark) 0%,#1e1b4b 100%); border-radius:var(--radius-xl); overflow:hidden; position:relative; }
+    .connect-inner::before { content:''; position:absolute; top:-80px; right:-80px; width:380px; height:380px; background:radial-gradient(circle,rgba(124,58,237,.3),transparent 70%); }
+    .connect-grid { display:grid; grid-template-columns:1fr 1fr; min-height:460px; }
+    .connect-left { padding:60px 52px; position:relative; z-index:1; }
+    .connect-eyebrow { font-family:'Inter',sans-serif; font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.45); margin-bottom:12px; }
+    .connect-title { font-family:'Inter',sans-serif; font-size:clamp(22px,3vw,34px); font-weight:800; color:#fff; margin-bottom:14px; line-height:1.2; }
+    .connect-desc { font-size:15px; color:rgba(255,255,255,.68); line-height:1.7; margin-bottom:28px; }
+    .connect-checklist { display:flex; flex-direction:column; gap:11px; margin-bottom:32px; }
+    .cc-row { display:flex; align-items:center; gap:10px; font-size:14px; color:rgba(255,255,255,.78); }
+    .cc-icon { width:20px; height:20px; border-radius:6px; background:rgba(22,163,74,.2); border:1px solid rgba(74,222,128,.3); color:#4ade80; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0; }
+    .connect-actions { display:flex; gap:10px; flex-wrap:wrap; }
+    .connect-right { display:flex; align-items:center; justify-content:center; padding:48px; background:rgba(255,255,255,.04); }
+    .connect-logo-wrap { text-align:center; }
+    .connect-logo-img { max-width:280px; margin:0 auto; filter:drop-shadow(0 16px 40px rgba(0,0,0,.4)); animation:floatA 4s ease-in-out infinite; }
+    .live-badge { display:inline-flex; align-items:center; gap:7px; margin-top:20px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:99px; padding:8px 16px; font-size:12px; font-weight:600; color:#fff; }
+    @media(max-width:800px){ .connect-grid{grid-template-columns:1fr;} .connect-right{display:none;} .connect-left{padding:40px 28px;} }
 
-/* ── NAV ─────────────────────────────────────────────────────────── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.logo-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:15px;}
-.logo-name{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--text);}
-.logo-name span{color:var(--primary);}
-.nav-links{display:flex;align-items:center;gap:28px;}
-.nav-links a{font-size:14px;color:var(--text-sec);text-decoration:none;font-weight:500;transition:color .2s;}
-.nav-links a:hover{color:var(--primary);}
-.nav-cta{display:flex;align-items:center;gap:10px;}
-.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:4px;}
-@media(max-width:768px){
-  .nav-links,.nav-cta{display:none;}
-  .mobile-menu-btn{display:block;}
-}
-
-/* ── HERO ─────────────────────────────────────────────────────────── */
-.hero{padding:140px 0 100px;position:relative;overflow:hidden;background:var(--white);}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(29,78,216,.07) 0%,transparent 70%);pointer-events:none;}
-.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(124,58,237,.05) 0%,transparent 70%);pointer-events:none;}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-.hero-eyebrow{display:flex;align-items:center;gap:8px;margin-bottom:20px;}
-.hero-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.6;transform:scale(1.2);}}
-.hero-eyebrow-text{font-size:13px;font-weight:500;color:var(--text-sec);}
-.hero-headline{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;margin-bottom:20px;}
-.hero-headline .hl-blue{color:var(--primary);}
-.hero-headline .hl-grad{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-desc{font-size:17px;color:var(--text-sec);line-height:1.7;margin-bottom:32px;}
-.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-.hero-stats{display:flex;gap:32px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border);}
-.h-stat-num{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--text);}
-.h-stat-lbl{font-size:13px;color:var(--text-muted);margin-top:2px;}
-.hero-visual{position:relative;}
-.hero-card{background:#fff;border-radius:16px;box-shadow:var(--card-shadow);border:1px solid var(--border);overflow:hidden;}
-.hero-card-header{background:linear-gradient(135deg,var(--primary),var(--accent));padding:18px 20px;display:flex;align-items:center;gap:10px;}
-.hch-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);}
-.hch-title{font-size:13px;font-weight:600;color:#fff;font-family:'Syne',sans-serif;}
-.hero-card-body{padding:20px;}
-.metric-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px;}
-.metric{background:var(--bg);border-radius:10px;padding:12px;text-align:center;}
-.metric-val{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--primary);}
-.metric-lbl{font-size:11px;color:var(--text-muted);margin-top:2px;}
-.mini-bar-group{margin-bottom:10px;}
-.mini-bar-label{display:flex;justify-content:space-between;font-size:12px;color:var(--text-sec);margin-bottom:5px;}
-.mini-bar-track{height:6px;background:var(--bg);border-radius:99px;overflow:hidden;}
-.mini-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--primary),var(--accent));}
-.activity-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--bg);}
-.act-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
-.act-text{flex:1;font-size:12px;color:var(--text-sec);}
-.act-text strong{color:var(--text);font-weight:500;}
-.act-time{font-size:11px;color:var(--text-muted);}
-.floating-badge{position:absolute;background:#fff;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.12);border:1px solid var(--border);padding:10px 14px;display:flex;align-items:center;gap:8px;}
-.fb-1{top:-20px;right:-10px;animation:float1 3s ease-in-out infinite;}
-.fb-2{bottom:20px;left:-20px;animation:float2 3.5s ease-in-out infinite;}
-@keyframes float1{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-@keyframes float2{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
-.fb-icon{font-size:18px;}
-.fb-text{font-size:12px;font-weight:600;color:var(--text);}
-.fb-sub{font-size:11px;color:var(--text-muted);}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.hero-visual{display:none;}}
-
-/* ── TRUST BAR ────────────────────────────────────────────────────── */
-.trust-bar{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 0;}
-.trust-inner{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
-.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-sec);font-weight:500;}
-.trust-icon{color:var(--primary);font-size:16px;}
-
-/* ── ABOUT ────────────────────────────────────────────────────────── */
-.about{padding:100px 0;background:var(--white);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.about-visual-wrap{position:relative;}
-.about-img-block{background:linear-gradient(135deg,var(--primary-dark),var(--accent));border-radius:20px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.about-img-block::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
-.about-icon-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:30px;}
-.aig-item{background:rgba(255,255,255,.12);border-radius:12px;padding:16px;text-align:center;}
-.aig-emoji{font-size:28px;margin-bottom:6px;}
-.aig-label{font-size:12px;color:rgba(255,255,255,.8);font-weight:500;}
-.about-pill{position:absolute;bottom:-16px;right:-16px;background:#fff;border-radius:12px;box-shadow:var(--card-shadow);border:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;gap:10px;}
-.ap-num{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--primary);}
-.ap-lbl{font-size:12px;color:var(--text-sec);}
-.value-list{margin-top:28px;display:flex;flex-direction:column;gap:14px;}
-.value-item{display:flex;align-items:flex-start;gap:12px;}
-.vi-icon{width:36px;height:36px;border-radius:10px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;}
-.vi-title{font-size:14px;font-weight:500;margin-bottom:2px;}
-.vi-desc{font-size:13px;color:var(--text-sec);}
-@media(max-width:900px){.about-grid{grid-template-columns:1fr;}}
-
-/* ── SERVICES ─────────────────────────────────────────────────────── */
-.services{padding:100px 0;background:var(--bg);}
-.services-header{text-align:center;margin-bottom:56px;}
-.services-header .section-sub{margin:0 auto;}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-.svc-card{background:#fff;border-radius:16px;padding:28px;border:1px solid var(--border);transition:all .25s;position:relative;overflow:hidden;}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
-.svc-card:hover{box-shadow:0 8px 32px rgba(29,78,216,.12);transform:translateY(-4px);border-color:transparent;}
-.svc-card:hover::before{transform:scaleX(1);}
-.svc-icon{width:48px;height:48px;border-radius:14px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;}
-.svc-card.green .svc-icon{background:var(--green-light);color:var(--green);}
-.svc-card.purple .svc-icon{background:#ede9fe;color:#7c3aed;}
-.svc-card.orange .svc-icon{background:#ffedd5;color:#ea580c;}
-.svc-card.teal .svc-icon{background:#ccfbf1;color:#0d9488;}
-.svc-card.pink .svc-icon{background:#fce7f3;color:#db2777;}
-.svc-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:8px;}
-.svc-desc{font-size:13px;color:var(--text-sec);line-height:1.65;margin-bottom:16px;}
-.svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.svc-tag{font-size:11px;padding:3px 9px;border-radius:99px;background:var(--bg);color:var(--text-sec);font-weight:500;}
-
-/* ── T-TECH CONNECT SHOWCASE ─────────────────────────────────────── */
-.showcase{padding:100px 0;background:var(--white);}
-.showcase-inner{background:linear-gradient(135deg,var(--primary-dark) 0%,#1e1b4b 100%);border-radius:24px;overflow:hidden;position:relative;}
-.showcase-inner::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(124,58,237,.3),transparent 70%);}
-.showcase-grid{display:grid;grid-template-columns:1fr 1fr;min-height:480px;}
-.showcase-left{padding:60px 48px;position:relative;z-index:1;}
-.showcase-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:12px;font-family:'Syne',sans-serif;}
-.showcase-title{font-family:'Syne',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.15;}
-.showcase-desc{font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:28px;}
-.feature-list{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
-.feat-item{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.8);}
-.feat-check{width:20px;height:20px;border-radius:6px;background:rgba(22,163,74,.2);border:1px solid rgba(22,163,74,.4);color:#4ade80;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
-.showcase-right{background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;padding:40px;position:relative;}
-.app-mockup{background:#fff;border-radius:16px;padding:0;width:100%;max-width:320px;box-shadow:0 24px 64px rgba(0,0,0,.3);overflow:hidden;}
-.app-topbar{background:linear-gradient(135deg,var(--primary),var(--accent));padding:14px 16px;display:flex;align-items:center;gap:8px;}
-.app-tb-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);}
-.app-tb-title{font-size:12px;font-weight:600;color:#fff;font-family:'Syne',sans-serif;margin-left:4px;}
-.app-body{padding:16px;}
-.app-search{background:#f3f4f6;border-radius:8px;padding:10px 12px;font-size:12px;color:#9ca3af;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
-.prop-card-mini{border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;margin-bottom:8px;}
-.pcm-img{height:70px;background:linear-gradient(135deg,#dbeafe,#ede9fe);display:flex;align-items:center;justify-content:center;font-size:24px;}
-.pcm-body{padding:8px 10px;}
-.pcm-title{font-size:12px;font-weight:600;color:#111827;}
-.pcm-meta{font-size:11px;color:#6b7280;margin-top:2px;}
-.pcm-price{font-size:12px;font-weight:700;color:var(--primary);margin-top:4px;}
-.app-badge-row{display:flex;gap:6px;margin-top:4px;}
-.app-badge{font-size:10px;padding:2px 7px;border-radius:99px;}
-@media(max-width:800px){.showcase-grid{grid-template-columns:1fr;}.showcase-right{display:none;}.showcase-left{padding:40px 28px;}}
-
-/* ── TECH STACK ───────────────────────────────────────────────────── */
-.techstack{padding:80px 0;background:var(--bg);}
-.tech-header{text-align:center;margin-bottom:48px;}
-.tech-categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
-.tech-cat{background:#fff;border-radius:14px;padding:24px;border:1px solid var(--border);}
-.tc-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px;}
-.tc-items{display:flex;flex-wrap:wrap;gap:8px;}
-.tc-item{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--text);background:var(--bg);padding:5px 10px;border-radius:8px;}
-.tc-dot{width:7px;height:7px;border-radius:50%;}
-.dot-blue{background:var(--primary);}
-.dot-green{background:var(--green);}
-.dot-purple{background:#7c3aed;}
-.dot-orange{background:#ea580c;}
-
-/* ── PRICING ──────────────────────────────────────────────────────── */
-.pricing{padding:100px 0;background:var(--white);}
-.pricing-header{text-align:center;margin-bottom:56px;}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;align-items:start;}
-.price-card{border-radius:16px;padding:32px;border:1px solid var(--border);transition:all .25s;}
-.price-card:hover{box-shadow:var(--card-shadow);transform:translateY(-3px);}
-.price-card.featured{background:linear-gradient(135deg,var(--primary-dark),var(--accent));border-color:transparent;color:#fff;}
-.price-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;}
-.price-card.featured .price-name,.price-card.featured .price-desc,.price-card.featured .price-feature{color:rgba(255,255,255,.85);}
-.price-desc{font-size:13px;color:var(--text-sec);margin-bottom:20px;}
-.price-amount{display:flex;align-items:baseline;gap:4px;margin-bottom:24px;}
-.pa-currency{font-size:16px;font-weight:600;color:var(--text-sec);margin-top:6px;}
-.price-card.featured .pa-currency{color:rgba(255,255,255,.7);}
-.pa-val{font-family:'Syne',sans-serif;font-size:40px;font-weight:800;color:var(--text);}
-.price-card.featured .pa-val{color:#fff;}
-.pa-per{font-size:13px;color:var(--text-muted);}
-.price-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
-.price-feature{font-size:13px;color:var(--text-sec);display:flex;align-items:center;gap:8px;}
-.pf-check{color:var(--green);font-weight:700;}
-.price-card.featured .pf-check{color:#4ade80;}
-.price-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:11px;padding:3px 10px;border-radius:99px;margin-bottom:12px;display:inline-block;}
-
-/* ── CONTACT ──────────────────────────────────────────────────────── */
-.contact{padding:100px 0;background:var(--bg);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
-.contact-info{display:flex;flex-direction:column;gap:20px;margin-top:28px;}
-.contact-item{display:flex;align-items:center;gap:14px;}
-.ci-icon{width:44px;height:44px;border-radius:12px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.ci-label{font-size:12px;color:var(--text-muted);}
-.ci-val{font-size:14px;font-weight:500;color:var(--text);}
-.contact-form{background:#fff;border-radius:20px;padding:36px;border:1px solid var(--border);}
-.form-group{margin-bottom:18px;}
-.form-label{font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px;display:block;}
-.form-input,.form-textarea,.form-select{width:100%;background:#f9fafb;border:1px solid var(--border);border-radius:10px;padding:11px 14px;font-size:14px;color:var(--text);font-family:'DM Sans',sans-serif;transition:border-color .2s,box-shadow .2s;outline:none;}
-.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(29,78,216,.1);}
-.form-textarea{resize:vertical;min-height:120px;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-@media(max-width:900px){.contact-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
-
-/* ── FOOTER ───────────────────────────────────────────────────────── */
-footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
-.footer-brand .logo-name{color:#fff;}
-.footer-brand .logo-name span{color:#93c5fd;}
-.footer-tagline{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px;line-height:1.6;}
-.footer-col-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.footer-links a{font-size:13px;color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s;}
-.footer-links a:hover{color:#fff;}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap;gap:12px;}
-.footer-copy{font-size:13px;color:rgba(255,255,255,.4);}
-.footer-social{display:flex;gap:10px;}
-.social-btn{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;transition:all .2s;}
-.social-btn:hover{background:rgba(255,255,255,.16);color:#fff;}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;}}
-
-/* ── CONNECT LOGO DISPLAY ────────────────────────────────────────── */
-.connect-logo-display{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;height:100%;}
-.connect-logo-img{width:100%;max-width:300px;filter:drop-shadow(0 16px 48px rgba(0,0,0,.5));animation:logoFloat 4s ease-in-out infinite;}
-@keyframes logoFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
-.connect-logo-badge{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);border-radius:99px;padding:8px 18px;font-size:13px;font-weight:600;color:#fff;}
-.clb-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite;flex-shrink:0;}
-
-/* ── ANIMATIONS ───────────────────────────────────────────────────── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.visible{opacity:1;transform:none;}
-.stagger-1{transition-delay:.1s;}
-.stagger-2{transition-delay:.2s;}
-.stagger-3{transition-delay:.3s;}
-.stagger-4{transition-delay:.4s;}
-</style>
+    /* Why us */
+    .why-us { padding:100px 0; background:var(--bg); }
+    .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .why-card { background:var(--white); border-radius:var(--radius-lg); padding:32px; border:1px solid var(--border); }
+    .why-num { font-family:'Inter',sans-serif; font-size:40px; font-weight:800; color:var(--primary-light); line-height:1; margin-bottom:16px; }
+    .why-title { font-family:'Inter',sans-serif; font-size:17px; font-weight:700; margin-bottom:10px; }
+    .why-desc { font-size:14px; color:var(--text-sec); line-height:1.7; }
+    @media(max-width:768px){ .why-grid{grid-template-columns:1fr;} }
+  </style>
 </head>
 <body>
 
@@ -282,106 +97,83 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
 <nav>
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">
+      <a href="index.html" class="nav-logo">
         <div class="logo-mark">TT</div>
         <span class="logo-name">T-Tech <span>Solutions</span></span>
       </a>
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#connect">T-Tech Connect</a>
-        <a href="#stack">Technologies</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="connect.html">T-Tech Connect</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="nav-cta">
-        <a href="#contact" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Get in Touch</a>
-        <a href="#services" class="btn btn-primary" style="padding:9px 18px;font-size:13px;">Our Services</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Start a Project</a>
       </div>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
       </button>
     </div>
   </div>
 </nav>
+<div class="mobile-menu">
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="connect.html">T-Tech Connect</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary btn-full" style="margin-top:20px;">Start a Project</a>
+</div>
 
 <!-- HERO -->
-<section class="hero" id="home">
+<section class="hero">
   <div class="container">
     <div class="hero-grid">
-      <div class="hero-content">
-        <div class="hero-eyebrow">
-          <div class="hero-dot"></div>
-          <span class="hero-eyebrow-text">Zimbabwe's Smart Digital Partner</span>
-        </div>
-        <h1 class="hero-headline">
-          Smart Solutions for<br/>
-          <span class="hl-grad">Finance, Property</span><br/>
-          &amp; Business Growth
-        </h1>
-        <p class="hero-desc">We build financial systems, AI tools, web applications, ERPs, and property technology that help businesses and individuals work smarter across Zimbabwe.</p>
+      <div>
+        <div class="hero-eyebrow"><div class="pulse-dot"></div><span class="hero-eyebrow-text">Zimbabwe's Digital Solutions Partner</span></div>
+        <h1>Digital Systems Built for <span class="grad-text">Zimbabwe's Businesses</span></h1>
+        <p class="lead">We design and deliver web applications, financial systems, ERP platforms, AI tools, and property technology, engineered to work in the Zimbabwean context.</p>
         <div class="hero-actions">
-          <a href="#services" class="btn btn-primary">Explore Services →</a>
-          <a href="#connect" class="btn btn-outline">View T-Tech Connect</a>
+          <a href="contact.html" class="btn btn-primary btn-lg">Start a Project →</a>
+          <a href="services.html" class="btn btn-outline btn-lg">Our Services</a>
         </div>
         <div class="hero-stats">
-          <div>
-            <div class="h-stat-num">6+</div>
-            <div class="h-stat-lbl">Service areas</div>
-          </div>
-          <div>
-            <div class="h-stat-num">ZW</div>
-            <div class="h-stat-lbl">Zimbabwe-based</div>
-          </div>
-          <div>
-            <div class="h-stat-num">AI</div>
-            <div class="h-stat-lbl">Powered solutions</div>
-          </div>
+          <div><div class="h-stat-num">8+</div><div class="h-stat-lbl">Service areas</div></div>
+          <div><div class="h-stat-num">ZW</div><div class="h-stat-lbl">Zimbabwe-based</div></div>
+          <div><div class="h-stat-num">AI</div><div class="h-stat-lbl">Powered solutions</div></div>
         </div>
       </div>
       <div class="hero-visual">
-        <div class="floating-badge fb-1">
+        <div class="float-badge fb-top">
           <span class="fb-icon">🏠</span>
-          <div><div class="fb-text">T-Tech Connect</div><div class="fb-sub">Property platform live</div></div>
+          <div><div class="fb-title">T-Tech Connect</div><div class="fb-sub">Property platform live</div></div>
         </div>
         <div class="hero-card">
           <div class="hero-card-header">
-            <div class="hch-dot"></div><div class="hch-dot"></div><div class="hch-dot"></div>
-            <span class="hch-title">T-Tech Solutions Dashboard</span>
+            <div class="hc-dot"></div><div class="hc-dot"></div><div class="hc-dot"></div>
+            <span class="hc-title">T-Tech Solutions Dashboard</span>
           </div>
           <div class="hero-card-body">
             <div class="metric-row">
               <div class="metric"><div class="metric-val">12</div><div class="metric-lbl">Projects</div></div>
               <div class="metric"><div class="metric-val">98%</div><div class="metric-lbl">Delivered</div></div>
-              <div class="metric"><div class="metric-val">6</div><div class="metric-lbl">Services</div></div>
+              <div class="metric"><div class="metric-val">8</div><div class="metric-lbl">Services</div></div>
             </div>
-            <div class="mini-bar-group">
-              <div class="mini-bar-label"><span>Web Development</span><span>95%</span></div>
-              <div class="mini-bar-track"><div class="mini-bar-fill" style="width:95%"></div></div>
-            </div>
-            <div class="mini-bar-group">
-              <div class="mini-bar-label"><span>Financial Systems</span><span>88%</span></div>
-              <div class="mini-bar-track"><div class="mini-bar-fill" style="width:88%"></div></div>
-            </div>
-            <div class="mini-bar-group">
-              <div class="mini-bar-label"><span>Data Analysis</span><span>82%</span></div>
-              <div class="mini-bar-track"><div class="mini-bar-fill" style="width:82%"></div></div>
-            </div>
-            <div class="activity-row">
-              <div class="act-icon" style="background:#dbeafe;">🌐</div>
-              <div class="act-text"><strong>New website</strong> delivered to client</div>
-              <div class="act-time">Today</div>
-            </div>
-            <div class="activity-row">
-              <div class="act-icon" style="background:#dcfce7;">📊</div>
-              <div class="act-text"><strong>ERP system</strong> module completed</div>
-              <div class="act-time">2d ago</div>
-            </div>
+            <div class="mini-bar"><div class="mini-bar-top"><span>Web Development</span><span>95%</span></div><div class="mini-bar-track"><div class="mini-bar-fill" style="width:95%"></div></div></div>
+            <div class="mini-bar"><div class="mini-bar-top"><span>Financial Systems</span><span>88%</span></div><div class="mini-bar-track"><div class="mini-bar-fill" style="width:88%"></div></div></div>
+            <div class="mini-bar"><div class="mini-bar-top"><span>Data Analysis</span><span>82%</span></div><div class="mini-bar-track"><div class="mini-bar-fill" style="width:82%"></div></div></div>
+            <div class="activity-item"><div class="ai-icon" style="background:#dbeafe;">🌐</div><div class="ai-text"><strong>New website</strong> delivered to client</div><div class="ai-time">Today</div></div>
+            <div class="activity-item"><div class="ai-icon" style="background:#dcfce7;">📊</div><div class="ai-text"><strong>ERP module</strong> completed</div><div class="ai-time">2d ago</div></div>
           </div>
         </div>
-        <div class="floating-badge fb-2">
+        <div class="float-badge fb-bot">
           <span class="fb-icon">✅</span>
-          <div><div class="fb-text">Project Delivered</div><div class="fb-sub">On time, every time</div></div>
+          <div><div class="fb-title">On-time delivery</div><div class="fb-sub">Every project, every time</div></div>
         </div>
       </div>
     </div>
@@ -392,147 +184,82 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
 <div class="trust-bar">
   <div class="container">
     <div class="trust-inner">
-      <div class="trust-item"><span class="trust-icon">🇿🇼</span> Based in Zimbabwe</div>
-      <div class="trust-item"><span class="trust-icon">🔒</span> Secure &amp; Reliable Systems</div>
-      <div class="trust-item"><span class="trust-icon">⚡</span> Fast Delivery</div>
-      <div class="trust-item"><span class="trust-icon">🤝</span> Ongoing Support</div>
-      <div class="trust-item"><span class="trust-icon">🏆</span> Finance + Tech Expertise</div>
+      <div class="trust-item">🇿🇼 &nbsp;Based in Zimbabwe</div>
+      <div class="trust-item">🔒 &nbsp;Secure &amp; Reliable</div>
+      <div class="trust-item">⚡ &nbsp;Fast Delivery</div>
+      <div class="trust-item">🤝 &nbsp;Ongoing Support</div>
+      <div class="trust-item">🏆 &nbsp;Finance + Tech Expertise</div>
     </div>
   </div>
 </div>
 
-<!-- ABOUT -->
-<section class="about" id="about">
+<!-- SERVICES OVERVIEW -->
+<section class="services-overview">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-visual-wrap reveal">
-        <div class="about-img-block">
-          <div class="about-icon-grid">
-            <div class="aig-item"><div class="aig-emoji">💻</div><div class="aig-label">Web Apps</div></div>
-            <div class="aig-item"><div class="aig-emoji">📊</div><div class="aig-label">Finance</div></div>
-            <div class="aig-item"><div class="aig-emoji">🏠</div><div class="aig-label">PropTech</div></div>
-            <div class="aig-item"><div class="aig-emoji">🤖</div><div class="aig-label">AI Tools</div></div>
-          </div>
-        </div>
-        <div class="about-pill">
-          <div class="ap-num">100%</div>
-          <div class="ap-lbl">Zimbabwe-focused<br/>solutions</div>
-        </div>
-      </div>
-      <div class="reveal stagger-1">
-        <div class="section-eyebrow">Who We Are</div>
-        <h2 class="section-title">Finance meets technology — built for Zimbabwe</h2>
-        <p class="section-sub">T-Tech Solutions is a digital solutions company combining deep financial expertise with modern technology to build systems that actually work in the Zimbabwean context.</p>
-        <div class="value-list">
-          <div class="value-item">
-            <div class="vi-icon">💡</div>
-            <div><div class="vi-title">Innovation-first</div><div class="vi-desc">We build with the latest tools including AI, automation, and modern web frameworks.</div></div>
-          </div>
-          <div class="value-item">
-            <div class="vi-icon">🎯</div>
-            <div><div class="vi-title">Context-aware</div><div class="vi-desc">Every system we build is designed for how Zimbabwe businesses actually operate.</div></div>
-          </div>
-          <div class="value-item">
-            <div class="vi-icon">🤝</div>
-            <div><div class="vi-title">Long-term partnership</div><div class="vi-desc">We don't just deliver and disappear. We support and grow with our clients.</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="services-header reveal">
-      <div class="section-eyebrow">What We Build</div>
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-sub">From custom web apps to full ERP systems — we cover the full digital stack for businesses, individuals, and institutions.</p>
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">What We Build</span>
+      <h2>Eight Services. One Reliable Partner.</h2>
+      <p class="lead">From a simple business website to a full enterprise platform, we cover everything your business needs digitally.</p>
     </div>
     <div class="services-grid">
-      <div class="svc-card reveal">
-        <div class="svc-icon">🌐</div>
-        <div class="svc-title">Website Development</div>
-        <p class="svc-desc">Professional business websites, landing pages, portfolios, and company sites built to convert visitors into clients.</p>
-        <div class="svc-tags"><span class="svc-tag">HTML/CSS</span><span class="svc-tag">JavaScript</span><span class="svc-tag">React</span><span class="svc-tag">Responsive</span></div>
-      </div>
-      <div class="svc-card reveal stagger-1">
-        <div class="svc-icon">⚙️</div>
-        <div class="svc-title">Web Applications</div>
-        <p class="svc-desc">Custom dashboards, portals, booking systems, and management tools built for your exact business workflow.</p>
-        <div class="svc-tags"><span class="svc-tag">Flask</span><span class="svc-tag">Python</span><span class="svc-tag">REST APIs</span><span class="svc-tag">Real-time</span></div>
-      </div>
-      <div class="svc-card green reveal stagger-2">
-        <div class="svc-icon">🏢</div>
-        <div class="svc-title">ERP Systems</div>
-        <p class="svc-desc">End-to-end Enterprise Resource Planning systems for schools, businesses, and organisations — inventory, HR, payroll, and more.</p>
-        <div class="svc-tags"><span class="svc-tag">Inventory</span><span class="svc-tag">HR</span><span class="svc-tag">Payroll</span><span class="svc-tag">Reporting</span></div>
-      </div>
-      <div class="svc-card purple reveal stagger-3">
-        <div class="svc-icon">💰</div>
-        <div class="svc-title">Financial Systems</div>
-        <p class="svc-desc">Billing systems, revenue management, expense tracking, and financial dashboards built for Zimbabwean businesses.</p>
-        <div class="svc-tags"><span class="svc-tag">Billing</span><span class="svc-tag">Revenue</span><span class="svc-tag">Excel</span><span class="svc-tag">Dashboards</span></div>
-      </div>
-      <div class="svc-card orange reveal">
-        <div class="svc-icon">📊</div>
-        <div class="svc-title">Data Analysis</div>
-        <p class="svc-desc">Professional data analysis using Stata, SPSS, R, and Excel. Research, academic, and business datasets handled with precision.</p>
-        <div class="svc-tags"><span class="svc-tag">Stata</span><span class="svc-tag">SPSS</span><span class="svc-tag">R</span><span class="svc-tag">SQL</span></div>
-      </div>
-      <div class="svc-card teal reveal stagger-1">
-        <div class="svc-icon">🤖</div>
-        <div class="svc-title">AI Solutions</div>
-        <p class="svc-desc">Intelligent chatbots, AI-powered assistants, automation tools, and smart systems that reduce manual work.</p>
-        <div class="svc-tags"><span class="svc-tag">Chatbots</span><span class="svc-tag">Automation</span><span class="svc-tag">AI APIs</span><span class="svc-tag">NLP</span></div>
-      </div>
-      <div class="svc-card pink reveal stagger-2">
-        <div class="svc-icon">🎨</div>
-        <div class="svc-title">Branding &amp; Design</div>
-        <p class="svc-desc">Logo design, brand identity, posters, digital marketing assets, and UI/UX design using Figma and modern tools.</p>
-        <div class="svc-tags"><span class="svc-tag">Figma</span><span class="svc-tag">Logos</span><span class="svc-tag">Canva</span><span class="svc-tag">UI/UX</span></div>
-      </div>
-      <div class="svc-card reveal stagger-3">
-        <div class="svc-icon">🏠</div>
-        <div class="svc-title">Property Technology</div>
-        <p class="svc-desc">Tenant-landlord platforms, rental management systems, property verification, and real estate marketplaces.</p>
-        <div class="svc-tags"><span class="svc-tag">PropTech</span><span class="svc-tag">Rental</span><span class="svc-tag">Matching</span><span class="svc-tag">Maps</span></div>
-      </div>
+      <div class="card card-hover reveal"><div class="card-body">
+        <div class="icon-box ib-blue" style="margin-bottom:16px;">🌐</div>
+        <h3>Website Development</h3>
+        <p class="svc-desc">Professional business websites and landing pages built to convert visitors into clients.</p>
+        <div class="svc-tag-row"><span class="svc-tag">HTML/CSS</span><span class="svc-tag">JavaScript</span><span class="svc-tag">React</span></div>
+      </div></div>
+      <div class="card card-hover reveal s1"><div class="card-body">
+        <div class="icon-box ib-blue" style="margin-bottom:16px;">⚙️</div>
+        <h3>Web Applications</h3>
+        <p class="svc-desc">Custom dashboards, portals, and management tools built around your exact workflow.</p>
+        <div class="svc-tag-row"><span class="svc-tag">Flask</span><span class="svc-tag">Python</span><span class="svc-tag">REST APIs</span></div>
+      </div></div>
+      <div class="card card-hover reveal s2"><div class="card-body">
+        <div class="icon-box ib-green" style="margin-bottom:16px;">🏢</div>
+        <h3>ERP Systems</h3>
+        <p class="svc-desc">End-to-end enterprise resource planning for schools, businesses, and organisations.</p>
+        <div class="svc-tag-row"><span class="svc-tag">Inventory</span><span class="svc-tag">HR</span><span class="svc-tag">Payroll</span></div>
+      </div></div>
+      <div class="card card-hover reveal s3"><div class="card-body">
+        <div class="icon-box ib-purple" style="margin-bottom:16px;">💰</div>
+        <h3>Financial Systems</h3>
+        <p class="svc-desc">Billing systems, revenue management, and financial dashboards for Zimbabwean businesses.</p>
+        <div class="svc-tag-row"><span class="svc-tag">Billing</span><span class="svc-tag">Dashboards</span><span class="svc-tag">Excel</span></div>
+      </div></div>
+    </div>
+    <div class="text-center" style="margin-top:12px;">
+      <a href="services.html" class="btn btn-outline">View All 8 Services →</a>
     </div>
   </div>
 </section>
 
-<!-- T-TECH CONNECT SHOWCASE -->
-<section class="showcase" id="connect">
+<!-- T-TECH CONNECT FEATURE -->
+<section class="connect-feature">
   <div class="container">
-    <div class="showcase-inner">
-      <div class="showcase-grid">
-        <div class="showcase-left">
-          <div class="showcase-eyebrow">Our Flagship Product</div>
-          <h2 class="showcase-title">T-Tech Connect — Zimbabwe's Rental Marketplace</h2>
-          <p class="showcase-desc">A smart accommodation platform connecting students and general tenants with verified landlords across Zimbabwe's major cities.</p>
-          <div class="feature-list">
-            <div class="feat-item"><div class="feat-check">✓</div>Smart search for students &amp; general tenants</div>
-            <div class="feat-item"><div class="feat-check">✓</div>Real-time messaging with landlords</div>
-            <div class="feat-item"><div class="feat-check">✓</div>Campus proximity filter (UZ, NUST, MSU &amp; more)</div>
-            <div class="feat-item"><div class="feat-check">✓</div>Verified property listings with photos</div>
-            <div class="feat-item"><div class="feat-check">✓</div>Secure commission payment gateway</div>
-            <div class="feat-item"><div class="feat-check">✓</div>Roommate matching for students</div>
+    <div class="connect-inner">
+      <div class="connect-grid">
+        <div class="connect-left">
+          <div class="connect-eyebrow">Our Flagship Product</div>
+          <div class="connect-title">T-Tech Connect — Zimbabwe's Rental Marketplace</div>
+          <p class="connect-desc">A live property platform connecting students and general tenants with verified landlords across Zimbabwe's major cities.</p>
+          <div class="connect-checklist">
+            <div class="cc-row"><div class="cc-icon">✓</div>Smart search for students &amp; general tenants</div>
+            <div class="cc-row"><div class="cc-icon">✓</div>Real-time messaging with landlords</div>
+            <div class="cc-row"><div class="cc-icon">✓</div>Campus proximity filter for UZ, NUST, MSU &amp; more</div>
+            <div class="cc-row"><div class="cc-icon">✓</div>Verified listings with photos</div>
+            <div class="cc-row"><div class="cc-icon">✓</div>Secure payment gateway</div>
           </div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-white">View Platform →</a>
-            <a href="#contact" class="btn" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);">List a Property</a>
+          <div class="connect-actions">
+            <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-white">Visit Platform →</a>
+            <a href="connect.html" class="btn btn-ghost">Learn More</a>
           </div>
         </div>
-        <div class="showcase-right">
-          <div class="connect-logo-display">
+        <div class="connect-right">
+          <div class="connect-logo-wrap">
             <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener">
-              <img src="images/logo.png" alt="T-Tech Connect Logo" class="connect-logo-img"/>
+              <img src="images/logo.png" alt="T-Tech Connect" class="connect-logo-img"/>
             </a>
-            <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="connect-logo-badge">
-              <span class="clb-dot"></span> Live Platform — Visit Now
-            </a>
+            <div class="live-badge"><div class="pulse-dot"></div>&nbsp;Live Platform</div>
           </div>
         </div>
       </div>
@@ -540,182 +267,42 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
   </div>
 </section>
 
-<!-- TECH STACK -->
-<section class="techstack" id="stack">
+<!-- WHY T-TECH -->
+<section class="why-us">
   <div class="container">
-    <div class="tech-header reveal">
-      <div class="section-eyebrow">Our Stack</div>
-      <h2 class="section-title">Technologies We Use</h2>
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>We Don't Just Build. We Deliver.</h2>
+      <p class="lead">Three things that set T-Tech Solutions apart.</p>
     </div>
-    <div class="tech-categories">
-      <div class="tech-cat reveal">
-        <div class="tc-label">Frontend</div>
-        <div class="tc-items">
-          <div class="tc-item"><div class="tc-dot dot-blue"></div>HTML/CSS</div>
-          <div class="tc-item"><div class="tc-dot dot-blue"></div>JavaScript</div>
-          <div class="tc-item"><div class="tc-dot dot-blue"></div>React</div>
-          <div class="tc-item"><div class="tc-dot dot-blue"></div>Figma</div>
-        </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-num">01</div>
+        <div class="why-title">We Understand Zimbabwe</div>
+        <p class="why-desc">Every system we build is designed for how Zimbabwean businesses actually operate, not copied from a foreign template. We know the context, the constraints, and what works locally.</p>
       </div>
-      <div class="tech-cat reveal stagger-1">
-        <div class="tc-label">Backend</div>
-        <div class="tc-items">
-          <div class="tc-item"><div class="tc-dot dot-green"></div>Python</div>
-          <div class="tc-item"><div class="tc-dot dot-green"></div>Flask</div>
-          <div class="tc-item"><div class="tc-dot dot-green"></div>FastAPI</div>
-          <div class="tc-item"><div class="tc-dot dot-green"></div>PostgreSQL</div>
-        </div>
+      <div class="why-card reveal s1">
+        <div class="why-num">02</div>
+        <div class="why-title">Finance Meets Technology</div>
+        <p class="why-desc">Our team combines deep financial expertise with modern software development, meaning systems that are not only functional but financially intelligent.</p>
       </div>
-      <div class="tech-cat reveal stagger-2">
-        <div class="tc-label">Data & Analysis</div>
-        <div class="tc-items">
-          <div class="tc-item"><div class="tc-dot dot-orange"></div>Stata</div>
-          <div class="tc-item"><div class="tc-dot dot-orange"></div>SPSS</div>
-          <div class="tc-item"><div class="tc-dot dot-orange"></div>R</div>
-          <div class="tc-item"><div class="tc-dot dot-orange"></div>Excel</div>
-          <div class="tc-item"><div class="tc-dot dot-orange"></div>SQL</div>
-        </div>
-      </div>
-      <div class="tech-cat reveal stagger-3">
-        <div class="tc-label">AI & Automation</div>
-        <div class="tc-items">
-          <div class="tc-item"><div class="tc-dot dot-purple"></div>OpenAI APIs</div>
-          <div class="tc-item"><div class="tc-dot dot-purple"></div>Claude AI</div>
-          <div class="tc-item"><div class="tc-dot dot-purple"></div>Chatbots</div>
-          <div class="tc-item"><div class="tc-dot dot-purple"></div>Automation</div>
-        </div>
+      <div class="why-card reveal s2">
+        <div class="why-num">03</div>
+        <div class="why-title">We Stay After Launch</div>
+        <p class="why-desc">We don't deliver and disappear. Every project includes ongoing support, and we grow alongside our clients long after the system goes live.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="pricing" id="pricing">
+<!-- CTA -->
+<section class="cta-section">
   <div class="container">
-    <div class="pricing-header reveal">
-      <div class="section-eyebrow">Transparent Pricing</div>
-      <h2 class="section-title">Simple, clear packages</h2>
-      <p class="section-sub" style="margin:0 auto;">No hidden costs. Every project is quoted upfront. Custom work available on request.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="price-card reveal">
-        <div class="price-name">Starter</div>
-        <div class="price-desc">For individuals, students &amp; small businesses</div>
-        <div class="price-amount">
-          <span class="pa-currency">$</span>
-          <span class="pa-val">50</span>
-          <span class="pa-per">from</span>
-        </div>
-        <ul class="price-features">
-          <li class="price-feature"><span class="pf-check">✓</span>Business website (5 pages)</li>
-          <li class="price-feature"><span class="pf-check">✓</span>Logo design</li>
-          <li class="price-feature"><span class="pf-check">✓</span>Basic data analysis</li>
-          <li class="price-feature"><span class="pf-check">✓</span>1 month support</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started</a>
-      </div>
-      <div class="price-card featured reveal stagger-1">
-        <div class="price-badge">Most Popular</div>
-        <div class="price-name">Professional</div>
-        <div class="price-desc">For SMEs, schools &amp; growing businesses</div>
-        <div class="price-amount">
-          <span class="pa-currency">$</span>
-          <span class="pa-val">200</span>
-          <span class="pa-per">from</span>
-        </div>
-        <ul class="price-features">
-          <li class="price-feature"><span class="pf-check">✓</span>Full web application</li>
-          <li class="price-feature"><span class="pf-check">✓</span>Financial system or ERP module</li>
-          <li class="price-feature"><span class="pf-check">✓</span>Admin dashboard</li>
-          <li class="price-feature"><span class="pf-check">✓</span>Database + backend API</li>
-          <li class="price-feature"><span class="pf-check">✓</span>3 months support</li>
-        </ul>
-        <a href="#contact" class="btn btn-white" style="width:100%;justify-content:center;">Get Started</a>
-      </div>
-      <div class="price-card reveal stagger-2">
-        <div class="price-name">Enterprise</div>
-        <div class="price-desc">For organisations needing full systems</div>
-        <div class="price-amount">
-          <span class="pa-currency">$</span>
-          <span class="pa-val">500</span>
-          <span class="pa-per">from</span>
-        </div>
-        <ul class="price-features">
-          <li class="price-feature"><span class="pf-check">✓</span>Full ERP or platform build</li>
-          <li class="price-feature"><span class="pf-check">✓</span>AI integration</li>
-          <li class="price-feature"><span class="pf-check">✓</span>Custom branding &amp; design system</li>
-          <li class="price-feature"><span class="pf-check">✓</span>Payment gateway integration</li>
-          <li class="price-feature"><span class="pf-check">✓</span>6 months support &amp; maintenance</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Contact Us</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="reveal">
-        <div class="section-eyebrow">Get In Touch</div>
-        <h2 class="section-title">Let's build something together</h2>
-        <p class="section-sub">Tell us what you need. We'll respond within 24 hours with a plan and a quote.</p>
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="ci-icon">📞</div>
-            <div><div class="ci-label">Call / WhatsApp</div><div class="ci-val"><a href="tel:+263774128219" style="color:inherit;text-decoration:none;">+263 774 128 219</a></div></div>
-          </div>
-          <div class="contact-item">
-            <div class="ci-icon">💬</div>
-            <div><div class="ci-label">WhatsApp</div><div class="ci-val"><a href="https://wa.me/263774128219" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Chat on WhatsApp</a></div></div>
-          </div>
-          <div class="contact-item">
-            <div class="ci-icon">📧</div>
-            <div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:terrencemuromba6@gmail.com" style="color:inherit;text-decoration:none;">terrencemuromba6@gmail.com</a></div></div>
-          </div>
-          <div class="contact-item">
-            <div class="ci-icon">📍</div>
-            <div><div class="ci-label">Location</div><div class="ci-val">391 Off Beeston, The Grange, Harare</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal stagger-1">
-        <div class="contact-form">
-          <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;">Send us a message</h3>
-          <div class="form-row">
-            <div class="form-group"><label class="form-label">Full Name</label><input class="form-input" type="text" placeholder="Your name"/></div>
-            <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="you@example.com"/></div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Service Needed</label>
-            <select class="form-select">
-              <option value="">Select a service…</option>
-              <option>Website Development</option>
-              <option>Web Application</option>
-              <option>ERP System</option>
-              <option>Financial System</option>
-              <option>Data Analysis</option>
-              <option>AI Solution</option>
-              <option>Branding & Design</option>
-              <option>Property Technology</option>
-              <option>T-Tech Connect Listing</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group"><label class="form-label">Budget Range</label>
-            <select class="form-select">
-              <option>Under $50</option>
-              <option>$50 – $200</option>
-              <option>$200 – $500</option>
-              <option>$500+</option>
-              <option>Let's discuss</option>
-            </select>
-          </div>
-          <div class="form-group"><label class="form-label">Tell us about your project</label><textarea class="form-textarea" placeholder="Describe what you need…"></textarea></div>
-          <button class="btn btn-primary" style="width:100%;justify-content:center;padding:14px;">Send Message →</button>
-        </div>
-      </div>
+    <h2>Ready to Build Something?</h2>
+    <p>Tell us what you need. We'll respond within 24 hours with a clear plan and an upfront quote; no hidden costs.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-white btn-lg">Start a Conversation →</a>
+      <a href="services.html" class="btn btn-ghost btn-lg">Browse Services</a>
     </div>
   </div>
 </section>
@@ -724,85 +311,49 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 28px;}
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="nav-logo" style="margin-bottom:12px;">
-          <div class="logo-mark">TT</div>
-          <span class="logo-name footer-brand">T-Tech <span>Solutions</span></span>
-        </div>
-        <p class="footer-tagline">Smart digital solutions for finance, property &amp; business growth. Built in Zimbabwe, for Zimbabwe.</p>
+      <div>
+        <div class="footer-logo"><div class="logo-mark">TT</div><span class="logo-name">T-Tech <span>Solutions</span></span></div>
+        <p class="footer-tagline">Smart digital solutions for finance, property &amp; business growth.<br/>Built in Zimbabwe, for Zimbabwe.</p>
       </div>
       <div>
         <div class="footer-col-title">Services</div>
         <ul class="footer-links">
-          <li><a href="#services">Websites</a></li>
-          <li><a href="#services">Web Applications</a></li>
-          <li><a href="#services">ERP Systems</a></li>
-          <li><a href="#services">Financial Systems</a></li>
-          <li><a href="#services">Data Analysis</a></li>
-          <li><a href="#services">AI Solutions</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Products</div>
-        <ul class="footer-links">
-          <li><a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener">T-Tech Connect</a></li>
-          <li><a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener">List a Property</a></li>
-          <li><a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener">Find Accommodation</a></li>
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">Web Applications</a></li>
+          <li><a href="services.html">ERP Systems</a></li>
+          <li><a href="services.html">Financial Systems</a></li>
+          <li><a href="services.html">Data Analysis</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Company</div>
         <ul class="footer-links">
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="connect.html">T-Tech Connect</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-row">📞 &nbsp;<a href="tel:+263774128219">+263 774 128 219</a></div>
+        <div class="footer-contact-row">💬 &nbsp;<a href="https://wa.me/263774128219" target="_blank" rel="noopener">WhatsApp Us</a></div>
+        <div class="footer-contact-row">✉️ &nbsp;<a href="mailto:terrencemuromba6@gmail.com">terrencemuromba6@gmail.com</a></div>
+        <div class="footer-contact-row">📍 &nbsp;<span>391 Off Beeston, The Grange, Harare</span></div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 T-Tech Solutions. All rights reserved. | Zimbabwe 🇿🇼</div>
+      <div class="footer-copy">© 2025 T-Tech Solutions. All rights reserved. 🇿🇼</div>
       <div class="footer-social">
         <a href="https://wa.me/263774128219" target="_blank" rel="noopener" class="social-btn" title="WhatsApp">💬</a>
-        <a href="#" class="social-btn" title="LinkedIn">in</a>
-        <a href="#" class="social-btn" title="Twitter">𝕏</a>
         <a href="mailto:terrencemuromba6@gmail.com" class="social-btn" title="Email">✉</a>
+        <a href="#" class="social-btn" title="LinkedIn">in</a>
       </div>
     </div>
   </div>
 </footer>
 
-<script>
-// Scroll reveal
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-// Contact form — send via WhatsApp
-document.querySelector('.btn-primary[style*="width:100"]').addEventListener('click', function(e){
-  e.preventDefault();
-  const form = this.closest('.contact-form');
-  const name    = form.querySelector('input[type="text"]').value.trim();
-  const email   = form.querySelector('input[type="email"]').value.trim();
-  const service = form.querySelector('select').value;
-  const budget  = form.querySelectorAll('select')[1].value;
-  const message = form.querySelector('textarea').value.trim();
-
-  if (!name || !email || !message) {
-    alert('Please fill in your name, email, and project description.');
-    return;
-  }
-
-  const text = `Hello T-Tech Solutions!\n\n*Name:* ${name}\n*Email:* ${email}\n*Service:* ${service || 'Not specified'}\n*Budget:* ${budget || 'Not specified'}\n\n*Project:*\n${message}`;
-  const url  = `https://wa.me/263774128219?text=${encodeURIComponent(text)}`;
-  window.open(url, '_blank');
-
-  this.textContent = '✓ Opening WhatsApp…';
-  this.style.background = '#16a34a';
-  setTimeout(() => { this.textContent = 'Send Message →'; this.style.background = ''; }, 3000);
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
