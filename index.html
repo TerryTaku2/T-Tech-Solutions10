@@ -81,6 +81,44 @@
     .live-badge { display:inline-flex; align-items:center; gap:7px; margin-top:20px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:99px; padding:8px 16px; font-size:12px; font-weight:600; color:#fff; }
     @media(max-width:800px){ .connect-grid{grid-template-columns:1fr;} .connect-right{display:none;} .connect-left{padding:40px 28px;} }
 
+    /* Hero photo */
+    .hero-photo-wrap { position:relative; }
+    .hero-photo-ring {
+      width:100%; aspect-ratio:3/4; border-radius:28px; overflow:hidden;
+      border:3px solid rgba(29,78,216,.15);
+      box-shadow:0 28px 72px rgba(29,78,216,.22), 0 4px 20px rgba(0,0,0,.12);
+      position:relative;
+    }
+    .hero-photo-ring img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+    .hero-photo-ring::after {
+      content:''; position:absolute; bottom:0; left:0; right:0; height:50%;
+      background:linear-gradient(to top,rgba(10,18,40,.88) 0%,rgba(10,18,40,.5) 55%,transparent 100%);
+      pointer-events:none; z-index:1;
+    }
+    .hero-photo-name {
+      position:absolute; bottom:20px; left:20px; right:20px; z-index:2;
+      color:#fff; font-family:'Syne',sans-serif; font-size:17px; font-weight:800;
+      text-shadow:0 1px 6px rgba(0,0,0,.4);
+    }
+    .hero-photo-name span { display:block; font-family:'Inter',sans-serif; font-size:12px; font-weight:500; color:rgba(255,255,255,.8); margin-top:3px; letter-spacing:.04em; }
+
+    /* Portfolio */
+    .portfolio { padding:100px 0; background:var(--white); }
+    .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
+    .proj-card { background:var(--white); border-radius:var(--radius-xl); border:1px solid var(--border); overflow:hidden; transition:all .25s; display:flex; flex-direction:column; }
+    .proj-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-5px); border-color:transparent; }
+    .proj-preview { height:200px; position:relative; overflow:hidden; }
+    .proj-preview img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform .4s ease; }
+    .proj-card:hover .proj-preview img { transform:scale(1.04); }
+    .proj-preview-label { position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,.5); color:#fff; font-size:10px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; padding:7px 14px; z-index:1; }
+    .proj-body { padding:22px 24px; flex:1; display:flex; flex-direction:column; }
+    .proj-client { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:5px; }
+    .proj-name { font-family:'Syne',sans-serif; font-size:18px; font-weight:800; color:var(--text); margin-bottom:8px; }
+    .proj-desc { font-size:13px; line-height:1.65; color:var(--text-sec); flex:1; }
+    .proj-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
+    .proj-tag { font-size:11px; padding:3px 10px; border-radius:99px; background:var(--bg); color:var(--text-sec); font-weight:500; }
+    .proj-links { display:flex; gap:10px; margin-top:18px; }
+
     /* Why us */
     .why-us { padding:100px 0; background:var(--bg); }
     .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
@@ -105,6 +143,7 @@
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
         <a href="connect.html">T-Tech Connect</a>
         <a href="pricing.html">Pricing</a>
         <a href="contact.html">Contact</a>
@@ -140,40 +179,31 @@
         <p class="lead">I design and deliver web applications, financial systems, ERP platforms, AI tools, and property technology, engineered to work in the Zimbabwean context.</p>
         <div class="hero-actions">
           <a href="contact.html" class="btn btn-primary btn-lg">Start a Project →</a>
-          <a href="services.html" class="btn btn-outline btn-lg">Our Services</a>
+          <a href="services.html" class="btn btn-outline btn-lg">My Services</a>
         </div>
         <div class="hero-stats">
-          <div><div class="h-stat-num">8+</div><div class="h-stat-lbl">Service areas</div></div>
-          <div><div class="h-stat-num">ZW</div><div class="h-stat-lbl">Zimbabwe-based</div></div>
-          <div><div class="h-stat-num">AI</div><div class="h-stat-lbl">Powered solutions</div></div>
+          <div><div class="h-stat-num">3+</div><div class="h-stat-lbl">Live projects</div></div>
+          <div><div class="h-stat-num">8</div><div class="h-stat-lbl">Services offered</div></div>
+          <div><div class="h-stat-num">24h</div><div class="h-stat-lbl">Response time</div></div>
         </div>
       </div>
       <div class="hero-visual">
         <div class="float-badge fb-top">
-          <span class="fb-icon">🏠</span>
-          <div><div class="fb-title">T-Tech Connect</div><div class="fb-sub">Property platform live</div></div>
+          <span class="fb-icon">🎓</span>
+          <div><div class="fb-title">BSc Fiscal Management</div><div class="fb-sub">University of Zimbabwe</div></div>
         </div>
-        <div class="hero-card">
-          <div class="hero-card-header">
-            <div class="hc-dot"></div><div class="hc-dot"></div><div class="hc-dot"></div>
-            <span class="hc-title">T-Tech Solutions Dashboard</span>
-          </div>
-          <div class="hero-card-body">
-            <div class="metric-row">
-              <div class="metric"><div class="metric-val">12</div><div class="metric-lbl">Projects</div></div>
-              <div class="metric"><div class="metric-val">98%</div><div class="metric-lbl">Delivered</div></div>
-              <div class="metric"><div class="metric-val">8</div><div class="metric-lbl">Services</div></div>
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-ring">
+            <img src="images/me.jpg" alt="Terrence Muromba — T-Tech Solutions"/>
+            <div class="hero-photo-name">
+              Terrence Muromba
+              <span>Freelance Developer · Harare, Zimbabwe</span>
             </div>
-            <div class="mini-bar"><div class="mini-bar-top"><span>Web Development</span><span>95%</span></div><div class="mini-bar-track"><div class="mini-bar-fill" style="width:95%"></div></div></div>
-            <div class="mini-bar"><div class="mini-bar-top"><span>Financial Systems</span><span>88%</span></div><div class="mini-bar-track"><div class="mini-bar-fill" style="width:88%"></div></div></div>
-            <div class="mini-bar"><div class="mini-bar-top"><span>Data Analysis</span><span>82%</span></div><div class="mini-bar-track"><div class="mini-bar-fill" style="width:82%"></div></div></div>
-            <div class="activity-item"><div class="ai-icon" style="background:#dbeafe;">🌐</div><div class="ai-text"><strong>New website</strong> delivered to client</div><div class="ai-time">Today</div></div>
-            <div class="activity-item"><div class="ai-icon" style="background:#dcfce7;">📊</div><div class="ai-text"><strong>ERP module</strong> completed</div><div class="ai-time">2d ago</div></div>
           </div>
         </div>
         <div class="float-badge fb-bot">
-          <span class="fb-icon">✅</span>
-          <div><div class="fb-title">On-time delivery</div><div class="fb-sub">Every project, every time</div></div>
+          <span class="fb-icon"><div class="pulse-dot"></div></span>
+          <div><div class="fb-title">Available for projects</div><div class="fb-sub">Responds within 24 hours</div></div>
         </div>
       </div>
     </div>
@@ -229,6 +259,86 @@
     </div>
     <div class="text-center" style="margin-top:12px;">
       <a href="services.html" class="btn btn-outline">View All 8 Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="eyebrow">Recent Work</span>
+      <h2>Projects I Have Built</h2>
+      <p class="lead">Real systems, delivered and live. Here is a selection of work that demonstrates what I build and how I build it.</p>
+    </div>
+    <div class="portfolio-grid">
+
+      <!-- JB Construction -->
+      <div class="proj-card reveal">
+        <div class="proj-preview" style="background:#1c3d2e;padding:0;">
+          <img src="images/jb-construction.jpg" alt="JB Construction website" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"/>
+          <div class="proj-preview-label">Website · Live</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-client">Client Project</div>
+          <div class="proj-name">JB Construction</div>
+          <p class="proj-desc">A professional business website designed and developed for a construction company. Built to establish credibility online, showcase services, and generate client enquiries.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">HTML / CSS</span>
+            <span class="proj-tag">JavaScript</span>
+            <span class="proj-tag">Responsive</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://jb-constructions.onrender.com" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Live Site →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- T-Tech Connect -->
+      <div class="proj-card reveal s1">
+        <div class="proj-preview" style="background:#1e3a8a;padding:0;">
+          <img src="images/logo.png" alt="T-Tech Connect platform" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"/>
+          <div class="proj-preview-label">Platform · Live</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-client">Own Product</div>
+          <div class="proj-name">T-Tech Connect</div>
+          <p class="proj-desc">A live property rental marketplace connecting students and general tenants with verified landlords across Zimbabwe. Features real-time messaging, smart search, and campus proximity filters.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">Flask</span>
+            <span class="proj-tag">PostgreSQL</span>
+            <span class="proj-tag">Real-time</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Platform →</a>
+            <a href="connect.html" class="btn btn-outline btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Financial Management System -->
+      <div class="proj-card reveal s2">
+        <div class="proj-preview" style="background:#7c2d12;padding:0;">
+          <img src="images/COH.png" alt="City of Harare Financial Management System" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"/>
+          <div class="proj-preview-label">System · Live</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-client">Dissertation Project · University of Zimbabwe</div>
+          <div class="proj-name">City of Harare FMS</div>
+          <p class="proj-desc">A computerised financial management system designed to mitigate revenue leakage at the City of Harare. Covers billing, revenue tracking, audit trails, and real-time financial reporting.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">Flask</span>
+            <span class="proj-tag">Financial</span>
+            <span class="proj-tag">Audit Trail</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://financial-management-system-7.onrender.com" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View System →</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -327,7 +437,7 @@
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Company</div>
+        <div class="footer-col-title">Quick Links</div>
         <ul class="footer-links">
           <li><a href="about.html">About Me</a></li>
           <li><a href="pricing.html">Pricing</a></li>

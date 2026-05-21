@@ -10,12 +10,9 @@
   <link rel="stylesheet" href="styles.css"/>
   <style>
     .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; padding:100px 0; }
-    .about-visual { background:linear-gradient(135deg,var(--primary-dark),var(--accent)); border-radius:var(--radius-xl); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-    .about-visual::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
-    .icon-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:32px; position:relative; z-index:1; }
-    .icon-cell { background:rgba(255,255,255,.12); border-radius:12px; padding:18px; text-align:center; }
-    .icon-cell .emoji { font-size:32px; margin-bottom:8px; }
-    .icon-cell .label { font-size:12px; color:rgba(255,255,255,.8); font-weight:500; }
+    .about-visual { border-radius:var(--radius-xl); aspect-ratio:3/4; overflow:hidden; position:relative; box-shadow:0 28px 72px rgba(29,78,216,.18), 0 4px 20px rgba(0,0,0,.1); }
+    .about-visual img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+    .about-visual::after { content:''; position:absolute; bottom:0; left:0; right:0; height:40%; background:linear-gradient(to top,rgba(15,23,42,.6),transparent); pointer-events:none; }
     .about-pill { position:absolute; bottom:-20px; right:-12px; background:#fff; border-radius:12px; box-shadow:var(--shadow-md); border:1px solid var(--border); padding:14px 20px; display:flex; align-items:center; gap:12px; }
     .pill-num { font-family:'Inter',sans-serif; font-size:24px; font-weight:800; color:var(--primary); }
     .pill-lbl { font-size:12px; color:var(--text-sec); line-height:1.4; }
@@ -63,6 +60,7 @@
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About</a>
         <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
         <a href="connect.html">T-Tech Connect</a>
         <a href="pricing.html">Pricing</a>
         <a href="contact.html">Contact</a>
@@ -97,16 +95,11 @@
   <div class="about-grid">
     <div class="about-visual-wrap reveal">
       <div class="about-visual">
-        <div class="icon-grid">
-          <div class="icon-cell"><div class="emoji">💻</div><div class="label">Web Apps</div></div>
-          <div class="icon-cell"><div class="emoji">📊</div><div class="label">Finance</div></div>
-          <div class="icon-cell"><div class="emoji">🏠</div><div class="label">PropTech</div></div>
-          <div class="icon-cell"><div class="emoji">🤖</div><div class="label">AI Tools</div></div>
-        </div>
+        <img src="images/me.jpg" alt="Terrence Muromba — T-Tech Solutions"/>
       </div>
       <div class="about-pill">
-        <div class="pill-num">100%</div>
-        <div class="pill-lbl">Zimbabwe-focused<br/>solutions</div>
+        <div class="pill-num">UZ</div>
+        <div class="pill-lbl">BSc Fiscal Management<br/>2022 – 2026</div>
       </div>
     </div>
     <div class="reveal s1">
@@ -376,7 +369,7 @@
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Company</div>
+        <div class="footer-col-title">Quick Links</div>
         <ul class="footer-links">
           <li><a href="about.html">About Me</a></li>
           <li><a href="pricing.html">Pricing</a></li>
