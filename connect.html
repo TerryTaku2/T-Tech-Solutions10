@@ -24,7 +24,7 @@
     /* Custom hero for Connect page */
     .connect-hero {
       padding: 148px 0 80px;
-      background: linear-gradient(135deg, var(--primary-dark) 0%, #1e1b4b 100%);
+      background: linear-gradient(135deg, #0a0f1e 0%, #0f172a 50%, #1a1040 100%);
       position: relative; overflow: hidden;
     }
     .connect-hero::before { content:''; position:absolute; top:-80px; right:-80px; width:500px; height:500px; background:radial-gradient(circle,rgba(124,58,237,.3),transparent 70%); }
@@ -81,7 +81,7 @@
     /* Live CTA */
     .live-cta {
       padding:100px 0;
-      background: linear-gradient(135deg, var(--primary-dark), #1e1b4b);
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 50%, #1a0a30 100%);
       text-align:center; position:relative; overflow:hidden;
     }
     .live-cta::before { content:''; position:absolute; top:-50%; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle,rgba(124,58,237,.25),transparent 70%); pointer-events:none; }
@@ -351,6 +351,11 @@
     </div>
   </div>
 </footer>
+<button id="scrollTop" class="scroll-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
 <script src="script.js"></script>
 </body>
 </html>

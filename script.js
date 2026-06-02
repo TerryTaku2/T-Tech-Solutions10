@@ -2,6 +2,22 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ── Nav scroll shadow ───────────────────────────────── */
+  const nav = document.querySelector('nav');
+  const scrollTop = document.getElementById('scrollTop');
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (nav) nav.classList.toggle('scrolled', y > 20);
+    if (scrollTop) scrollTop.classList.toggle('visible', y > 400);
+  }, { passive: true });
+
+  if (scrollTop) {
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   /* ── Mobile Menu ─────────────────────────────────────── */
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
