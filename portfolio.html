@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Live Projects by Terrence Muromba | T-Tech Solutions Zimbabwe</title>
+  <meta name="description" content="Portfolio of real projects built and delivered by Terrence Muromba — JB Construction website, T-Tech Connect property rental platform, and City of Harare Financial Management System. All live and deployed."/>
+  <meta name="keywords" content="web developer portfolio Zimbabwe, T-Tech Solutions projects, website developer Harare portfolio, financial system Zimbabwe, property platform Zimbabwe, JB Construction website, T-Tech Connect"/>
+  <meta name="author" content="Terrence Muromba — T-Tech Solutions"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Portfolio — Live Projects by Terrence Muromba | T-Tech Solutions"/>
+  <meta property="og:description" content="Real systems live and running — JB Construction website, T-Tech Connect rental platform, and City of Harare Financial Management System."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://ttechsolutions.co.zw/portfolio.html"/>
+  <meta property="og:image" content="https://ttechsolutions.co.zw/images/jb-construction.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Portfolio — T-Tech Solutions Zimbabwe"/>
+  <meta name="twitter:description" content="Real live projects: JB Construction website, T-Tech Connect rental platform, City of Harare FMS."/>
+  <link rel="canonical" href="https://ttechsolutions.co.zw/portfolio.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* ── Portfolio page styles ─────────────────────────────── */
+    .portfolio-hero { padding: 148px 0 88px; background: linear-gradient(135deg, #0a0f1e 0%, #0f172a 50%, #1a1040 100%); position: relative; overflow: hidden; }
+    .portfolio-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 520px; height: 520px; background: radial-gradient(circle, rgba(124,58,237,.28), transparent 70%); pointer-events: none; }
+    .portfolio-hero::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(59,130,246,.14), transparent 70%); pointer-events: none; }
+    .portfolio-hero-content { position: relative; z-index: 1; text-align: center; max-width: 760px; margin: 0 auto; }
+    .portfolio-hero .breadcrumb { justify-content: center; margin-bottom: 24px; }
+    .portfolio-hero .eyebrow { color: rgba(255,255,255,.5); }
+    .portfolio-hero h1 { color: #fff; margin-bottom: 20px; }
+    .portfolio-hero .lead { color: rgba(255,255,255,.65); font-size: 18px; max-width: 620px; margin: 0 auto; }
+
+    /* Stats strip */
+    .port-stats { background: #fff; border-bottom: 1px solid var(--border); padding: 28px 0; }
+    .port-stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; text-align: center; }
+    .port-stat { padding: 0 24px; border-right: 1px solid var(--border); }
+    .port-stat:last-child { border-right: none; }
+    .port-stat-num { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 800; color: var(--primary); line-height: 1; }
+    .port-stat-lbl { font-size: 12px; color: var(--text-muted); margin-top: 5px; }
+    @media(max-width:640px){ .port-stats-grid{ grid-template-columns:repeat(2,1fr); } .port-stat{ border-bottom:1px solid var(--border); padding:16px; } }
+
+    /* Project cards */
+    .projects-section { padding: 80px 0 100px; background: var(--bg); }
+
+    .proj-full-card {
+      background: var(--white); border-radius: var(--radius-xl);
+      border: 1px solid var(--border); overflow: hidden;
+      margin-bottom: 36px; transition: box-shadow .3s;
+    }
+    .proj-full-card:hover { box-shadow: var(--shadow-lg); }
+
+    .proj-full-grid { display: grid; grid-template-columns: 480px 1fr; min-height: 340px; }
+    .proj-full-grid.reverse { direction: rtl; }
+    .proj-full-grid.reverse > * { direction: ltr; }
+    @media(max-width:900px){ .proj-full-grid, .proj-full-grid.reverse { grid-template-columns:1fr; direction:ltr; } }
+
+    .proj-full-image { position: relative; overflow: hidden; min-height: 280px; }
+    .proj-full-image img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .5s; }
+    .proj-full-card:hover .proj-full-image img { transform: scale(1.04); }
+
+    .proj-status {
+      position: absolute; top: 18px; left: 18px;
+      display: flex; align-items: center; gap: 7px;
+      background: rgba(10,15,30,.75); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.15);
+      color: #fff; font-size: 11px; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 99px;
+    }
+
+    .proj-full-body { padding: 44px 48px; display: flex; flex-direction: column; justify-content: center; }
+    @media(max-width:900px){ .proj-full-body{ padding: 32px 28px; } }
+
+    .proj-type { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+    .proj-title { font-family: 'Montserrat', sans-serif; font-size: clamp(22px,3vw,30px); font-weight: 800; color: var(--text); margin-bottom: 14px; line-height: 1.2; }
+    .proj-summary { font-size: 15px; line-height: 1.75; color: var(--text-sec); margin-bottom: 22px; }
+
+    .proj-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
+    @media(max-width:480px){ .proj-detail-grid{ grid-template-columns:1fr; } }
+    .proj-detail { background: var(--bg); border-radius: var(--radius); padding: 14px 16px; }
+    .proj-detail-label { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+    .proj-detail-value { font-size: 13px; font-weight: 600; color: var(--text); }
+
+    .proj-tech-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 28px; }
+    .proj-tech { font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 99px; background: var(--primary-light); color: var(--primary); }
+
+    .proj-deliverables { margin-bottom: 28px; }
+    .proj-deliverables-title { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+    .proj-del-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--text-sec); margin-bottom: 8px; line-height: 1.5; }
+    .proj-del-dot { width: 18px; height: 18px; border-radius: 5px; background: var(--green-light); color: var(--green); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+
+    .proj-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Accent colours per card */
+    .accent-green .proj-tech { background: #dcfce7; color: #15803d; }
+    .accent-blue  .proj-tech { background: #dbeafe; color: #1d4ed8; }
+    .accent-amber .proj-tech { background: #fef3c7; color: #b45309; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark">TT</div>
+        <span class="logo-name">T-Tech <span>Solutions</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="connect.html">T-Tech Connect</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta"><a href="contact.html" class="btn btn-primary btn-sm">Start a Project</a></div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html" class="active">Portfolio</a>
+  <a href="connect.html">T-Tech Connect</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary btn-full" style="margin-top:20px;">Start a Project →</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="portfolio-hero">
+  <div class="container">
+    <div class="portfolio-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <span style="color:rgba(255,255,255,.7);">Portfolio</span>
+      </div>
+      <span class="eyebrow">My Work</span>
+      <h1>Projects Built<br/>and Delivered</h1>
+      <p class="lead">Real systems, live and running. Every project here was designed, built, and deployed by me. Proof of what I can deliver for your business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="port-stats">
+  <div class="container">
+    <div class="port-stats-grid">
+      <div class="port-stat reveal">
+        <div class="port-stat-num">3+</div>
+        <div class="port-stat-lbl">Live Projects</div>
+      </div>
+      <div class="port-stat reveal s1">
+        <div class="port-stat-num">3</div>
+        <div class="port-stat-lbl">Technologies Used</div>
+      </div>
+      <div class="port-stat reveal s2">
+        <div class="port-stat-num">100%</div>
+        <div class="port-stat-lbl">Deployed &amp; Live</div>
+      </div>
+      <div class="port-stat reveal s3">
+        <div class="port-stat-num">ZW</div>
+        <div class="port-stat-lbl">Zimbabwe-Focused</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section class="projects-section">
+  <div class="container">
+
+    <!-- Project 1: JB Construction -->
+    <div class="proj-full-card accent-green reveal">
+      <div class="proj-full-grid">
+        <div class="proj-full-image">
+          <img src="images/jb-construction.jpg" alt="JB Construction website"/>
+          <div class="proj-status"><span class="pulse-dot"></span>Live</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">Client Project &nbsp;·&nbsp; Website</div>
+          <div class="proj-title">JB Construction</div>
+          <p class="proj-summary">A professional business website built for a construction company to establish their online presence, showcase services, and generate client enquiries. Designed to look credible and convert visitors into leads.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">Client Type</div>
+              <div class="proj-detail-value">Construction Company</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">Delivery Time</div>
+              <div class="proj-detail-value">Under 7 days</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">What Was Delivered</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Responsive multi-page website</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Services showcase and project gallery</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Contact form and WhatsApp integration</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>SEO-ready structure and meta tags</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Deployed and live on Render</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">HTML</span>
+            <span class="proj-tech">CSS</span>
+            <span class="proj-tech">JavaScript</span>
+            <span class="proj-tech">Responsive Design</span>
+            <span class="proj-tech">SEO</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://jb-constructions.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">View Live Site →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2: T-Tech Connect -->
+    <div class="proj-full-card accent-blue reveal">
+      <div class="proj-full-grid reverse">
+        <div class="proj-full-image" style="background:#0a1628;">
+          <img src="images/logo.png" alt="T-Tech Connect platform" style="object-fit:contain;padding:48px;"/>
+          <div class="proj-status"><span class="pulse-dot"></span>Live</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">Own Product &nbsp;·&nbsp; Web Platform</div>
+          <div class="proj-title">T-Tech Connect</div>
+          <p class="proj-summary">A live property rental marketplace connecting students and general tenants with verified landlords across Zimbabwe's major cities. Built from the ground up with real-time messaging, smart search, and campus proximity filters.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">Project Type</div>
+              <div class="proj-detail-value">Full-Stack Platform</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">Target Users</div>
+              <div class="proj-detail-value">Students &amp; Tenants</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">Key Features Built</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Smart property search with campus proximity filters</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Real-time landlord-tenant messaging</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Verified listings with photo uploads</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Secure payment gateway integration</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Landlord and tenant dashboards</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">Python</span>
+            <span class="proj-tech">Flask</span>
+            <span class="proj-tech">PostgreSQL</span>
+            <span class="proj-tech">REST APIs</span>
+            <span class="proj-tech">Real-time</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://t-tech-connect1-1.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">Visit Platform →</a>
+            <a href="connect.html" class="btn btn-outline">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3: City of Harare FMS -->
+    <div class="proj-full-card accent-amber reveal">
+      <div class="proj-full-grid">
+        <div class="proj-full-image" style="background:#1a0f00;">
+          <img src="images/COH.png" alt="City of Harare Financial Management System"/>
+          <div class="proj-status"><span class="pulse-dot"></span>Live</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">Dissertation Project &nbsp;·&nbsp; Financial System</div>
+          <div class="proj-title">City of Harare — Financial Management System</div>
+          <p class="proj-summary">A computerised financial management system designed and built as my final year dissertation at the University of Zimbabwe. The system addresses revenue leakage at the City of Harare through automated billing, real-time reporting, audit trails, and financial controls.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">Institution</div>
+              <div class="proj-detail-value">University of Zimbabwe</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">Focus Area</div>
+              <div class="proj-detail-value">Revenue Leakage Mitigation</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">System Capabilities</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Automated invoice generation and billing</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Revenue tracking and collections dashboard</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Full audit trail and transaction history</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Real-time financial reporting and exports</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Role-based access control</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">Python</span>
+            <span class="proj-tech">Flask</span>
+            <span class="proj-tech">PostgreSQL</span>
+            <span class="proj-tech">Financial Systems</span>
+            <span class="proj-tech">Audit Trail</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://financial-management-system-7.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">View Live System →</a>
+            <a href="about.html#dissertation" class="btn btn-outline">Research Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Want Something Built Like This?</h2>
+    <p>Tell me about your project. I'll respond within 24 hours with a clear plan and an honest quote.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-white btn-lg">Start a Conversation →</a>
+      <a href="services.html" class="btn btn-ghost btn-lg">My Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><div class="logo-mark">TT</div><span class="logo-name">T-Tech <span>Solutions</span></span></div>
+        <p class="footer-tagline">Smart digital solutions for finance, property &amp; business growth.<br/>Built in Zimbabwe, for Zimbabwe. 🇿🇼</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">Web Applications</a></li>
+          <li><a href="services.html">ERP Systems</a></li>
+          <li><a href="services.html">Financial Systems</a></li>
+          <li><a href="services.html">Data Analysis</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="connect.html">T-Tech Connect</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-row">📞 &nbsp;<a href="tel:+263774128219">+263 774 128 219</a></div>
+        <div class="footer-contact-row">💬 &nbsp;<a href="https://wa.me/263774128219" target="_blank" rel="noopener">WhatsApp Me</a></div>
+        <div class="footer-contact-row">✉️ &nbsp;<a href="mailto:terrencemuromba6@gmail.com">terrencemuromba6@gmail.com</a></div>
+        <div class="footer-contact-row">📍 &nbsp;<span>391 Off Beeston, The Grange, Harare</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 T-Tech Solutions · Terrence Muromba · All rights reserved.</div>
+      <div class="footer-social">
+        <a href="https://wa.me/263774128219" target="_blank" rel="noopener" class="social-btn" title="WhatsApp">💬</a>
+        <a href="mailto:terrencemuromba6@gmail.com" class="social-btn" title="Email">✉</a>
+        <a href="https://www.linkedin.com/in/terrence-muromba-80483b241" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">in</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

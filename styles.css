@@ -2,7 +2,7 @@
    T-Tech Solutions — Shared Stylesheet
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 /* ── Variables ─────────────────────────────────────────────── */
 :root {
@@ -31,7 +31,7 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: var(--text);
   background: var(--white);
   overflow-x: hidden;
@@ -48,14 +48,14 @@ ul { list-style: none; }
 
 /* ── Typography ────────────────────────────────────────────── */
 .eyebrow {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px; font-weight: 700;
   letter-spacing: .14em; text-transform: uppercase;
   color: var(--primary); margin-bottom: 12px;
   display: block;
 }
 h1, h2, h3, h4 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 800; line-height: 1.15; color: var(--text);
 }
 h1 { font-size: clamp(34px, 5vw, 56px); }
@@ -63,6 +63,11 @@ h2 { font-size: clamp(26px, 4vw, 40px); margin-bottom: 14px; }
 h3 { font-size: clamp(18px, 2.5vw, 22px); font-weight: 700; margin-bottom: 8px; }
 h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
 p  { line-height: 1.75; color: var(--text-sec); }
+
+/* Technical / monospace elements */
+code, .tech-spec, .stack-item, .svc-tag, .tag, .proj-tag {
+  font-family: 'Courier New', 'Consolas', monospace;
+}
 .lead {
   font-size: 17px; line-height: 1.75;
   color: var(--text-sec); max-width: 600px;
@@ -222,20 +227,64 @@ textarea.form-control { resize: vertical; min-height: 130px; }
 /* ── Page Hero (inner pages) ───────────────────────────────── */
 .page-hero {
   padding: 148px 0 88px;
-  background: linear-gradient(135deg, var(--primary-dark) 0%, #1e1b4b 100%);
+  background: linear-gradient(135deg, #0a0f1e 0%, #0f172a 50%, #1a1040 100%);
   position: relative; overflow: hidden;
 }
 .page-hero::before {
   content: ''; position: absolute;
   top: -80px; right: -80px;
-  width: 480px; height: 480px;
-  background: radial-gradient(circle, rgba(124,58,237,.3), transparent 70%);
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(124,58,237,.28), transparent 70%);
   pointer-events: none;
 }
-.page-hero-content { position: relative; z-index: 1; }
-.page-hero .eyebrow { color: rgba(255,255,255,.55); }
-.page-hero h1 { color: #fff; margin-bottom: 16px; }
-.page-hero .lead { color: rgba(255,255,255,.72); }
+.page-hero::after {
+  content: ''; position: absolute;
+  bottom: -60px; left: -60px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(59,130,246,.14), transparent 70%);
+  pointer-events: none;
+}
+.page-hero-content {
+  position: relative; z-index: 1;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.page-hero .eyebrow { color: rgba(255,255,255,.5); letter-spacing: .14em; }
+.page-hero h1 { color: #fff; margin-bottom: 20px; }
+.page-hero .lead {
+  color: rgba(255,255,255,.65);
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+.page-hero .breadcrumb { justify-content: center; margin-bottom: 24px; }
+
+/* ── Dark section utility ──────────────────────────────────── */
+.section-dark {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  position: relative;
+}
+.section-dark h2 { color: #fff; }
+.section-dark p  { color: rgba(255,255,255,.65); }
+.section-dark .eyebrow { color: rgba(255,255,255,.45); }
+
+/* ── Improved card hover ───────────────────────────────────── */
+.card-hover {
+  transition: all .28s cubic-bezier(.4,0,.2,1);
+  position: relative; overflow: hidden;
+}
+.card-hover::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.card-hover:hover {
+  box-shadow: 0 16px 56px rgba(0,0,0,.12);
+  transform: translateY(-5px); border-color: transparent;
+}
+.card-hover:hover::before { transform: scaleX(1); }
 
 /* ── Breadcrumb ────────────────────────────────────────────── */
 .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
