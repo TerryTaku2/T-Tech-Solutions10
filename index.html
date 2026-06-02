@@ -13,12 +13,12 @@
   <meta property="og:title" content="T-Tech Solutions — Web Developer &amp; Digital Systems | Harare, Zimbabwe"/>
   <meta property="og:description" content="Freelance developer offering website development, ERP systems, financial systems, AI tools and more. Based in Harare, Zimbabwe. Fast delivery and transparent pricing."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://ttechsolutions.co.zw/"/>
-  <meta property="og:image" content="https://ttechsolutions.co.zw/images/me.jpg"/>
+  <meta property="og:url" content="https://t-techsolutions.co.zw/"/>
+  <meta property="og:image" content="https://t-techsolutions.co.zw/images/me.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="T-Tech Solutions — Web Developer | Harare, Zimbabwe"/>
   <meta name="twitter:description" content="Freelance developer offering website development, ERP systems, financial systems, AI tools and more. Based in Harare, Zimbabwe."/>
-  <link rel="canonical" href="https://ttechsolutions.co.zw/"/>
+  <link rel="canonical" href="https://t-techsolutions.co.zw/"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
@@ -28,14 +28,14 @@
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://ttechsolutions.co.zw/#person",
+        "@id": "https://t-techsolutions.co.zw/#person",
         "name": "Terrence Muromba",
         "jobTitle": "Freelance Web Developer & Digital Systems Specialist",
         "description": "Zimbabwe-based freelance developer with an Honours degree in Fiscal Management from the University of Zimbabwe, building web applications, financial systems, ERP platforms and AI tools.",
-        "url": "https://ttechsolutions.co.zw",
+        "url": "https://t-techsolutions.co.zw",
         "email": "terrencemuromba6@gmail.com",
         "telephone": "+263774128219",
-        "image": "https://ttechsolutions.co.zw/images/me.jpg",
+        "image": "https://t-techsolutions.co.zw/images/me.jpg",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "391 Off Beeston, The Grange",
@@ -50,15 +50,15 @@
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://ttechsolutions.co.zw/#business",
+        "@id": "https://t-techsolutions.co.zw/#business",
         "name": "T-Tech Solutions",
         "description": "Professional digital services in Zimbabwe — website development, web applications, ERP systems, financial systems, data analysis, AI solutions, branding and property technology.",
-        "url": "https://ttechsolutions.co.zw",
-        "logo": "https://ttechsolutions.co.zw/images/me.jpg",
-        "image": "https://ttechsolutions.co.zw/images/me.jpg",
+        "url": "https://t-techsolutions.co.zw",
+        "logo": "https://t-techsolutions.co.zw/images/me.jpg",
+        "image": "https://t-techsolutions.co.zw/images/me.jpg",
         "email": "terrencemuromba6@gmail.com",
         "telephone": "+263774128219",
-        "founder": { "@id": "https://ttechsolutions.co.zw/#person" },
+        "founder": { "@id": "https://t-techsolutions.co.zw/#person" },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "391 Off Beeston, The Grange",
@@ -87,11 +87,11 @@
       },
       {
         "@type": "WebSite",
-        "@id": "https://ttechsolutions.co.zw/#website",
-        "url": "https://ttechsolutions.co.zw",
+        "@id": "https://t-techsolutions.co.zw/#website",
+        "url": "https://t-techsolutions.co.zw",
         "name": "T-Tech Solutions",
         "description": "Digital solutions for Zimbabwe's businesses",
-        "publisher": { "@id": "https://ttechsolutions.co.zw/#business" }
+        "publisher": { "@id": "https://t-techsolutions.co.zw/#business" }
       }
     ]
   }
@@ -125,15 +125,16 @@
     .h-stat-num { font-family:'Montserrat',sans-serif; font-size:30px; font-weight:800; color:#fff; line-height:1; }
     .h-stat-lbl { font-size:12px; color:rgba(255,255,255,.45); margin-top:4px; }
     .hero-photo-col { position:relative; }
-    .hero-photo-frame { border-radius:24px; overflow:hidden; border:2px solid rgba(255,255,255,.1); box-shadow:0 32px 80px rgba(0,0,0,.5); aspect-ratio:3/4; position:relative; }
+    .hero-photo-frame { border-radius:24px; overflow:visible; border:2px solid rgba(255,255,255,.1); box-shadow:0 32px 80px rgba(0,0,0,.5); aspect-ratio:3/4; position:relative; }
+    .hero-photo-frame img { border-radius:22px; }
     .hero-photo-frame img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
     .hero-photo-frame::after { content:''; position:absolute; bottom:0; left:0; right:0; height:55%; background:linear-gradient(to top,rgba(10,15,30,.92) 0%,rgba(10,15,30,.5) 50%,transparent 100%); pointer-events:none; }
     .hero-photo-info { position:absolute; bottom:22px; left:22px; right:22px; z-index:2; }
     .hero-photo-name { font-family:'Montserrat',sans-serif; font-size:18px; font-weight:800; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.5); }
     .hero-photo-role { font-size:12px; color:rgba(255,255,255,.7); margin-top:3px; }
     .float-badge { position:absolute; background:rgba(255,255,255,.95); backdrop-filter:blur(12px); border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,.25); padding:11px 16px; display:flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.6); }
-    .fb-top { top:-16px; left:-20px; animation:floatA 3.5s ease-in-out infinite; }
-    .fb-bot { bottom:70px; right:-20px; animation:floatB 4s ease-in-out infinite; }
+    .fb-top { top:24px; right:-14px; animation:floatA 3.5s ease-in-out infinite; }
+    .fb-bot { bottom:90px; left:-14px; animation:floatB 4s ease-in-out infinite; }
     @keyframes floatA { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
     @keyframes floatB { 0%,100%{transform:translateY(0);} 50%{transform:translateY(7px);} }
     .fb-icon { font-size:20px; }
@@ -312,12 +313,16 @@
         </div>
       </div>
       <div class="hero-photo-col reveal s1">
-        <div class="float-badge fb-top">
-          <span class="fb-icon">🎓</span>
-          <div><div class="fb-title">BSc Fiscal Management</div><div class="fb-sub">University of Zimbabwe</div></div>
-        </div>
         <div class="hero-photo-frame">
           <img src="images/me.jpg" alt="Terrence Muromba — T-Tech Solutions"/>
+          <!-- Badge on top of image -->
+          <div style="position:absolute;top:16px;right:16px;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:9px;box-shadow:0 4px 20px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.7);">
+            <span style="font-size:18px;">🎓</span>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:#0f172a;white-space:nowrap;">BSc Fiscal Management</div>
+              <div style="font-size:10px;color:#64748b;margin-top:2px;">University of Zimbabwe</div>
+            </div>
+          </div>
           <div class="hero-photo-info">
             <div class="hero-photo-name">Terrence Muromba</div>
             <div class="hero-photo-role">Freelance Developer · Harare, Zimbabwe</div>
