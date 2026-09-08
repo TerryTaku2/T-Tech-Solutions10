@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>T-Tech Solutions — Web Developer &amp; Digital Systems | Harare, Zimbabwe</title>
-  <meta name="description" content="Terrence Muromba — Zimbabwe-based freelance developer offering website development, web apps, ERP systems, financial systems, data analysis and AI solutions. Based in Harare. Fast delivery, transparent pricing."/>
+  <title>T-Tech Solutions | Web Developer &amp; Digital Systems | Harare, Zimbabwe</title>
+  <meta name="description" content="Terrence Muromba, a Zimbabwe-based freelance developer offering website development, web apps, ERP systems, financial systems, data analysis and AI solutions. Based in Harare. Fast delivery, transparent pricing."/>
   <meta name="keywords" content="web developer Zimbabwe, website development Harare, freelance developer Zimbabwe, ERP system Zimbabwe, financial system Zimbabwe, web application Harare, data analysis Zimbabwe, AI solutions Zimbabwe, property technology Zimbabwe, T-Tech Solutions, Terrence Muromba"/>
-  <meta name="author" content="Terrence Muromba — T-Tech Solutions"/>
+  <meta name="author" content="Terrence Muromba, T-Tech Solutions"/>
   <meta name="robots" content="index, follow"/>
   <meta name="google-site-verification" content="_-a3iwbuSrS0n_5PtdQEDmLfazkn39o003lxUBIlpZA"/>
   <meta name="geo.region" content="ZW-HA"/>
   <meta name="geo.placename" content="Harare, Zimbabwe"/>
-  <meta property="og:title" content="T-Tech Solutions — Web Developer &amp; Digital Systems | Harare, Zimbabwe"/>
+  <meta property="og:title" content="T-Tech Solutions | Web Developer &amp; Digital Systems | Harare, Zimbabwe"/>
   <meta property="og:description" content="Freelance developer offering website development, ERP systems, financial systems, AI tools and more. Based in Harare, Zimbabwe. Fast delivery and transparent pricing."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://t-techsolutions.co.zw/"/>
   <meta property="og:image" content="https://t-techsolutions.co.zw/images/me.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="T-Tech Solutions — Web Developer | Harare, Zimbabwe"/>
+  <meta name="twitter:title" content="T-Tech Solutions | Web Developer | Harare, Zimbabwe"/>
   <meta name="twitter:description" content="Freelance developer offering website development, ERP systems, financial systems, AI tools and more. Based in Harare, Zimbabwe."/>
   <link rel="canonical" href="https://t-techsolutions.co.zw/"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
   <script type="application/ld+json">
   {
@@ -53,7 +53,7 @@
         "@type": "LocalBusiness",
         "@id": "https://t-techsolutions.co.zw/#business",
         "name": "T-Tech Solutions",
-        "description": "Professional digital services in Zimbabwe — website development, web applications, ERP systems, financial systems, data analysis, AI solutions, branding and property technology.",
+        "description": "Professional digital services in Zimbabwe: website development, web applications, ERP systems, financial systems, data analysis, AI solutions, branding and property technology.",
         "url": "https://t-techsolutions.co.zw",
         "logo": "https://t-techsolutions.co.zw/images/me.jpg",
         "image": "https://t-techsolutions.co.zw/images/me.jpg",
@@ -101,106 +101,109 @@
     /* HERO */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(135deg, #0a0f1e 0%, #0f172a 40%, #1a1040 100%);
+      background: var(--ink);
+      background-image:
+        repeating-linear-gradient(180deg, rgba(255,255,255,.035) 0px, rgba(255,255,255,.035) 1px, transparent 1px, transparent 44px),
+        radial-gradient(circle at 85% 15%, rgba(184,121,42,.14), transparent 42%);
       display: flex; align-items: center;
       position: relative; overflow: hidden;
       padding: 120px 0 80px;
+      border-top: 3px solid transparent;
+      border-image: linear-gradient(90deg, var(--accent), var(--primary)) 1;
     }
-    .hero-orb-1 { position:absolute; top:-120px; right:-100px; width:580px; height:580px; border-radius:50%; background:radial-gradient(circle,rgba(59,130,246,.18) 0%,transparent 70%); pointer-events:none; }
-    .hero-orb-2 { position:absolute; bottom:-80px; left:-80px; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle,rgba(124,58,237,.14) 0%,transparent 70%); pointer-events:none; }
     .hero-grid { display:grid; grid-template-columns:1fr 420px; gap:72px; align-items:center; position:relative; z-index:1; }
     @media(max-width:1000px){ .hero-grid{ grid-template-columns:1fr; } .hero-photo-col{ display:none; } }
     .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:99px; padding:7px 16px; margin-bottom:28px; font-size:12px; font-weight:500; color:rgba(255,255,255,.7); }
     .hero-badge .pulse-dot { background:#4ade80; }
-    .hero h1 { font-family:'Montserrat',sans-serif; font-size:clamp(36px,5vw,62px); font-weight:800; line-height:1.1; color:#fff; margin-bottom:22px; }
-    .hero h1 .grad { background:linear-gradient(90deg,#60a5fa,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .hero h1 { font-family:'Space Grotesk',sans-serif; font-size:clamp(36px,5vw,62px); font-weight:700; line-height:1.1; color:#fff; margin-bottom:22px; }
+    .hero h1 .grad { background:linear-gradient(90deg,var(--accent),#6fcfa8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
     .hero-lead { font-size:17px; line-height:1.75; color:rgba(255,255,255,.6); max-width:520px; margin-bottom:36px; }
     .hero-actions { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:52px; }
-    .hero-actions .btn-primary { background:linear-gradient(135deg,#2563eb,#7c3aed); border:none; padding:15px 32px; font-size:15px; font-weight:600; box-shadow:0 8px 32px rgba(37,99,235,.35); }
-    .hero-actions .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(37,99,235,.5); }
+    .hero-actions .btn-primary { padding:15px 32px; font-size:15px; font-weight:600; }
     .hero-actions .btn-outline { border-color:rgba(255,255,255,.25); color:#fff; background:rgba(255,255,255,.06); padding:15px 32px; font-size:15px; }
     .hero-actions .btn-outline:hover { background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.4); }
     .hero-stats { display:flex; gap:0; }
     .h-stat { padding-right:32px; margin-right:32px; border-right:1px solid rgba(255,255,255,.12); }
     .h-stat:last-child { border-right:none; }
-    .h-stat-num { font-family:'Montserrat',sans-serif; font-size:30px; font-weight:800; color:#fff; line-height:1; }
+    .h-stat-num { font-family:'JetBrains Mono',monospace; font-size:30px; font-weight:700; color:#fff; line-height:1; }
     .h-stat-lbl { font-size:12px; color:rgba(255,255,255,.45); margin-top:4px; }
     .hero-photo-col { position:relative; }
-    .hero-photo-frame { border-radius:24px; overflow:visible; border:2px solid rgba(255,255,255,.1); box-shadow:0 32px 80px rgba(0,0,0,.5); aspect-ratio:3/4; position:relative; }
-    .hero-photo-frame img { border-radius:22px; }
+    .hero-photo-frame { border-radius:var(--radius-xl); overflow:visible; border:2px solid rgba(255,255,255,.1); box-shadow:0 32px 80px rgba(0,0,0,.5); aspect-ratio:3/4; position:relative; }
+    .hero-photo-frame img { border-radius:16px; }
     .hero-photo-frame img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
-    .hero-photo-frame::after { content:''; position:absolute; bottom:0; left:0; right:0; height:55%; background:linear-gradient(to top,rgba(10,15,30,.92) 0%,rgba(10,15,30,.5) 50%,transparent 100%); pointer-events:none; }
+    .hero-photo-frame::after { content:''; position:absolute; bottom:0; left:0; right:0; height:55%; background:linear-gradient(to top,rgba(14,31,24,.92) 0%,rgba(14,31,24,.5) 50%,transparent 100%); pointer-events:none; }
     .hero-photo-info { position:absolute; bottom:22px; left:22px; right:22px; z-index:2; }
-    .hero-photo-name { font-family:'Montserrat',sans-serif; font-size:18px; font-weight:800; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.5); }
+    .hero-photo-name { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:700; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.5); }
     .hero-photo-role { font-size:12px; color:rgba(255,255,255,.7); margin-top:3px; }
     .float-badge { position:absolute; background:rgba(255,255,255,.95); backdrop-filter:blur(12px); border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,.25); padding:11px 16px; display:flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.6); }
-    .fb-top { top:24px; right:-14px; animation:floatA 3.5s ease-in-out infinite; }
-    .fb-bot { bottom:90px; left:-14px; animation:floatB 4s ease-in-out infinite; }
-    @keyframes floatA { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
-    @keyframes floatB { 0%,100%{transform:translateY(0);} 50%{transform:translateY(7px);} }
+    .fb-top { top:24px; right:-14px; }
+    .fb-bot { bottom:90px; left:-14px; }
     .fb-icon { font-size:20px; }
-    .fb-title { font-size:12px; font-weight:700; color:#0f172a; }
-    .fb-sub { font-size:11px; color:#64748b; margin-top:1px; }
+    .fb-title { font-size:12px; font-weight:700; color:var(--text); }
+    .fb-sub { font-size:11px; color:var(--text-sec); margin-top:1px; }
 
     /* TRUST BAR */
-    .trust-bar { background:#f8fafc; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; padding:0; overflow:hidden; }
+    .trust-bar { background:var(--bg-soft); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:0; overflow:hidden; }
     .trust-track { display:flex; gap:0; align-items:center; animation:marquee 28s linear infinite; white-space:nowrap; padding:18px 0; }
     @keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
-    .trust-item { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:#475569; padding:0 36px; flex-shrink:0; }
-    .trust-sep { color:#cbd5e1; font-size:18px; flex-shrink:0; }
+    .trust-item { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:var(--text-sec); padding:0 36px; flex-shrink:0; }
+    .trust-sep { color:var(--border); font-size:18px; flex-shrink:0; }
 
     /* SERVICES */
     .services-section { padding:110px 0; background:#fff; }
     .section-header { margin-bottom:60px; }
     .section-header h2 { font-size:clamp(28px,4vw,42px); margin-bottom:14px; }
-    .section-lead { font-size:16px; color:#64748b; max-width:520px; margin-top:10px; line-height:1.7; }
+    .section-lead { font-size:16px; color:var(--text-sec); max-width:520px; margin-top:10px; line-height:1.7; }
     .services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
     @media(max-width:900px){ .services-grid{ grid-template-columns:repeat(2,1fr); } }
     @media(max-width:520px){ .services-grid{ grid-template-columns:1fr; } }
-    .svc-card { background:#f8fafc; border:1px solid #e2e8f0; border-radius:20px; padding:28px 24px; transition:all .3s; position:relative; overflow:hidden; cursor:default; }
+    .svc-card { background:var(--bg-soft); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .3s; position:relative; overflow:hidden; cursor:default; }
     .svc-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; border-radius:3px 3px 0 0; transform:scaleX(0); transform-origin:left; transition:transform .3s; }
-    .svc-card[data-color="blue"]::before   { background:linear-gradient(90deg,#3b82f6,#6366f1); }
-    .svc-card[data-color="purple"]::before { background:linear-gradient(90deg,#7c3aed,#a855f7); }
-    .svc-card[data-color="green"]::before  { background:linear-gradient(90deg,#16a34a,#22c55e); }
-    .svc-card[data-color="orange"]::before { background:linear-gradient(90deg,#ea580c,#f97316); }
-    .svc-card:hover { background:#fff; box-shadow:0 12px 48px rgba(0,0,0,.1); transform:translateY(-5px); border-color:transparent; }
+    .svc-card[data-color="blue"]::before   { background:linear-gradient(90deg,var(--primary),var(--primary-dark)); }
+    .svc-card[data-color="purple"]::before { background:linear-gradient(90deg,var(--accent),var(--primary)); }
+    .svc-card[data-color="green"]::before  { background:linear-gradient(90deg,var(--green),var(--primary)); }
+    .svc-card[data-color="orange"]::before { background:linear-gradient(90deg,var(--accent),#d99b4e); }
+    .svc-card:hover { background:#fff; box-shadow:0 12px 48px rgba(14,31,24,.08); transform:translateY(-5px); border-color:transparent; }
     .svc-card:hover::before { transform:scaleX(1); }
-    .svc-num { font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; letter-spacing:.1em; color:#94a3b8; margin-bottom:16px; }
+    .svc-num { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.1em; color:var(--text-muted); margin-bottom:16px; }
     .svc-icon { font-size:32px; margin-bottom:14px; }
-    .svc-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; color:#0f172a; font-family:'Montserrat',sans-serif; }
-    .svc-card p { font-size:13px; color:#64748b; line-height:1.65; margin-bottom:14px; }
+    .svc-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; color:var(--text); font-family:'Space Grotesk',sans-serif; }
+    .svc-card p { font-size:13px; color:var(--text-sec); line-height:1.65; margin-bottom:14px; }
     .svc-tags { display:flex; flex-wrap:wrap; gap:6px; }
-    .svc-tags span { font-size:11px; background:#f1f5f9; color:#475569; border-radius:99px; padding:3px 10px; font-weight:500; }
+    .svc-tags span { font-size:11px; background:var(--bg); color:var(--text-sec); border-radius:99px; padding:3px 10px; font-weight:500; font-family:'JetBrains Mono',monospace; }
 
     /* PORTFOLIO */
-    .portfolio-section { padding:110px 0; background:#f8fafc; }
+    .portfolio-section { padding:110px 0; background:var(--bg-soft); }
     .portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
     @media(max-width:900px){ .portfolio-grid{ grid-template-columns:1fr; } }
-    .proj-card { background:#fff; border-radius:22px; border:1px solid #e2e8f0; overflow:hidden; transition:all .3s; display:flex; flex-direction:column; }
-    .proj-card:hover { box-shadow:0 20px 64px rgba(0,0,0,.12); transform:translateY(-6px); border-color:transparent; }
+    .proj-card { background:#fff; border-radius:var(--radius-lg); border:1px solid var(--border); overflow:hidden; transition:all .3s; display:flex; flex-direction:column; }
+    .proj-card:hover { box-shadow:0 20px 64px rgba(14,31,24,.1); transform:translateY(-6px); border-color:transparent; }
     .proj-image { height:210px; position:relative; overflow:hidden; }
     .proj-image img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform .5s ease; }
     .proj-card:hover .proj-image img { transform:scale(1.06); }
-    .proj-label { position:absolute; top:14px; left:14px; background:rgba(10,15,30,.72); backdrop-filter:blur(8px); color:#fff; font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:5px 12px; border-radius:99px; border:1px solid rgba(255,255,255,.15); }
+    .proj-label { position:absolute; top:14px; left:14px; background:rgba(14,31,24,.72); backdrop-filter:blur(8px); color:#fff; font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:5px 12px; border-radius:99px; border:1px solid rgba(255,255,255,.15); }
     .proj-body { padding:24px 26px; flex:1; display:flex; flex-direction:column; }
-    .proj-client { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#94a3b8; margin-bottom:6px; }
-    .proj-name { font-family:'Montserrat',sans-serif; font-size:20px; font-weight:800; color:#0f172a; margin-bottom:10px; }
-    .proj-desc { font-size:13.5px; color:#64748b; line-height:1.7; flex:1; margin-bottom:16px; }
+    .proj-client { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px; }
+    .proj-name { font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:700; color:var(--text); margin-bottom:10px; }
+    .proj-desc { font-size:13.5px; color:var(--text-sec); line-height:1.7; flex:1; margin-bottom:16px; }
     .proj-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px; }
-    .proj-tags span { font-size:11px; background:#f1f5f9; color:#475569; border-radius:99px; padding:3px 10px; font-weight:500; }
+    .proj-tags span { font-size:11px; background:var(--bg); color:var(--text-sec); border-radius:99px; padding:3px 10px; font-weight:500; font-family:'JetBrains Mono',monospace; }
     .proj-links { display:flex; gap:10px; margin-top:auto; }
 
     /* ABOUT STRIP */
-    .about-strip { padding:100px 0; background:#0f172a; }
+    .about-strip {
+      padding:100px 0; background:var(--ink);
+      background-image: repeating-linear-gradient(180deg, rgba(255,255,255,.035) 0px, rgba(255,255,255,.035) 1px, transparent 1px, transparent 44px);
+    }
     .about-strip-grid { display:grid; grid-template-columns:420px 1fr; gap:80px; align-items:center; }
     @media(max-width:900px){ .about-strip-grid{ grid-template-columns:1fr; } .about-strip-photo{ display:none; } }
-    .asp-frame { border-radius:22px; overflow:hidden; border:2px solid rgba(255,255,255,.1); box-shadow:0 24px 64px rgba(0,0,0,.4); aspect-ratio:4/5; }
+    .asp-frame { border-radius:var(--radius-xl); overflow:hidden; border:2px solid rgba(255,255,255,.1); box-shadow:0 24px 64px rgba(0,0,0,.4); aspect-ratio:4/5; }
     .asp-frame img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
-    .asp-badge { position:absolute; bottom:-16px; right:-16px; background:linear-gradient(135deg,#2563eb,#7c3aed); border-radius:16px; padding:16px 20px; color:#fff; text-align:center; box-shadow:0 8px 32px rgba(37,99,235,.4); }
-    .asp-badge-num { font-family:'Montserrat',sans-serif; font-size:28px; font-weight:800; }
+    .asp-badge { position:absolute; bottom:-16px; right:-16px; background:var(--primary); border-radius:16px; padding:16px 20px; color:#fff; text-align:center; box-shadow:0 8px 32px rgba(12,122,82,.4); }
+    .asp-badge-num { font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:700; }
     .asp-badge-lbl { font-size:11px; opacity:.8; margin-top:2px; }
     .about-strip-photo { position:relative; }
-    .about-strip-content .eyebrow { color:#60a5fa; }
+    .about-strip-content .eyebrow { color:#6fcfa8; }
     .about-strip-content h2 { color:#fff; margin-bottom:18px; }
     .about-strip-content p { color:rgba(255,255,255,.6); line-height:1.8; margin-bottom:14px; }
     .cred-list { display:flex; flex-direction:column; gap:14px; margin:28px 0 36px; }
@@ -213,40 +216,40 @@
     .why-section { padding:110px 0; background:#fff; }
     .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
     @media(max-width:768px){ .why-grid{ grid-template-columns:1fr; } }
-    .why-card { background:#f8fafc; border-radius:22px; padding:36px 30px; border:1px solid #e2e8f0; transition:all .3s; }
-    .why-card:hover { background:#fff; box-shadow:0 16px 56px rgba(0,0,0,.09); transform:translateY(-4px); border-color:transparent; }
-    .why-num { font-family:'Montserrat',sans-serif; font-size:44px; font-weight:800; line-height:1; margin-bottom:20px; background:linear-gradient(135deg,#dbeafe,#ede9fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-    .why-card h3 { font-size:18px; font-weight:700; margin-bottom:12px; color:#0f172a; font-family:'Montserrat',sans-serif; }
-    .why-card p { font-size:14px; color:#64748b; line-height:1.75; }
+    .why-card { background:var(--bg-soft); border-radius:var(--radius-lg); padding:36px 30px; border:1px solid var(--border); transition:all .3s; }
+    .why-card:hover { background:#fff; box-shadow:0 16px 56px rgba(14,31,24,.08); transform:translateY(-4px); border-color:transparent; }
+    .why-num { font-family:'JetBrains Mono',monospace; font-size:44px; font-weight:700; line-height:1; margin-bottom:20px; background:linear-gradient(135deg,var(--primary-light),var(--accent-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .why-card h3 { font-size:18px; font-weight:700; margin-bottom:12px; color:var(--text); font-family:'Space Grotesk',sans-serif; }
+    .why-card p { font-size:14px; color:var(--text-sec); line-height:1.75; }
 
     /* FLAGSHIP */
-    .flagship-section { padding:100px 0; background:#f8fafc; }
-    .flagship-inner { background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 60%,#0f172a 100%); border-radius:28px; overflow:hidden; position:relative; }
-    .flagship-glow { position:absolute; top:-100px; right:-100px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(124,58,237,.25),transparent 70%); pointer-events:none; }
+    .flagship-section { padding:100px 0; background:var(--bg-soft); }
+    .flagship-inner {
+      background:var(--ink);
+      background-image: repeating-linear-gradient(180deg, rgba(255,255,255,.035) 0px, rgba(255,255,255,.035) 1px, transparent 1px, transparent 44px), radial-gradient(circle at 88% 8%, rgba(184,121,42,.16), transparent 45%);
+      border-radius:var(--radius-xl); overflow:hidden; position:relative;
+    }
     .flagship-content { display:grid; grid-template-columns:1fr 300px; min-height:420px; position:relative; z-index:1; }
     @media(max-width:800px){ .flagship-content{ grid-template-columns:1fr; } .flagship-right{ display:none; } }
     .flagship-left { padding:60px 56px; }
-    .flagship-title { font-family:'Montserrat',sans-serif; font-size:clamp(22px,3vw,32px); font-weight:800; color:#fff; margin:10px 0 16px; line-height:1.2; }
+    .flagship-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(22px,3vw,32px); font-weight:700; color:#fff; margin:10px 0 16px; line-height:1.2; }
     .flagship-desc { font-size:15px; color:rgba(255,255,255,.6); line-height:1.7; margin-bottom:28px; max-width:440px; }
     .flagship-checklist { display:flex; flex-direction:column; gap:11px; margin-bottom:36px; }
     .flagship-checklist li { display:flex; align-items:center; gap:11px; font-size:14px; color:rgba(255,255,255,.75); }
     .flagship-checklist .ck { width:20px; height:20px; border-radius:6px; background:rgba(74,222,128,.15); border:1px solid rgba(74,222,128,.3); color:#4ade80; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:800; flex-shrink:0; }
     .flagship-actions { display:flex; gap:12px; flex-wrap:wrap; }
     .flagship-right { display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(255,255,255,.04); padding:48px 32px; gap:20px; }
-    .flagship-logo { max-width:200px; filter:drop-shadow(0 16px 40px rgba(0,0,0,.5)); animation:floatA 4s ease-in-out infinite; }
+    .flagship-logo { max-width:200px; filter:drop-shadow(0 16px 40px rgba(0,0,0,.5)); }
     .live-badge { display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:99px; padding:8px 18px; font-size:12px; font-weight:600; color:#fff; }
 
     /* CTA */
-    .cta-section { padding:120px 0; background:linear-gradient(135deg,#1e1b4b 0%,#0f172a 50%,#1a0a30 100%); text-align:center; position:relative; overflow:hidden; }
-    .cta-glow { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:700px; height:700px; border-radius:50%; background:radial-gradient(circle,rgba(124,58,237,.18),transparent 65%); pointer-events:none; }
+    .cta-section { padding:120px 0; }
     .cta-inner { position:relative; z-index:1; }
     .cta-section h2 { font-size:clamp(32px,5vw,54px); color:#fff; margin-bottom:18px; }
     .cta-section p { font-size:17px; color:rgba(255,255,255,.6); max-width:520px; margin:0 auto 40px; line-height:1.75; }
     .cta-buttons { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
     .cta-section .btn-white { padding:16px 36px; font-size:16px; font-weight:600; box-shadow:0 8px 32px rgba(255,255,255,.15); }
     .cta-section .btn-ghost { padding:16px 36px; font-size:16px; }
-
-    footer { background:#070c18; }
   </style>
 </head>
 <body>
@@ -292,8 +295,6 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-orb-1"></div>
-  <div class="hero-orb-2"></div>
   <div class="container">
     <div class="hero-grid">
       <div class="reveal">
@@ -301,27 +302,27 @@
           <span class="pulse-dot"></span>
           Zimbabwe-Based &nbsp;·&nbsp; Available Now
         </div>
-        <h1>Digital Systems Built for <span class="grad">Zimbabwe's</span> Businesses</h1>
-        <p class="hero-lead">I design and deliver web applications, financial systems, ERP platforms, AI tools, and property technology, engineered to solve real problems in the Zimbabwean context.</p>
+        <h1>The Financial Systems <span class="grad">Zimbabwe's</span> Businesses Run On</h1>
+        <p class="hero-lead">I've sat on both sides of the ledger: closing the books as a finance professional, then writing the code that closes them faster. I design and deliver financial systems, ERP platforms, web applications, AI tools, and property technology built for how Zimbabwean businesses actually operate.</p>
         <div class="hero-actions">
           <a href="contact.html" class="btn btn-primary btn-lg">Start a Project →</a>
           <a href="services.html" class="btn btn-outline btn-lg">My Services</a>
         </div>
         <div class="hero-stats">
-          <div class="h-stat"><div class="h-stat-num">3+</div><div class="h-stat-lbl">Live Projects</div></div>
-          <div class="h-stat"><div class="h-stat-num">8</div><div class="h-stat-lbl">Services</div></div>
+          <div class="h-stat"><div class="h-stat-num">12+</div><div class="h-stat-lbl">Projects Built</div></div>
+          <div class="h-stat"><div class="h-stat-num">7</div><div class="h-stat-lbl">Live &amp; Deployed</div></div>
           <div class="h-stat"><div class="h-stat-num">24h</div><div class="h-stat-lbl">Response Time</div></div>
         </div>
       </div>
       <div class="hero-photo-col reveal s1">
         <div class="hero-photo-frame">
-          <img src="images/me.jpg" alt="Terrence Muromba — T-Tech Solutions"/>
+          <img src="images/me.jpg" alt="Terrence Muromba, T-Tech Solutions"/>
           <!-- Badge on top of image -->
           <div style="position:absolute;top:16px;right:16px;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:9px;box-shadow:0 4px 20px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.7);">
             <span style="font-size:18px;">🎓</span>
             <div>
-              <div style="font-size:11px;font-weight:700;color:#0f172a;white-space:nowrap;">BSc Fiscal Management</div>
-              <div style="font-size:10px;color:#64748b;margin-top:2px;">University of Zimbabwe</div>
+              <div style="font-size:11px;font-weight:700;color:var(--text);white-space:nowrap;">BSc Fiscal Mgmt · 2:1</div>
+              <div style="font-size:10px;color:var(--text-sec);margin-top:2px;">University of Zimbabwe</div>
             </div>
           </div>
           <div class="hero-photo-info">
@@ -388,7 +389,7 @@
     <div class="section-header reveal">
       <span class="eyebrow">Recent Work</span>
       <h2>Projects I've Built &amp; Delivered</h2>
-      <p class="section-lead">Real systems, live and running. A selection of work that shows what I build and how I build it.</p>
+      <p class="section-lead">12+ systems shipped across finance, healthcare, education, logistics and property. Three highlights below; see the full portfolio for the rest.</p>
     </div>
     <div class="portfolio-grid">
       <div class="proj-card reveal">
@@ -438,6 +439,9 @@
         </div>
       </div>
     </div>
+    <div class="text-center" style="margin-top:48px;">
+      <a href="portfolio.html" class="btn btn-primary btn-lg">View All 12+ Projects →</a>
+    </div>
   </div>
 </section>
 
@@ -452,11 +456,12 @@
       <div class="about-strip-content reveal s1">
         <span class="eyebrow">Who I Am</span>
         <h2>Finance Expertise Meets Modern Technology</h2>
-        <p>I am a Zimbabwe-based freelance developer and final-year Fiscal Management student at the University of Zimbabwe. I combine a strong academic foundation in finance with independently developed programming skills to build systems that solve real problems.</p>
+        <p>I'm a Zimbabwe-based finance professional and developer, holding a BSc Honours in Fiscal Management from the University of Zimbabwe (Upper Second Class; dissertation awarded Distinction). I've worked inside real finance functions, from municipal budgets to transport-sector accounting, and I build the software that does that work faster.</p>
         <p>My interest in Fintech drives everything I do, from financial management systems and ERPs to live property platforms and AI-powered tools.</p>
         <div class="cred-list">
-          <div class="cred-item"><div class="cred-icon">🎓</div><div><div class="cred-title">BSc Honours in Fiscal Management</div><div class="cred-sub">University of Zimbabwe · 2022 – 2026</div></div></div>
-          <div class="cred-item"><div class="cred-icon">💻</div><div><div class="cred-title">Independent Software Development</div><div class="cred-sub">Self-driven · Validated through real projects</div></div></div>
+          <div class="cred-item"><div class="cred-icon">🎓</div><div><div class="cred-title">BSc Honours in Fiscal Management (Upper Second Class)</div><div class="cred-sub">University of Zimbabwe · 2022 – 2026</div></div></div>
+          <div class="cred-item"><div class="cred-icon">🏛️</div><div><div class="cred-title">Finance Attaché, Budgets Division</div><div class="cred-sub">City of Harare · 2024 – 2025</div></div></div>
+          <div class="cred-item"><div class="cred-icon">📊</div><div><div class="cred-title">Assistant Accountant &amp; Systems Administrator</div><div class="cred-sub">Gratz Logistics · Current</div></div></div>
           <div class="cred-item"><div class="cred-icon">📍</div><div><div class="cred-title">Based in Harare, Zimbabwe</div><div class="cred-sub">Serving clients locally and regionally</div></div></div>
         </div>
         <a href="about.html" class="btn btn-white">Read My Full Story →</a>
@@ -484,16 +489,15 @@
 <section class="flagship-section">
   <div class="container">
     <div class="flagship-inner">
-      <div class="flagship-glow"></div>
       <div class="flagship-content">
         <div class="flagship-left">
           <span class="eyebrow" style="color:rgba(255,255,255,.4);font-size:10px;">My Flagship Product</span>
-          <div class="flagship-title">T-Tech Connect — Zimbabwe's Rental Marketplace</div>
+          <div class="flagship-title">T-Tech Connect: Zimbabwe's Rental Marketplace</div>
           <p class="flagship-desc">A live property platform connecting students and general tenants with verified landlords across Zimbabwe's major cities.</p>
           <ul class="flagship-checklist">
             <li><span class="ck">✓</span>Smart search for students &amp; general tenants</li>
             <li><span class="ck">✓</span>Real-time messaging with landlords</li>
-            <li><span class="ck">✓</span>Campus proximity filter — UZ, NUST, MSU &amp; more</li>
+            <li><span class="ck">✓</span>Campus proximity filter (UZ, NUST, MSU &amp; more)</li>
             <li><span class="ck">✓</span>Verified listings with photos</li>
             <li><span class="ck">✓</span>Secure payment gateway</li>
           </ul>
@@ -515,7 +519,6 @@
 
 <!-- CTA -->
 <section class="cta-section">
-  <div class="cta-glow"></div>
   <div class="container">
     <div class="cta-inner reveal">
       <span class="eyebrow" style="color:rgba(255,255,255,.4);">Ready to Build?</span>

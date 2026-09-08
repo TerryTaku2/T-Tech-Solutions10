@@ -3,31 +3,34 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>T-Tech Connect — Zimbabwe's Rental Marketplace | Find Accommodation Near UZ, NUST, MSU</title>
+  <title>T-Tech Connect | Zimbabwe's Rental Marketplace | Find Accommodation Near UZ, NUST, MSU</title>
   <meta name="description" content="T-Tech Connect is Zimbabwe's property rental marketplace connecting students and tenants with verified landlords. Find accommodation near UZ, NUST, MSU and other campuses in Harare and beyond. Real-time messaging, verified listings."/>
   <meta name="keywords" content="student accommodation Zimbabwe, rental Zimbabwe, property Zimbabwe, house for rent Harare, student housing UZ, NUST accommodation, MSU accommodation, landlord Zimbabwe, T-Tech Connect, property platform Zimbabwe"/>
-  <meta name="author" content="Terrence Muromba — T-Tech Solutions"/>
+  <meta name="author" content="Terrence Muromba, T-Tech Solutions"/>
   <meta name="robots" content="index, follow"/>
-  <meta property="og:title" content="T-Tech Connect — Zimbabwe's Rental Marketplace"/>
+  <meta property="og:title" content="T-Tech Connect | Zimbabwe's Rental Marketplace"/>
   <meta property="og:description" content="Find student accommodation and rentals near UZ, NUST, MSU and more. Connect directly with verified landlords across Zimbabwe."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://t-techsolutions.co.zw/connect.html"/>
   <meta property="og:image" content="https://t-techsolutions.co.zw/images/logo.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="T-Tech Connect — Zimbabwe's Rental Marketplace"/>
+  <meta name="twitter:title" content="T-Tech Connect | Zimbabwe's Rental Marketplace"/>
   <meta name="twitter:description" content="Find student accommodation and rentals in Zimbabwe. Connect with verified landlords near UZ, NUST, MSU."/>
   <link rel="canonical" href="https://t-techsolutions.co.zw/connect.html"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
   <style>
     /* Custom hero for Connect page */
     .connect-hero {
       padding: 148px 0 80px;
-      background: linear-gradient(135deg, #0a0f1e 0%, #0f172a 50%, #1a1040 100%);
       position: relative; overflow: hidden;
+      background: var(--ink);
+      background-image:
+        repeating-linear-gradient(180deg, rgba(255,255,255,.035) 0px, rgba(255,255,255,.035) 1px, transparent 1px, transparent 44px),
+        radial-gradient(circle at 88% 12%, rgba(184,121,42,.14), transparent 42%);
     }
-    .connect-hero::before { content:''; position:absolute; top:-80px; right:-80px; width:500px; height:500px; background:radial-gradient(circle,rgba(124,58,237,.3),transparent 70%); }
+    .connect-hero::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--accent), var(--primary)); }
     .connect-hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; position:relative; z-index:1; }
     .connect-hero h1 { color:#fff; margin-bottom:16px; }
     .connect-hero .lead { color:rgba(255,255,255,.72); margin-bottom:28px; }
@@ -47,10 +50,10 @@
     .audience { padding:100px 0; background:var(--bg); }
     .audience-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
     .aud-card { background:var(--white); border-radius:var(--radius-xl); padding:40px; border:1px solid var(--border); }
-    .aud-label { font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; }
+    .aud-label { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:12px; }
     .aud-label.blue { color:var(--primary); }
     .aud-label.green { color:var(--green); }
-    .aud-title { font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; margin-bottom:12px; }
+    .aud-title { font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; margin-bottom:12px; }
     .aud-desc { font-size:14px; line-height:1.75; color:var(--text-sec); margin-bottom:24px; }
     .aud-check { display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
     .aud-row { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--text-sec); }
@@ -63,8 +66,8 @@
     .how { padding:100px 0; background:var(--white); }
     .steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
     .step { text-align:center; }
-    .step-num { width:56px; height:56px; border-radius:50%; background:var(--primary); color:#fff; font-family:'Montserrat',sans-serif; font-size:20px; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
-    .step-title { font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700; margin-bottom:8px; }
+    .step-num { width:56px; height:56px; border-radius:50%; background:var(--primary); color:#fff; font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
+    .step-title { font-family:'Space Grotesk',sans-serif; font-size:17px; font-weight:700; margin-bottom:8px; }
     .step-desc { font-size:14px; color:var(--text-sec); line-height:1.7; }
     .step-divider { position:relative; }
     .step-divider::after { content:'→'; position:absolute; top:-36px; right:-16px; font-size:20px; color:var(--border); }
@@ -75,16 +78,19 @@
     .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
     .feat-card { background:var(--white); border-radius:var(--radius-lg); padding:28px; border:1px solid var(--border); }
     .feat-icon { font-size:28px; margin-bottom:14px; }
-    .feat-title { font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700; margin-bottom:8px; }
+    .feat-title { font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:700; margin-bottom:8px; }
     .feat-desc { font-size:13px; color:var(--text-sec); line-height:1.7; }
 
     /* Live CTA */
     .live-cta {
       padding:100px 0;
-      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 50%, #1a0a30 100%);
       text-align:center; position:relative; overflow:hidden;
+      background: var(--ink);
+      background-image:
+        repeating-linear-gradient(180deg, rgba(255,255,255,.035) 0px, rgba(255,255,255,.035) 1px, transparent 1px, transparent 44px),
+        radial-gradient(circle at 14% 85%, rgba(184,121,42,.14), transparent 42%);
     }
-    .live-cta::before { content:''; position:absolute; top:-50%; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle,rgba(124,58,237,.25),transparent 70%); pointer-events:none; }
+    .live-cta::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--accent), var(--primary)); }
     .live-cta h2 { color:#fff; position:relative; }
     .live-cta p { color:rgba(255,255,255,.7); margin:14px auto 32px; max-width:520px; position:relative; font-size:16px; }
     .live-cta-buttons { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; position:relative; }
@@ -160,7 +166,7 @@
       <div class="reveal">
         <span class="eyebrow">What is T-Tech Connect</span>
         <h2>The Smarter Way to Find or List Property in Zimbabwe</h2>
-        <p style="margin-bottom:16px;">Finding accommodation in Zimbabwe has always been a frustrating process — word of mouth, WhatsApp forwards, unsafe meetups, and no real verification of properties or landlords.</p>
+        <p style="margin-bottom:16px;">Finding accommodation in Zimbabwe has always been a frustrating process: word of mouth, WhatsApp forwards, unsafe meetups, and no real verification of properties or landlords.</p>
         <p style="margin-bottom:16px;">T-Tech Connect changes that. It is a dedicated digital marketplace where landlords list verified properties and tenants find accommodation safely, with photos, real pricing, and direct communication all in one platform.</p>
         <p>Whether you are a university student looking for something close to campus, or a working professional looking for a furnished flat, T-Tech Connect makes the process simple, transparent, and trustworthy.</p>
         <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
@@ -169,7 +175,7 @@
         </div>
       </div>
       <div class="reveal s1" style="background:var(--bg);border-radius:var(--radius-xl);padding:40px;border:1px solid var(--border);">
-        <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;">Platform at a Glance</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;">Platform at a Glance</div>
         <div style="display:flex;flex-direction:column;gap:16px;">
           <div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:10px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🔍</div><div><div style="font-weight:600;font-size:14px;">Smart Search</div><div style="font-size:13px;color:var(--text-sec);">Filter by city, campus, price, and type</div></div></div>
           <div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:10px;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">✅</div><div><div style="font-weight:600;font-size:14px;">Verified Listings</div><div style="font-size:13px;color:var(--text-sec);">Properties reviewed with real photos</div></div></div>
@@ -232,7 +238,7 @@
       <p class="lead">Getting started on T-Tech Connect takes minutes, whether you're a tenant or a landlord.</p>
     </div>
     <div style="margin-bottom:56px;">
-      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:28px;text-align:center;">For Tenants</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:28px;text-align:center;">For Tenants</div>
       <div class="steps-grid">
         <div class="step step-divider reveal">
           <div class="step-num">1</div>
@@ -252,7 +258,7 @@
       </div>
     </div>
     <div>
-      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:28px;text-align:center;">For Landlords</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:28px;text-align:center;">For Landlords</div>
       <div class="steps-grid">
         <div class="step step-divider reveal">
           <div class="step-num" style="background:var(--green);">1</div>

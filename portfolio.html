@@ -3,28 +3,36 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio — Live Projects by Terrence Muromba | T-Tech Solutions Zimbabwe</title>
-  <meta name="description" content="Portfolio of real projects built and delivered by Terrence Muromba — JB Construction website, T-Tech Connect property rental platform, and City of Harare Financial Management System. All live and deployed."/>
-  <meta name="keywords" content="web developer portfolio Zimbabwe, T-Tech Solutions projects, website developer Harare portfolio, financial system Zimbabwe, property platform Zimbabwe, JB Construction website, T-Tech Connect"/>
-  <meta name="author" content="Terrence Muromba — T-Tech Solutions"/>
+  <title>Portfolio | 12+ Projects by Terrence Muromba | T-Tech Solutions Zimbabwe</title>
+  <meta name="description" content="Portfolio of real projects built and delivered by Terrence Muromba: ERP, finance, healthcare, education, logistics, and marketing systems, including JB Construction, T-Tech Connect, GRATZ Logistics, Store ERP, and TourismPulse. Live and deployed."/>
+  <meta name="keywords" content="web developer portfolio Zimbabwe, T-Tech Solutions projects, software developer Harare portfolio, ERP developer Zimbabwe, financial system Zimbabwe, property platform Zimbabwe, JB Construction website, T-Tech Connect, GRATZ Logistics"/>
+  <meta name="author" content="Terrence Muromba, T-Tech Solutions"/>
   <meta name="robots" content="index, follow"/>
-  <meta property="og:title" content="Portfolio — Live Projects by Terrence Muromba | T-Tech Solutions"/>
-  <meta property="og:description" content="Real systems live and running — JB Construction website, T-Tech Connect rental platform, and City of Harare Financial Management System."/>
+  <meta property="og:title" content="Portfolio | 12+ Projects by Terrence Muromba | T-Tech Solutions"/>
+  <meta property="og:description" content="Real systems live and running: ERP, finance, healthcare, education, logistics, and marketing platforms built and deployed by Terrence Muromba."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://t-techsolutions.co.zw/portfolio.html"/>
   <meta property="og:image" content="https://t-techsolutions.co.zw/images/jb-construction.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Portfolio — T-Tech Solutions Zimbabwe"/>
+  <meta name="twitter:title" content="Portfolio | T-Tech Solutions Zimbabwe"/>
   <meta name="twitter:description" content="Real live projects: JB Construction website, T-Tech Connect rental platform, City of Harare FMS."/>
   <link rel="canonical" href="https://t-techsolutions.co.zw/portfolio.html"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
   <style>
     /* ── Portfolio page styles ─────────────────────────────── */
-    .portfolio-hero { padding: 148px 0 88px; background: linear-gradient(135deg, #0a0f1e 0%, #0f172a 50%, #1a1040 100%); position: relative; overflow: hidden; }
-    .portfolio-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 520px; height: 520px; background: radial-gradient(circle, rgba(124,58,237,.28), transparent 70%); pointer-events: none; }
-    .portfolio-hero::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(59,130,246,.14), transparent 70%); pointer-events: none; }
+    .portfolio-hero {
+      padding: 148px 0 88px; position: relative; overflow: hidden;
+      background: var(--ink);
+      background-image:
+        repeating-linear-gradient(180deg, rgba(255,255,255,.035) 0px, rgba(255,255,255,.035) 1px, transparent 1px, transparent 44px),
+        radial-gradient(circle at 14% 12%, rgba(184,121,42,.14), transparent 42%);
+    }
+    .portfolio-hero::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+    }
     .portfolio-hero-content { position: relative; z-index: 1; text-align: center; max-width: 760px; margin: 0 auto; }
     .portfolio-hero .breadcrumb { justify-content: center; margin-bottom: 24px; }
     .portfolio-hero .eyebrow { color: rgba(255,255,255,.5); }
@@ -36,7 +44,7 @@
     .port-stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; text-align: center; }
     .port-stat { padding: 0 24px; border-right: 1px solid var(--border); }
     .port-stat:last-child { border-right: none; }
-    .port-stat-num { font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 800; color: var(--primary); line-height: 1; }
+    .port-stat-num { font-family: 'JetBrains Mono', monospace; font-size: 32px; font-weight: 700; color: var(--primary); line-height: 1; }
     .port-stat-lbl { font-size: 12px; color: var(--text-muted); margin-top: 5px; }
     @media(max-width:640px){ .port-stats-grid{ grid-template-columns:repeat(2,1fr); } .port-stat{ border-bottom:1px solid var(--border); padding:16px; } }
 
@@ -73,7 +81,7 @@
     @media(max-width:900px){ .proj-full-body{ padding: 32px 28px; } }
 
     .proj-type { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
-    .proj-title { font-family: 'Montserrat', sans-serif; font-size: clamp(22px,3vw,30px); font-weight: 800; color: var(--text); margin-bottom: 14px; line-height: 1.2; }
+    .proj-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px,3vw,30px); font-weight: 700; color: var(--text); margin-bottom: 14px; line-height: 1.2; }
     .proj-summary { font-size: 15px; line-height: 1.75; color: var(--text-sec); margin-bottom: 22px; }
 
     .proj-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
@@ -96,6 +104,34 @@
     .accent-green .proj-tech { background: #dcfce7; color: #15803d; }
     .accent-blue  .proj-tech { background: #dbeafe; color: #1d4ed8; }
     .accent-amber .proj-tech { background: #fef3c7; color: #b45309; }
+    .accent-purple  .proj-tech { background: #ede9fe; color: #6d28d9; }
+    .accent-teal    .proj-tech { background: #ccfbf1; color: #0f766e; }
+    .accent-indigo  .proj-tech { background: #e0e7ff; color: #4338ca; }
+    .accent-cyan    .proj-tech { background: #cffafe; color: #0e7490; }
+    .accent-orange  .proj-tech { background: #ffedd5; color: #c2410c; }
+    .accent-rose    .proj-tech { background: #ffe4e6; color: #be123c; }
+    .accent-fuchsia .proj-tech { background: #fae8ff; color: #a21caf; }
+    .accent-sky     .proj-tech { background: #e0f2fe; color: #0369a1; }
+    .accent-emerald .proj-tech { background: #d1fae5; color: #047857; }
+
+    /* Placeholder image (no screenshot yet) */
+    .proj-placeholder { display: flex; align-items: center; justify-content: center; }
+    .proj-placeholder-inner { text-align: center; color: rgba(255,255,255,.92); }
+    .proj-placeholder-icon { font-size: 52px; line-height: 1; margin-bottom: 12px; }
+    .proj-placeholder-label { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+    .proj-placeholder.accent-purple  { background: linear-gradient(135deg,#7c3aed,#3b0764); }
+    .proj-placeholder.accent-teal    { background: linear-gradient(135deg,#14b8a6,#042f2e); }
+    .proj-placeholder.accent-indigo  { background: linear-gradient(135deg,#6366f1,#1e1b4b); }
+    .proj-placeholder.accent-cyan    { background: linear-gradient(135deg,#06b6d4,#083344); }
+    .proj-placeholder.accent-orange  { background: linear-gradient(135deg,#f97316,#431407); }
+    .proj-placeholder.accent-rose    { background: linear-gradient(135deg,#f43f5e,#4c0519); }
+    .proj-placeholder.accent-fuchsia { background: linear-gradient(135deg,#d946ef,#4a044e); }
+    .proj-placeholder.accent-sky     { background: linear-gradient(135deg,#0ea5e9,#082f49); }
+    .proj-placeholder.accent-emerald { background: linear-gradient(135deg,#10b981,#022c22); }
+
+    /* Completed (not-yet-deployed) status badge */
+    .proj-status.completed { background: rgba(10,15,30,.6); }
+    .static-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted); display: inline-block; }
   </style>
 </head>
 <body>
@@ -157,16 +193,16 @@
   <div class="container">
     <div class="port-stats-grid">
       <div class="port-stat reveal">
-        <div class="port-stat-num">3+</div>
-        <div class="port-stat-lbl">Live Projects</div>
+        <div class="port-stat-num">12+</div>
+        <div class="port-stat-lbl">Projects Built</div>
       </div>
       <div class="port-stat reveal s1">
-        <div class="port-stat-num">3</div>
-        <div class="port-stat-lbl">Technologies Used</div>
+        <div class="port-stat-num">7</div>
+        <div class="port-stat-lbl">Live &amp; Deployed</div>
       </div>
       <div class="port-stat reveal s2">
-        <div class="port-stat-num">100%</div>
-        <div class="port-stat-lbl">Deployed &amp; Live</div>
+        <div class="port-stat-num">10+</div>
+        <div class="port-stat-lbl">Technologies Used</div>
       </div>
       <div class="port-stat reveal s3">
         <div class="port-stat-num">ZW</div>
@@ -276,7 +312,7 @@
         </div>
         <div class="proj-full-body">
           <div class="proj-type">Dissertation Project &nbsp;·&nbsp; Financial System</div>
-          <div class="proj-title">City of Harare — Financial Management System</div>
+          <div class="proj-title">City of Harare: Financial Management System</div>
           <p class="proj-summary">A computerised financial management system designed and built as my final year dissertation at the University of Zimbabwe. The system addresses revenue leakage at the City of Harare through automated billing, real-time reporting, audit trails, and financial controls.</p>
           <div class="proj-detail-grid">
             <div class="proj-detail">
@@ -306,6 +342,399 @@
           <div class="proj-actions">
             <a href="https://financial-management-system-7.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">View Live System →</a>
             <a href="about.html#dissertation" class="btn btn-outline">Research Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4: GRATZ Transport Fleet & Finance -->
+    <div class="proj-full-card accent-purple reveal">
+      <div class="proj-full-grid reverse">
+        <div class="proj-full-image proj-placeholder accent-purple">
+          <div class="proj-placeholder-inner">
+            <div class="proj-placeholder-icon">🚚</div>
+            <div class="proj-placeholder-label">TransFleet ERP</div>
+          </div>
+          <div class="proj-status"><span class="pulse-dot"></span>Live</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">Built on the Job &nbsp;·&nbsp; Fleet &amp; Finance System</div>
+          <div class="proj-title">GRATZ Logistics: TransFleet ERP</div>
+          <p class="proj-summary">A full transport fleet and finance ERP built for Gratz Logistics, where I work as Assistant Accountant &amp; Systems Administrator. Three systems in one: fleet &amp; maintenance tracking, a general ledger for the accounting side, and a Franchise Collections System that replaced years of scattered Excel collection sheets with one reconciled database.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">My Role</div>
+              <div class="proj-detail-value">Asst. Accountant &amp; Systems Admin</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">Deployment</div>
+              <div class="proj-detail-value">Web + Desktop Installer</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">What Was Delivered</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Fleet, driver, and vehicle maintenance tracking</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Ledger: capital, loans, receivables/payables, owner drawings</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Franchise Collections System: daily/weekly income reconciliation, defaulter tracking, and consolidated reporting across sites, replacing years of scattered Excel sheets</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Multi-branch data sync with conflict resolution and site health monitoring</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Role-based access with full audit trail</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>PDF and Excel report generation</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">Python</span>
+            <span class="proj-tech">Flask</span>
+            <span class="proj-tech">PostgreSQL</span>
+            <span class="proj-tech">Multi-Site Sync</span>
+            <span class="proj-tech">PDF/Excel Reporting</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://transport-financial-system.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">View Live System →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 5: Hospital Financial Management System -->
+    <div class="proj-full-card accent-teal reveal">
+      <div class="proj-full-grid">
+        <div class="proj-full-image proj-placeholder accent-teal">
+          <div class="proj-placeholder-inner">
+            <div class="proj-placeholder-icon">🏥</div>
+            <div class="proj-placeholder-label">Hospital Finance System</div>
+          </div>
+          <div class="proj-status completed"><span class="static-dot"></span>Completed</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">Personal Project &nbsp;·&nbsp; Healthcare Finance System</div>
+          <div class="proj-title">Hospital Financial Management System</div>
+          <p class="proj-summary">A hospital finance backend and admin UI covering patient billing, medical aid claims, and pharmacy procurement, built around a double-entry general ledger so the books can never go out of balance.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">Project Type</div>
+              <div class="proj-detail-value">Full-Stack System</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">User Roles</div>
+              <div class="proj-detail-value">5 (Admin–Clinician)</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">System Capabilities</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Patient billing, invoicing, deposits &amp; refunds</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Medical aid (insurance) claims workflow</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Pharmacy procurement: suppliers, POs, stock levels</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Double-entry general ledger with AR aging</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Multi-currency (USD/ZWG) and full audit trail</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">Python</span>
+            <span class="proj-tech">FastAPI</span>
+            <span class="proj-tech">PostgreSQL</span>
+            <span class="proj-tech">JWT Auth</span>
+            <span class="proj-tech">Double-Entry Accounting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 6: School Management System -->
+    <div class="proj-full-card accent-indigo reveal">
+      <div class="proj-full-grid reverse">
+        <div class="proj-full-image proj-placeholder accent-indigo">
+          <div class="proj-placeholder-inner">
+            <div class="proj-placeholder-icon">🎓</div>
+            <div class="proj-placeholder-label">School Management System</div>
+          </div>
+          <div class="proj-status completed"><span class="static-dot"></span>Completed</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">Personal Project &nbsp;·&nbsp; Education Management System</div>
+          <div class="proj-title">School Management System</div>
+          <p class="proj-summary">A full-stack school management platform combining fee/financial management with a student performance portal: five dashboards, one for each stakeholder, built on a single role-based system.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">Project Type</div>
+              <div class="proj-detail-value">Full-Stack System</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">User Roles</div>
+              <div class="proj-detail-value">5 (Admin–Parent)</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">What Was Delivered</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Fee categories, invoicing, and payment recording</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Auto-calculated report cards with subject averages</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Gradebook, assessments, and attendance tracking</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Class, subject, and enrollment management</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Dedicated dashboards for every role</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">Python</span>
+            <span class="proj-tech">FastAPI</span>
+            <span class="proj-tech">SQLAlchemy</span>
+            <span class="proj-tech">JWT / RBAC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 7: Store ERP -->
+    <div class="proj-full-card accent-cyan reveal">
+      <div class="proj-full-grid">
+        <div class="proj-full-image proj-placeholder accent-cyan">
+          <div class="proj-placeholder-inner">
+            <div class="proj-placeholder-icon">🏬</div>
+            <div class="proj-placeholder-label">Store ERP</div>
+          </div>
+          <div class="proj-status"><span class="pulse-dot"></span>Live</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">Own Product &nbsp;·&nbsp; Store Finance &amp; Inventory System</div>
+          <div class="proj-title">Store ERP: Business Finance &amp; Inventory Platform</div>
+          <p class="proj-summary">A multi-tenant store financial management system for small businesses: sales, expenses, inventory-linked costing, and reporting in one dashboard, with each registered business running its own branded workspace.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">Project Type</div>
+              <div class="proj-detail-value">Multi-Tenant SaaS</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">User Roles</div>
+              <div class="proj-detail-value">Admin, Manager, Cashier</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">What Was Delivered</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Sales and income tracking</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Expense and purchase recording</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Inventory-linked costing and stock levels</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Reports and dashboard analytics</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Multi-tenant: each business sets its own branding</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">Python</span>
+            <span class="proj-tech">FastAPI</span>
+            <span class="proj-tech">SQLite</span>
+            <span class="proj-tech">Docker</span>
+            <span class="proj-tech">JWT Auth</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://store-erp-jd82.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">View Live System →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 8: TourismPulse Marketing Platform -->
+    <div class="proj-full-card accent-orange reveal">
+      <div class="proj-full-grid reverse">
+        <div class="proj-full-image proj-placeholder accent-orange">
+          <div class="proj-placeholder-inner">
+            <div class="proj-placeholder-icon">🧭</div>
+            <div class="proj-placeholder-label">TourismPulse</div>
+          </div>
+          <div class="proj-status"><span class="pulse-dot"></span>Live</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">ML Project &nbsp;·&nbsp; Tourism Marketing Platform</div>
+          <div class="proj-title">TourismPulse: Smart Destination Marketing Platform</div>
+          <p class="proj-summary">A machine-learning-driven marketing platform that forecasts tourism demand, analyzes visitor sentiment, and auto-generates destination marketing content and dynamic pricing, modelled on eight real Zimbabwean destinations.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">Focus Area</div>
+              <div class="proj-detail-value">ML / Tourism Analytics</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">Models Used</div>
+              <div class="proj-detail-value">Ridge Regression, TF-IDF + LogReg</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">What Was Delivered</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Demand forecasting with time-series cross-validation</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Sentiment analysis on visitor reviews</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Dynamic pricing recommendation engine</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Auto-generated marketing copy per destination</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Live model performance / evaluation dashboard</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">Python</span>
+            <span class="proj-tech">Flask</span>
+            <span class="proj-tech">scikit-learn</span>
+            <span class="proj-tech">pandas</span>
+            <span class="proj-tech">Chart.js</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://marketing-platform-gl1e.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">View Live Platform →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 9: Expense Tracking System -->
+    <div class="proj-full-card accent-rose reveal">
+      <div class="proj-full-grid">
+        <div class="proj-full-image proj-placeholder accent-rose">
+          <div class="proj-placeholder-inner">
+            <div class="proj-placeholder-icon">💳</div>
+            <div class="proj-placeholder-label">Expense Tracker</div>
+          </div>
+          <div class="proj-status"><span class="pulse-dot"></span>Live</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">Personal Project &nbsp;·&nbsp; Finance Tool</div>
+          <div class="proj-title">Expense Tracking System</div>
+          <p class="proj-summary">A straightforward expense tracking web app for logging spending, uploading receipts, and reviewing categorized reports, built to practice clean financial data handling end to end.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">Project Type</div>
+              <div class="proj-detail-value">Web App</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">Deployment</div>
+              <div class="proj-detail-value">Live on Render</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">What Was Delivered</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Expense logging with categories</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Receipt upload and storage</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Spending reports and summaries</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Secure session handling</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">Python</span>
+            <span class="proj-tech">Flask</span>
+            <span class="proj-tech">SQLite</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://expense-tracking-system-2pwh.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">View Live App →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 10: T-Tech WhatsApp Commerce Bot -->
+    <div class="proj-full-card accent-fuchsia reveal">
+      <div class="proj-full-grid reverse">
+        <div class="proj-full-image proj-placeholder accent-fuchsia">
+          <div class="proj-placeholder-inner">
+            <div class="proj-placeholder-icon">💬</div>
+            <div class="proj-placeholder-label">WhatsApp Commerce Bot</div>
+          </div>
+          <div class="proj-status completed"><span class="static-dot"></span>Completed</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">Personal Project &nbsp;·&nbsp; WhatsApp Commerce Platform</div>
+          <div class="proj-title">T-Tech WhatsApp Commerce Bot</div>
+          <p class="proj-summary">A WhatsApp-based marketplace bot combining product sales, property rental enquiries, and service bookings in one conversational interface, with seller onboarding, delivery coordination, and an admin analytics dashboard behind the scenes.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">Project Type</div>
+              <div class="proj-detail-value">Conversational Commerce</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">Channel</div>
+              <div class="proj-detail-value">WhatsApp Business API</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">What Was Delivered</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Product marketplace with seller onboarding</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Property rental enquiries and paid viewing bookings</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Services marketplace with reviews</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Cart, orders, delivery coordination, and disputes</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Admin dashboard with sales and engagement analytics</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">Python</span>
+            <span class="proj-tech">Flask</span>
+            <span class="proj-tech">WhatsApp Business API</span>
+            <span class="proj-tech">SQLite</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 11: BM- eLearning Management System -->
+    <div class="proj-full-card accent-sky reveal">
+      <div class="proj-full-grid">
+        <div class="proj-full-image proj-placeholder accent-sky">
+          <div class="proj-placeholder-inner">
+            <div class="proj-placeholder-icon">📚</div>
+            <div class="proj-placeholder-label">eLearning Management System</div>
+          </div>
+          <div class="proj-status completed"><span class="static-dot"></span>Completed</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">Personal Project &nbsp;·&nbsp; eLearning Management System</div>
+          <div class="proj-title">BM- eLearning Management System</div>
+          <p class="proj-summary">A Node.js-based e-learning management system handling enrollment, attendance, and online testing, plus in-app messaging and a community/discussion space for learners.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">Project Type</div>
+              <div class="proj-detail-value">Full-Stack LMS</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">Backend</div>
+              <div class="proj-detail-value">Node.js + PostgreSQL</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">What Was Delivered</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Student enrollment and subject/class management</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Attendance tracking and online testing</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Notes and course material distribution</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Payment recording</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>In-app messaging and community discussion boards</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">Node.js</span>
+            <span class="proj-tech">Express</span>
+            <span class="proj-tech">PostgreSQL</span>
+            <span class="proj-tech">JWT Auth</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 12: Photography Studio Booking Platform -->
+    <div class="proj-full-card accent-emerald reveal">
+      <div class="proj-full-grid reverse">
+        <div class="proj-full-image proj-placeholder accent-emerald">
+          <div class="proj-placeholder-inner">
+            <div class="proj-placeholder-icon">📸</div>
+            <div class="proj-placeholder-label">Photo Studio Platform</div>
+          </div>
+          <div class="proj-status completed"><span class="static-dot"></span>Completed</div>
+        </div>
+        <div class="proj-full-body">
+          <div class="proj-type">Personal Project &nbsp;·&nbsp; Studio Booking Platform</div>
+          <div class="proj-title">Photography Studio Booking Platform</div>
+          <p class="proj-summary">A studio management platform for a photography business: client bookings, a photo delivery dashboard, and secure client logins, built on Next.js with a Prisma-backed database.</p>
+          <div class="proj-detail-grid">
+            <div class="proj-detail">
+              <div class="proj-detail-label">Project Type</div>
+              <div class="proj-detail-value">Full-Stack Web App</div>
+            </div>
+            <div class="proj-detail">
+              <div class="proj-detail-label">Frontend</div>
+              <div class="proj-detail-value">Next.js + React</div>
+            </div>
+          </div>
+          <div class="proj-deliverables">
+            <div class="proj-deliverables-title">What Was Delivered</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Client login/signup and booking dashboard</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Studio-side booking and session management</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Photo upload and delivery to clients</div>
+            <div class="proj-del-item"><div class="proj-del-dot">✓</div>Secure authentication with JWT-based sessions</div>
+          </div>
+          <div class="proj-tech-row">
+            <span class="proj-tech">Next.js</span>
+            <span class="proj-tech">React</span>
+            <span class="proj-tech">TypeScript</span>
+            <span class="proj-tech">Prisma</span>
+            <span class="proj-tech">Tailwind CSS</span>
           </div>
         </div>
       </div>
